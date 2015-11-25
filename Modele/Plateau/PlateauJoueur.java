@@ -8,7 +8,6 @@ import Modele.Carte.Carte;
  */
 public class PlateauJoueur 
 {
-
     private Carte[] main;
     private Carte[] terrain;
     private Carte[] ligneCombat;
@@ -34,5 +33,4 @@ public class PlateauJoueur
     {
         return terrain[i];
     }
-
 }

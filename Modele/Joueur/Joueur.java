@@ -4,8 +4,8 @@ package Modele.Joueur;
  * @author RICHE Vincent P1203372
  * @author PARIS AXEL P1306459
  */
-public class Joueur {
-
+public class Joueur 
+{
     private String nom;
     private int pv;
 

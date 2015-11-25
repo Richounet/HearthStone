@@ -2,12 +2,13 @@ package Modele.Plateau;
 
 import Modele.Carte.Carte;
 import Modele.Joueur.Joueur;
+import Utilitaire.MyObservable;
 
 /**
  * @author RICHE Vincent P1203372
  * @author PARIS AXEL P1306459
  */
-public class PlateauJoueur 
+public class PlateauJoueur extends MyObservable
 {
     private Joueur joueur;
     private Carte[] main;
@@ -20,6 +21,8 @@ public class PlateauJoueur
         this.main = new Carte[4];
         this.terrain = new Carte[4];
         this.ligneCombat = new Carte[4];
+        
+        Notify();
     }
 
     public Carte getMain(int i) 
@@ -49,17 +52,26 @@ public class PlateauJoueur
     
     public void TryDefend(Carte defenseur, Carte attaquante)
     {
-        
+        Notify();
     }
     
     public void TryInvoc(Carte newCarte)
     {
+        int j;
+        for (j = 0; j < terrain.length; j++)
+            if (terrain[j] == null)
+                break;
         
+        // S'il y a de la place et que le joueur a assez de ressource
+        if (j < terrain.length && newCarte.getCoutRessource() <= joueur.getRessource())
+            terrain[j] = newCarte;
+        
+        Notify();
     }
     
     public void TryAttack(Carte newAtt)
     {
-        
+        Notify();
     }
     
     public void RemoveAttaquant(int i)
@@ -70,5 +82,7 @@ public class PlateauJoueur
                 break;
         terrain[j] = ligneCombat[i];
         ligneCombat[i] = null;
+        
+        Notify();
     }
 }

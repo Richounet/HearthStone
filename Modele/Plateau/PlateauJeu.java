@@ -1,7 +1,6 @@
 package Modele.Plateau;
 
 import Modele.Carte.Carte;
-import Modele.Carte.Creature;
 import Modele.Joueur.Joueur;
 import Modele.Phase.PhaseType;
 
@@ -24,11 +23,6 @@ public class PlateauJeu
         this.plateauActuel = 0;
         this.phaseActuelle = PhaseType.PhaseDefense;
     }   
-
-    public PlateauJoueur getPlateauJoueur(int i) 
-    {
-        return plateauJoueur[i];
-    }
     
     public void JouerCoup(Carte c)
     {

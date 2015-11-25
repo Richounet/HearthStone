@@ -1,5 +1,6 @@
 package Modele.Plateau;
 
+import Modele.Carte.Carte;
 import Modele.Joueur.Joueur;
 
 /**
@@ -9,20 +10,24 @@ import Modele.Joueur.Joueur;
 
 public class Partie
 {
+    private Joueur[] joueurs;
     private PlateauJeu plateau;
+    private int numeroTour;
 
     public Partie(Joueur j1, Joueur j2)
     {
+        joueurs = new Joueur[] { j1, j2 };
         plateau = new PlateauJeu(j1, j2);
+        numeroTour = 0;
     }
     
-    public void JouerCoup()
+    public void JouerCoup(Carte c)
     {
-        plateau.JouerCoup(null);
+        plateau.JouerCoup(c);
     }
     
     public void NextPhase()
     {
-        plateau.NextPhase();
+        numeroTour += plateau.NextPhase();
     }
 }

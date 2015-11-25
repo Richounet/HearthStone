@@ -11,11 +11,13 @@ public class Joueur extends MyObservable
 {
     private String nom;
     private int pv;
+    private int ressource;
 
     public Joueur(String nom, int pv) 
     {
         this.nom = nom;
         this.pv = pv;
+        this.ressource = 0;
         
         Notify();
     }
@@ -40,5 +42,15 @@ public class Joueur extends MyObservable
     {
         this.pv = pv;
         Notify();
+    }
+    
+    public int getRessource()
+    {
+        return ressource;
+    }
+
+    public void setRessource(int ressource)
+    {
+        this.ressource = ressource;
     }
 }

@@ -1,6 +1,7 @@
 package Modele.Plateau;
 
 import Modele.Carte.Carte;
+import Modele.Carte.Creature;
 import Modele.Joueur.Joueur;
 import Modele.Phase.PhaseType;
 
@@ -33,19 +34,24 @@ public class PlateauJeu
     {
         if (phaseActuelle == PhaseType.PhaseDefense)
         {
-            
+            // Joue le match attaquant/defenseur si il y a des attaquants
+            Carte att = GetProchaineCarteAttaquante();
+            if (att != null)
+                plateauJoueur[plateauActuel].TryDefend(c, att);
         }
         else if (phaseActuelle == PhaseType.PhaseInvocation)
         {
-            
+            // Essaie d'invoquer la carte selectionnée
+            plateauJoueur[plateauActuel].TryInvoc(c);
         }
         else if (phaseActuelle == PhaseType.PhaseAttaque)
         {
-            
+            // Essaie de placer la carte selectionnée en ligne de combat
+            plateauJoueur[plateauActuel].TryAttack(c);
         }
     }
     
-    public void NextPhase()
+    public int NextPhase()
     {
         if (phaseActuelle == PhaseType.PhaseAttaque)
         {
@@ -53,8 +59,28 @@ public class PlateauJeu
             plateauActuel++;
             if (plateauActuel == 2)
                 plateauActuel = 0;
+            return 1;
         }
         else
             phaseActuelle = PhaseType.values()[phaseActuelle.ordinal() + 1];
+        
+        return 0;
+    }
+    
+    private Carte GetProchaineCarteAttaquante()
+    {
+        // Selectionne le plateau adverse
+        int index = 0;
+        if (plateauActuel == 0)
+            index = 1;
+        
+        for (int i = 0; i < 4; i++)
+            // Enleve le prochain attaquant de la ligne de combat adverse et le retourne
+            if (plateauJoueur[index].getLigneCombat(i) != null)
+            {
+                plateauJoueur[index].RemoveAttaquant(i);
+                return plateauJoueur[index].getLigneCombat(i);
+            }
+        return null;
     }
 }

@@ -9,14 +9,14 @@ import Modele.Joueur.Joueur;
  */
 public class PlateauJoueur 
 {
-    private Joueur j;
+    private Joueur joueur;
     private Carte[] main;
     private Carte[] terrain;
     private Carte[] ligneCombat;
 
     public PlateauJoueur(Joueur j) 
     {
-        this.j = j;
+        this.joueur = j;
         this.main = new Carte[4];
         this.terrain = new Carte[4];
         this.ligneCombat = new Carte[4];
@@ -39,11 +39,36 @@ public class PlateauJoueur
     
     public Joueur getJ()
     {
-        return j;
+        return joueur;
     }
 
     public void setJ(Joueur j)
     {
-        this.j = j;
+        this.joueur= j;
+    }
+    
+    public void TryDefend(Carte defenseur, Carte attaquante)
+    {
+        
+    }
+    
+    public void TryInvoc(Carte newCarte)
+    {
+        
+    }
+    
+    public void TryAttack(Carte newAtt)
+    {
+        
+    }
+    
+    public void RemoveAttaquant(int i)
+    {
+        int j;
+        for (j = 0; j < terrain.length; j++)
+            if (terrain[j] == null)
+                break;
+        terrain[j] = ligneCombat[i];
+        ligneCombat[i] = null;
     }
 }

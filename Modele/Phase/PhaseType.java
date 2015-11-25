@@ -5,7 +5,9 @@ package Modele.Phase;
  * @author PARIS AXEL    P1306459
  */
 
-public class PhaseDefense
+public enum PhaseType
 {
-
+    PhaseDefense,
+    PhaseInvocation,
+    PhaseAttaque,
 }

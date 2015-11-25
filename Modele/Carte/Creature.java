@@ -9,12 +9,14 @@ public class Creature extends Carte
 {
     private int attaque;
     private int defense;
+    private EtatCreature etat;
     
     public Creature(String nom, int coutRessource, int att, int def)
     {
         super(nom, coutRessource);
         this.attaque = att;
         this.defense = def;
+        this.etat = EtatCreature.Normal;
     }
 
     public int getAttaque()
@@ -35,5 +37,15 @@ public class Creature extends Carte
     public void setDefense(int defense)
     {
         this.defense = defense;
+    }
+
+    public EtatCreature getEtat()
+    {
+        return etat;
+    }
+
+    public void setEtat(EtatCreature etat)
+    {
+        this.etat = etat;
     }
 }

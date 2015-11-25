@@ -7,5 +7,15 @@ package Modele.Plateau;
 
 public class PlateauJeu
 {
+    private PlateauJoueur[] plateauJoueur;
 
+    public PlateauJeu() 
+    {
+        this.plateauJoueur = new PlateauJoueur[2];
+    }   
+
+    public PlateauJoueur getPlateauJoueur(int i) 
+    {
+        return plateauJoueur[i];
+    }   
 }

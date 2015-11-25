@@ -12,7 +12,7 @@ public class Partie
 {
     private Joueur[] joueurs;
     private PlateauJeu plateau;
-    private int numeroTour;
+    public static int numeroTour;
 
     public Partie(Joueur j1, Joueur j2)
     {

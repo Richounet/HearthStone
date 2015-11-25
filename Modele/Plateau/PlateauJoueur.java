@@ -1,8 +1,12 @@
 package Modele.Plateau;
 
 import Modele.Carte.Carte;
+import Modele.Carte.Creature;
+import Modele.Carte.Deck;
+import Modele.Carte.EtatCreature;
 import Modele.Joueur.Joueur;
 import Utilitaire.MyObservable;
+import Utilitaire.Tools;
 
 /**
  * @author RICHE Vincent P1203372
@@ -19,6 +23,8 @@ public class PlateauJoueur extends MyObservable
     {
         this.joueur = j;
         this.main = new Carte[4];
+        for (int i = 0; i < 4; i++)
+            main[i] = Deck.GetRandomCarte();
         this.terrain = new Carte[4];
         this.ligneCombat = new Carte[4];
         
@@ -50,6 +56,14 @@ public class PlateauJoueur extends MyObservable
         this.joueur= j;
     }
     
+    public void InitPlateauDebutTour()
+    {
+        // Passage de toutes les créatures du terrain en normal
+        for (int j = 0; j < terrain.length; j++)
+            if (terrain[j] != null)
+                ((Creature)terrain[j]).setEtat(EtatCreature.Normal);
+    }
+    
     public void TryDefend(Carte defenseur, Carte attaquante)
     {
         Notify();
@@ -63,14 +77,40 @@ public class PlateauJoueur extends MyObservable
                 break;
         
         // S'il y a de la place et que le joueur a assez de ressource
+        // On passe la carte de la main au terrain
         if (j < terrain.length && newCarte.getCoutRessource() <= joueur.getRessource())
+        {
             terrain[j] = newCarte;
+            Tools.RemoveFromArray(main, newCarte);
+        }
         
         Notify();
     }
     
     public void TryAttack(Carte newAtt)
     {
+        int j;
+        for (j = 0; j < ligneCombat.length; j++)
+            if (ligneCombat[j] == null)
+                break;
+        
+        // Si le joueur a assez de place pour attaquer
+        // On passe la carte du terrain a la ligne de combat
+        if (j < ligneCombat.length)
+        {
+            ((Creature)newAtt).setEtat(EtatCreature.Fatigue);
+            ligneCombat[j] = newAtt;
+            Tools.RemoveFromArray(terrain, newAtt);
+        }
+            
+        Notify();
+    }
+    
+    public void TryTirerCarte()
+    {
+        for (int i = 0; i < main.length; i++)
+            if (main[i] == null)
+                main[i] = Deck.GetRandomCarte();
         Notify();
     }
     
@@ -84,5 +124,10 @@ public class PlateauJoueur extends MyObservable
         ligneCombat[i] = null;
         
         Notify();
+    }
+    
+    public void ChargeRessource()
+    {
+        joueur.setRessource(Partie.numeroTour);
     }
 }

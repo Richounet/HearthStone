@@ -47,6 +47,7 @@ public class PlateauJeu
     
     public int NextPhase()
     {
+        // Passage à defense, début d'un tour
         if (phaseActuelle == PhaseType.PhaseAttaque)
         {
             phaseActuelle = PhaseType.PhaseDefense;
@@ -55,8 +56,19 @@ public class PlateauJeu
                 plateauActuel = 0;
             return 1;
         }
-        else
+        // Passage à invocation
+        else if (phaseActuelle == PhaseType.PhaseDefense)
+        {
             phaseActuelle = PhaseType.values()[phaseActuelle.ordinal() + 1];
+            plateauJoueur[plateauActuel].InitPlateauDebutTour();
+            plateauJoueur[plateauActuel].TryTirerCarte();
+            plateauJoueur[plateauActuel].ChargeRessource();
+        }
+        // Passage à attaque
+        else if (phaseActuelle == PhaseType.PhaseInvocation)
+        {
+            phaseActuelle = PhaseType.values()[phaseActuelle.ordinal() + 1];
+        }
         
         return 0;
     }

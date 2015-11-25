@@ -1,6 +1,7 @@
 package Main;
 
 import Vue.FenetrePalette;
+import Vue.VueCarte;
 
 /**
  *

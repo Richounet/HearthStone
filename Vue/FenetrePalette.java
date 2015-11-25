@@ -87,20 +87,22 @@ public class FenetrePalette extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(1000, 700));
-        setResizable(false);
+        setMinimumSize(new java.awt.Dimension(1010, 743));
+        setPreferredSize(new java.awt.Dimension(1010, 743));
 
         BackgroundPanel.setBackground(new java.awt.Color(255, 255, 255));
-        BackgroundPanel.setSize(new java.awt.Dimension(1000, 700));
+        BackgroundPanel.setSize(new java.awt.Dimension(1010, 743));
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.setPreferredSize(new java.awt.Dimension(667, 88));
+        jPanel1.setBackground(new java.awt.Color(238, 233, 233));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(139, 131, 120)));
+        jPanel1.setPreferredSize(new java.awt.Dimension(667, 80));
+        jPanel1.setSize(new java.awt.Dimension(667, 80));
 
-        jLabel1.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Verdana", 1, 16)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("10 PV");
 
-        jLabel2.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Verdana", 1, 16)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Axel");
 
@@ -109,7 +111,7 @@ public class FenetrePalette extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(181, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -118,17 +120,20 @@ public class FenetrePalette extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(28, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(22, 22, 22))
         );
 
-        JPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        JPanel2.setPreferredSize(new java.awt.Dimension(667, 88));
+        JPanel2.setBackground(new java.awt.Color(238, 233, 233));
+        JPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(139, 131, 120)));
+        JPanel2.setMinimumSize(new java.awt.Dimension(325, 80));
+        JPanel2.setPreferredSize(new java.awt.Dimension(325, 80));
+        JPanel2.setSize(new java.awt.Dimension(325, 80));
 
-        jLabel5.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Verdana", 1, 16)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Ressources: 0 / 0");
 
@@ -138,25 +143,27 @@ public class FenetrePalette extends javax.swing.JFrame {
             JPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JPanel2Layout.createSequentialGroup()
                 .addGap(87, 87, 87)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jLabel5)
+                .addContainerGap(81, Short.MAX_VALUE))
         );
         JPanel2Layout.setVerticalGroup(
             JPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPanel2Layout.createSequentialGroup()
-                .addContainerGap(26, Short.MAX_VALUE)
+                .addContainerGap(18, Short.MAX_VALUE)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(24, 24, 24))
         );
 
-        jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel6.setPreferredSize(new java.awt.Dimension(667, 88));
+        jPanel6.setBackground(new java.awt.Color(238, 233, 233));
+        jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(139, 131, 120)));
+        jPanel6.setPreferredSize(new java.awt.Dimension(667, 80));
+        jPanel6.setSize(new java.awt.Dimension(667, 80));
 
-        jLabel3.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Verdana", 1, 16)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Vincent");
 
-        jLabel4.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Verdana", 1, 16)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("10 PV");
 
@@ -178,11 +185,12 @@ public class FenetrePalette extends javax.swing.JFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
-        jPanel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel7.setPreferredSize(new java.awt.Dimension(667, 88));
+        jPanel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(139, 131, 120)));
+        jPanel7.setMinimumSize(new java.awt.Dimension(667, 532));
+        jPanel7.setSize(new java.awt.Dimension(667, 532));
         jPanel7.setLayout(new java.awt.GridLayout(2, 0, 0, 1));
 
         jPanel9.setBackground(new java.awt.Color(255, 255, 255));
@@ -198,7 +206,7 @@ public class FenetrePalette extends javax.swing.JFrame {
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 83, Short.MAX_VALUE)
+            .addGap(0, 91, Short.MAX_VALUE)
         );
 
         jPanel9.add(jPanel11);
@@ -213,7 +221,7 @@ public class FenetrePalette extends javax.swing.JFrame {
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 83, Short.MAX_VALUE)
+            .addGap(0, 91, Short.MAX_VALUE)
         );
 
         jPanel9.add(jPanel12);
@@ -228,7 +236,7 @@ public class FenetrePalette extends javax.swing.JFrame {
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 83, Short.MAX_VALUE)
+            .addGap(0, 91, Short.MAX_VALUE)
         );
 
         jPanel9.add(jPanel13);
@@ -243,7 +251,7 @@ public class FenetrePalette extends javax.swing.JFrame {
         );
         jPanel14Layout.setVerticalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 83, Short.MAX_VALUE)
+            .addGap(0, 91, Short.MAX_VALUE)
         );
 
         jPanel9.add(jPanel14);
@@ -258,7 +266,7 @@ public class FenetrePalette extends javax.swing.JFrame {
         );
         jPanel15Layout.setVerticalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 83, Short.MAX_VALUE)
+            .addGap(0, 91, Short.MAX_VALUE)
         );
 
         jPanel9.add(jPanel15);
@@ -273,7 +281,7 @@ public class FenetrePalette extends javax.swing.JFrame {
         );
         jPanel18Layout.setVerticalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 83, Short.MAX_VALUE)
+            .addGap(0, 91, Short.MAX_VALUE)
         );
 
         jPanel9.add(jPanel18);
@@ -288,7 +296,7 @@ public class FenetrePalette extends javax.swing.JFrame {
         );
         jPanel17Layout.setVerticalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 83, Short.MAX_VALUE)
+            .addGap(0, 91, Short.MAX_VALUE)
         );
 
         jPanel9.add(jPanel17);
@@ -303,7 +311,7 @@ public class FenetrePalette extends javax.swing.JFrame {
         );
         jPanel16Layout.setVerticalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 83, Short.MAX_VALUE)
+            .addGap(0, 91, Short.MAX_VALUE)
         );
 
         jPanel9.add(jPanel16);
@@ -318,7 +326,7 @@ public class FenetrePalette extends javax.swing.JFrame {
         );
         jPanel19Layout.setVerticalGroup(
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 83, Short.MAX_VALUE)
+            .addGap(0, 91, Short.MAX_VALUE)
         );
 
         jPanel9.add(jPanel19);
@@ -333,7 +341,7 @@ public class FenetrePalette extends javax.swing.JFrame {
         );
         jPanel20Layout.setVerticalGroup(
             jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 83, Short.MAX_VALUE)
+            .addGap(0, 91, Short.MAX_VALUE)
         );
 
         jPanel9.add(jPanel20);
@@ -348,7 +356,7 @@ public class FenetrePalette extends javax.swing.JFrame {
         );
         jPanel21Layout.setVerticalGroup(
             jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 83, Short.MAX_VALUE)
+            .addGap(0, 91, Short.MAX_VALUE)
         );
 
         jPanel9.add(jPanel21);
@@ -363,7 +371,7 @@ public class FenetrePalette extends javax.swing.JFrame {
         );
         jPanel22Layout.setVerticalGroup(
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 83, Short.MAX_VALUE)
+            .addGap(0, 91, Short.MAX_VALUE)
         );
 
         jPanel9.add(jPanel22);
@@ -383,7 +391,7 @@ public class FenetrePalette extends javax.swing.JFrame {
         );
         jPanel35Layout.setVerticalGroup(
             jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 83, Short.MAX_VALUE)
+            .addGap(0, 91, Short.MAX_VALUE)
         );
 
         jPanel10.add(jPanel35);
@@ -398,7 +406,7 @@ public class FenetrePalette extends javax.swing.JFrame {
         );
         jPanel36Layout.setVerticalGroup(
             jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 83, Short.MAX_VALUE)
+            .addGap(0, 91, Short.MAX_VALUE)
         );
 
         jPanel10.add(jPanel36);
@@ -413,7 +421,7 @@ public class FenetrePalette extends javax.swing.JFrame {
         );
         jPanel37Layout.setVerticalGroup(
             jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 83, Short.MAX_VALUE)
+            .addGap(0, 91, Short.MAX_VALUE)
         );
 
         jPanel10.add(jPanel37);
@@ -428,7 +436,7 @@ public class FenetrePalette extends javax.swing.JFrame {
         );
         jPanel38Layout.setVerticalGroup(
             jPanel38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 83, Short.MAX_VALUE)
+            .addGap(0, 91, Short.MAX_VALUE)
         );
 
         jPanel10.add(jPanel38);
@@ -443,7 +451,7 @@ public class FenetrePalette extends javax.swing.JFrame {
         );
         jPanel39Layout.setVerticalGroup(
             jPanel39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 83, Short.MAX_VALUE)
+            .addGap(0, 91, Short.MAX_VALUE)
         );
 
         jPanel10.add(jPanel39);
@@ -458,7 +466,7 @@ public class FenetrePalette extends javax.swing.JFrame {
         );
         jPanel40Layout.setVerticalGroup(
             jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 83, Short.MAX_VALUE)
+            .addGap(0, 91, Short.MAX_VALUE)
         );
 
         jPanel10.add(jPanel40);
@@ -473,7 +481,7 @@ public class FenetrePalette extends javax.swing.JFrame {
         );
         jPanel44Layout.setVerticalGroup(
             jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 83, Short.MAX_VALUE)
+            .addGap(0, 91, Short.MAX_VALUE)
         );
 
         jPanel10.add(jPanel44);
@@ -488,7 +496,7 @@ public class FenetrePalette extends javax.swing.JFrame {
         );
         jPanel43Layout.setVerticalGroup(
             jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 83, Short.MAX_VALUE)
+            .addGap(0, 91, Short.MAX_VALUE)
         );
 
         jPanel10.add(jPanel43);
@@ -503,7 +511,7 @@ public class FenetrePalette extends javax.swing.JFrame {
         );
         jPanel41Layout.setVerticalGroup(
             jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 83, Short.MAX_VALUE)
+            .addGap(0, 91, Short.MAX_VALUE)
         );
 
         jPanel10.add(jPanel41);
@@ -518,7 +526,7 @@ public class FenetrePalette extends javax.swing.JFrame {
         );
         jPanel42Layout.setVerticalGroup(
             jPanel42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 83, Short.MAX_VALUE)
+            .addGap(0, 91, Short.MAX_VALUE)
         );
 
         jPanel10.add(jPanel42);
@@ -533,7 +541,7 @@ public class FenetrePalette extends javax.swing.JFrame {
         );
         jPanel45Layout.setVerticalGroup(
             jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 83, Short.MAX_VALUE)
+            .addGap(0, 91, Short.MAX_VALUE)
         );
 
         jPanel10.add(jPanel45);
@@ -548,17 +556,19 @@ public class FenetrePalette extends javax.swing.JFrame {
         );
         jPanel46Layout.setVerticalGroup(
             jPanel46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 83, Short.MAX_VALUE)
+            .addGap(0, 91, Short.MAX_VALUE)
         );
 
         jPanel10.add(jPanel46);
 
         jPanel7.add(jPanel10);
 
-        jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel5.setPreferredSize(new java.awt.Dimension(667, 88));
+        jPanel5.setBackground(new java.awt.Color(238, 233, 233));
+        jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(139, 131, 120)));
+        jPanel5.setPreferredSize(new java.awt.Dimension(325, 80));
+        jPanel5.setSize(new java.awt.Dimension(325, 80));
 
-        jLabel6.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Verdana", 1, 16)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Ressources: 0 / 0");
 
@@ -568,19 +578,21 @@ public class FenetrePalette extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(78, 78, 78))
+                .addComponent(jLabel6)
+                .addGap(82, 82, 82))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addContainerGap(35, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        JPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        JPanel3.setBackground(new java.awt.Color(238, 233, 233));
+        JPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(139, 131, 120)));
         JPanel3.setPreferredSize(new java.awt.Dimension(667, 88));
+        JPanel3.setSize(new java.awt.Dimension(667, 88));
 
         javax.swing.GroupLayout JPanel3Layout = new javax.swing.GroupLayout(JPanel3);
         JPanel3.setLayout(JPanel3Layout);
@@ -590,13 +602,17 @@ public class FenetrePalette extends javax.swing.JFrame {
         );
         JPanel3Layout.setVerticalGroup(
             JPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 416, Short.MAX_VALUE)
+            .addGap(0, 471, Short.MAX_VALUE)
         );
 
-        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel4.setPreferredSize(new java.awt.Dimension(667, 88));
+        jPanel4.setBackground(new java.awt.Color(238, 233, 233));
+        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(139, 131, 120)));
+        jPanel4.setMinimumSize(new java.awt.Dimension(325, 80));
+        jPanel4.setPreferredSize(new java.awt.Dimension(325, 80));
+        jPanel4.setSize(new java.awt.Dimension(325, 80));
 
-        jButton1.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jButton1.setBackground(new java.awt.Color(238, 233, 233));
+        jButton1.setFont(new java.awt.Font("Verdana", 1, 16)); // NOI18N
         jButton1.setText("Finir le tour !");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -610,14 +626,14 @@ public class FenetrePalette extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 313, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -626,37 +642,38 @@ public class FenetrePalette extends javax.swing.JFrame {
         BackgroundPanelLayout.setHorizontalGroup(
             BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BackgroundPanelLayout.createSequentialGroup()
-                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addGroup(BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(JPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 327, Short.MAX_VALUE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 327, Short.MAX_VALUE)))
-            .addGroup(BackgroundPanelLayout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(JPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 327, Short.MAX_VALUE))
-            .addGroup(BackgroundPanelLayout.createSequentialGroup()
-                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 327, Short.MAX_VALUE))
+                    .addComponent(JPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(JPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 325, Short.MAX_VALUE)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         BackgroundPanelLayout.setVerticalGroup(
             BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BackgroundPanelLayout.createSequentialGroup()
-                .addGroup(BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(JPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap()
+                .addGroup(BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(JPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(BackgroundPanelLayout.createSequentialGroup()
-                        .addComponent(JPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 418, Short.MAX_VALUE)
+                        .addComponent(JPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 473, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

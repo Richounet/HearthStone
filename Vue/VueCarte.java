@@ -2,30 +2,37 @@ package Vue;
 
 import Modele.Carte.Carte;
 import Modele.Carte.Creature;
+import java.awt.Color;
+import java.awt.GridLayout;
+import javax.swing.BorderFactory;
+import javax.swing.JPanel;
 
-public class VueCarte extends javax.swing.JPanel 
-{
-    public VueCarte() 
-    {
+public class VueCarte extends javax.swing.JPanel {
+
+    public VueCarte() {
         initComponents();
+
+        Case = new JPanel[]{
+            Case_0_0, Case_0_1, Case_0_2, Case_1_0, Case_1_1, Case_1_2, Case_2_0, Case_2_1, Case_2_2
+        };
+
         SetCarte(null);
+
     }
-    
-    public VueCarte(String att, String def, String cout, String nom)
-    {
+
+    public VueCarte(String att, String def, String cout, String nom) {
         initComponents();
-        
+
         SetCardAttack(att);
         SetCardCout(cout);
         SetCardDef(def);
         SetCardNom(nom);
     }
-    
-    public VueCarte(Carte c)
-    {
+
+    public VueCarte(Carte c) {
         initComponents();
-        
-        Creature cr = (Creature)c;
+
+        Creature cr = (Creature) c;
         SetCardAttack(Integer.toString(cr.getAttaque()));
         SetCardCout(Integer.toString(cr.getCoutRessource()));
         SetCardDef(Integer.toString(cr.getDefense()));
@@ -34,253 +41,277 @@ public class VueCarte extends javax.swing.JPanel
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        Case_0_0 = new javax.swing.JPanel();
         cardName = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
+        Case_0_1 = new javax.swing.JPanel();
+        Case_0_2 = new javax.swing.JPanel();
         cardCost = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        jPanel5 = new javax.swing.JPanel();
-        jPanel6 = new javax.swing.JPanel();
-        jPanel7 = new javax.swing.JPanel();
+        Case_1_0 = new javax.swing.JPanel();
+        Case_1_1 = new javax.swing.JPanel();
+        Case_1_2 = new javax.swing.JPanel();
+        Case_2_0 = new javax.swing.JPanel();
         cardAtt = new javax.swing.JLabel();
-        jPanel8 = new javax.swing.JPanel();
-        jPanel9 = new javax.swing.JPanel();
+        Case_2_1 = new javax.swing.JPanel();
+        Case_2_2 = new javax.swing.JPanel();
         cardDef = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setMinimumSize(new java.awt.Dimension(164, 91));
+        setName("Case_0_1"); // NOI18N
         setPreferredSize(new java.awt.Dimension(164, 91));
         setRequestFocusEnabled(false);
         setLayout(new java.awt.GridLayout(3, 3, 2, 2));
+
+        Case_0_0.setName("Case_0_0"); // NOI18N
 
         cardName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         cardName.setText("C1");
         cardName.setAlignmentY(0.0F);
         cardName.setName("cardName"); // NOI18N
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout Case_0_0Layout = new javax.swing.GroupLayout(Case_0_0);
+        Case_0_0.setLayout(Case_0_0Layout);
+        Case_0_0Layout.setHorizontalGroup(
+            Case_0_0Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Case_0_0Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(cardName, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        Case_0_0Layout.setVerticalGroup(
+            Case_0_0Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Case_0_0Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(cardName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        add(jPanel1);
+        add(Case_0_0);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        Case_0_1.setName("Case_0_1"); // NOI18N
+
+        javax.swing.GroupLayout Case_0_1Layout = new javax.swing.GroupLayout(Case_0_1);
+        Case_0_1.setLayout(Case_0_1Layout);
+        Case_0_1Layout.setHorizontalGroup(
+            Case_0_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 53, Short.MAX_VALUE)
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        Case_0_1Layout.setVerticalGroup(
+            Case_0_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 31, Short.MAX_VALUE)
         );
 
-        add(jPanel2);
+        add(Case_0_1);
+
+        Case_0_2.setName("Case_0_2"); // NOI18N
 
         cardCost.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         cardCost.setText("1");
         cardCost.setAlignmentY(0.0F);
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        javax.swing.GroupLayout Case_0_2Layout = new javax.swing.GroupLayout(Case_0_2);
+        Case_0_2.setLayout(Case_0_2Layout);
+        Case_0_2Layout.setHorizontalGroup(
+            Case_0_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Case_0_2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(cardCost, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        Case_0_2Layout.setVerticalGroup(
+            Case_0_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Case_0_2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(cardCost, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        add(jPanel3);
+        add(Case_0_2);
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        Case_1_0.setName("Case_1_0"); // NOI18N
+
+        javax.swing.GroupLayout Case_1_0Layout = new javax.swing.GroupLayout(Case_1_0);
+        Case_1_0.setLayout(Case_1_0Layout);
+        Case_1_0Layout.setHorizontalGroup(
+            Case_1_0Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 53, Short.MAX_VALUE)
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        Case_1_0Layout.setVerticalGroup(
+            Case_1_0Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 31, Short.MAX_VALUE)
         );
 
-        add(jPanel4);
+        add(Case_1_0);
 
-        jPanel5.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        Case_1_1.setBackground(new java.awt.Color(204, 204, 204));
+        Case_1_1.setName("Case_1_1"); // NOI18N
+        Case_1_1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 cardMouseClick(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout Case_1_1Layout = new javax.swing.GroupLayout(Case_1_1);
+        Case_1_1.setLayout(Case_1_1Layout);
+        Case_1_1Layout.setHorizontalGroup(
+            Case_1_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 53, Short.MAX_VALUE)
         );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        Case_1_1Layout.setVerticalGroup(
+            Case_1_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 31, Short.MAX_VALUE)
         );
 
-        add(jPanel5);
+        add(Case_1_1);
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        Case_1_2.setName("Case_1_2"); // NOI18N
+
+        javax.swing.GroupLayout Case_1_2Layout = new javax.swing.GroupLayout(Case_1_2);
+        Case_1_2.setLayout(Case_1_2Layout);
+        Case_1_2Layout.setHorizontalGroup(
+            Case_1_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 53, Short.MAX_VALUE)
         );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        Case_1_2Layout.setVerticalGroup(
+            Case_1_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 31, Short.MAX_VALUE)
         );
 
-        add(jPanel6);
+        add(Case_1_2);
+
+        Case_2_0.setName("Case_2_0"); // NOI18N
 
         cardAtt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         cardAtt.setText("1");
         cardAtt.setAlignmentY(0.0F);
 
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
+        javax.swing.GroupLayout Case_2_0Layout = new javax.swing.GroupLayout(Case_2_0);
+        Case_2_0.setLayout(Case_2_0Layout);
+        Case_2_0Layout.setHorizontalGroup(
+            Case_2_0Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Case_2_0Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(cardAtt, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
+        Case_2_0Layout.setVerticalGroup(
+            Case_2_0Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Case_2_0Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(cardAtt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        add(jPanel7);
+        add(Case_2_0);
 
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        Case_2_1.setName("Case_2_1"); // NOI18N
+
+        javax.swing.GroupLayout Case_2_1Layout = new javax.swing.GroupLayout(Case_2_1);
+        Case_2_1.setLayout(Case_2_1Layout);
+        Case_2_1Layout.setHorizontalGroup(
+            Case_2_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 53, Short.MAX_VALUE)
         );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        Case_2_1Layout.setVerticalGroup(
+            Case_2_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 31, Short.MAX_VALUE)
         );
 
-        add(jPanel8);
+        add(Case_2_1);
+
+        Case_2_2.setName("Case_2_2"); // NOI18N
 
         cardDef.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         cardDef.setText("2");
         cardDef.setAlignmentY(0.0F);
 
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
+        javax.swing.GroupLayout Case_2_2Layout = new javax.swing.GroupLayout(Case_2_2);
+        Case_2_2.setLayout(Case_2_2Layout);
+        Case_2_2Layout.setHorizontalGroup(
+            Case_2_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Case_2_2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(cardDef, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
+        Case_2_2Layout.setVerticalGroup(
+            Case_2_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Case_2_2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(cardDef, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        add(jPanel9);
+        add(Case_2_2);
     }// </editor-fold>//GEN-END:initComponents
 
     private void cardMouseClick(java.awt.event.MouseEvent evt)//GEN-FIRST:event_cardMouseClick
     {//GEN-HEADEREND:event_cardMouseClick
-        
+
     }//GEN-LAST:event_cardMouseClick
-    
-    public void SetCarte(Carte c)
-    {
-        if (c != null)
-        {
-            Creature cr = (Creature)c;
+
+    public void SetCarte(Carte c) {
+        if (c != null) {
+            Creature cr = (Creature) c;
             SetCardAttack(Integer.toString(cr.getAttaque()));
             SetCardCout(Integer.toString(cr.getCoutRessource()));
             SetCardDef(Integer.toString(cr.getDefense()));
             SetCardNom(cr.getNom());
-        }
-        else
-        {
+            ((GridLayout) this.getLayout()).setHgap(3);
+            ((GridLayout) this.getLayout()).setVgap(3);
+            
+            for (int i = 0; i < 9; i++) {
+                Case[i].setBackground(new Color(213, 231, 203));
+            }
+            
+        } else {
             SetCardAttack("");
             SetCardCout("");
             SetCardDef("");
             SetCardNom("");
+            this.setBorder(BorderFactory.createEmptyBorder());
+            ((GridLayout) this.getLayout()).setHgap(0);
+            ((GridLayout) this.getLayout()).setVgap(0);
+
+            for (int i = 0; i < 9; i++) {
+                Case[i].setBackground(new Color(255, 215, 219));
+            }
         }
     }
-    
-    public void SetCardAttack(String txt)
-    {
+
+    public void SetCardAttack(String txt) {
         cardAtt.setText(txt);
     }
-    
-    public void SetCardDef(String txt)
-    {
+
+    public void SetCardDef(String txt) {
         cardDef.setText(txt);
     }
-    
-    public void SetCardNom(String txt)
-    {
+
+    public void SetCardNom(String txt) {
         cardName.setText(txt);
     }
-    
-    public void SetCardCout(String txt)
-    {
+
+    public void SetCardCout(String txt) {
         cardCost.setText(txt);
     }
-    
+
+    private JPanel[] Case;
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel Case_0_0;
+    private javax.swing.JPanel Case_0_1;
+    private javax.swing.JPanel Case_0_2;
+    private javax.swing.JPanel Case_1_0;
+    private javax.swing.JPanel Case_1_1;
+    private javax.swing.JPanel Case_1_2;
+    private javax.swing.JPanel Case_2_0;
+    private javax.swing.JPanel Case_2_1;
+    private javax.swing.JPanel Case_2_2;
     private javax.swing.JLabel cardAtt;
     private javax.swing.JLabel cardCost;
     private javax.swing.JLabel cardDef;
     private javax.swing.JLabel cardName;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
     // End of variables declaration//GEN-END:variables
 }

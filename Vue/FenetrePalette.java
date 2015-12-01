@@ -30,12 +30,12 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
         partie = new Partie(joueur1, joueur2);
         controleur = new Controleur(partie);
         
-        J1Main = new JPanel[] { J1Main1, J1Main2, J1Main3, J1Main4 };
-        J2Main = new JPanel[] { J1Main1, J1Main2, J1Main3, J1Main4 };
-        J1Terrain = new JPanel[] { J1Terrain1, J1Terrain2, J1Terrain3, J1Terrain4 };
-        J2Terrain = new JPanel[] { J2Terrain1, J2Terrain2, J2Terrain3, J2Terrain4 };
-        J1Combat = new JPanel[] { J1Combat1, J1Combat2, J1Combat3, J1Combat4 };
-        J2Combat = new JPanel[] { J2Combat1, J2Combat2, J2Combat3, J2Combat4 };
+        J1Main = new VueCarte[] { J1Main1, J2Main2, J2Main3, J2Main4 };
+        J2Main = new VueCarte[] { J1Main1, J2Main2, J2Main3, J2Main4 };
+        J1Terrain = new VueCarte[] { J2Terrain1, J2Terrain2, J2Terrain3, J2Terrain4 };
+        J2Terrain = new VueCarte[] { J2Terrain1, J2Terrain2, J2Terrain3, J2Terrain4 };
+        J1Combat = new VueCarte[] { J1Combat1, J1Combat2, J1Combat3, J1Combat4 };
+        J2Combat = new VueCarte[] { J2Combat1, J2Combat2, J2Combat3, J2Combat4 };
         
         PlateauJoueur[] plat = partie.GetPlateaux();
         plat[0].addObserver(this);
@@ -57,8 +57,7 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
 
         jPanel8 = new javax.swing.JPanel();
         JFramePanel = new javax.swing.JPanel();
@@ -72,31 +71,31 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
         J1PVLabel = new javax.swing.JLabel();
         PlateauPanel = new javax.swing.JPanel();
         J2PlateauPanel = new javax.swing.JPanel();
-        J2Main1 = new javax.swing.JPanel();
-        J2Main2 = new javax.swing.JPanel();
-        J2Main3 = new javax.swing.JPanel();
-        J2Main4 = new javax.swing.JPanel();
-        J2Terrain1 = new javax.swing.JPanel();
-        J2Terrain2 = new javax.swing.JPanel();
-        J2Terrain3 = new javax.swing.JPanel();
-        J2Terrain4 = new javax.swing.JPanel();
-        J2Combat1 = new javax.swing.JPanel();
-        J2Combat2 = new javax.swing.JPanel();
-        J2Combat3 = new javax.swing.JPanel();
-        J2Combat4 = new javax.swing.JPanel();
+        J2Main1 = new Vue.VueCarte();
+        J2Main2 = new Vue.VueCarte();
+        J2Main3 = new Vue.VueCarte();
+        J2Main4 = new Vue.VueCarte();
+        J2Terrain1 = new Vue.VueCarte();
+        J2Terrain2 = new Vue.VueCarte();
+        J2Terrain3 = new Vue.VueCarte();
+        J2Terrain4 = new Vue.VueCarte();
+        J2Combat1 = new Vue.VueCarte();
+        J2Combat2 = new Vue.VueCarte();
+        J2Combat3 = new Vue.VueCarte();
+        J2Combat4 = new Vue.VueCarte();
         J1PlateauPanel = new javax.swing.JPanel();
-        J1Combat1 = new javax.swing.JPanel();
-        J1Combat2 = new javax.swing.JPanel();
-        J1Combat3 = new javax.swing.JPanel();
-        J1Combat4 = new javax.swing.JPanel();
-        J1Terrain1 = new javax.swing.JPanel();
-        J1Terrain2 = new javax.swing.JPanel();
-        J1Terrain3 = new javax.swing.JPanel();
-        J1Terrain4 = new javax.swing.JPanel();
-        J1Main1 = new javax.swing.JPanel();
-        J1Main2 = new javax.swing.JPanel();
-        J1Main3 = new javax.swing.JPanel();
-        J1Main4 = new javax.swing.JPanel();
+        J1Combat4 = new Vue.VueCarte();
+        J1Combat3 = new Vue.VueCarte();
+        J1Combat2 = new Vue.VueCarte();
+        J1Combat1 = new Vue.VueCarte();
+        J1Terrain4 = new Vue.VueCarte();
+        J1Terrain3 = new Vue.VueCarte();
+        J1Terrain2 = new Vue.VueCarte();
+        J1Terrain1 = new Vue.VueCarte();
+        J1Main4 = new Vue.VueCarte();
+        J1Main3 = new Vue.VueCarte();
+        J1Main2 = new Vue.VueCarte();
+        J1Main1 = new Vue.VueCarte();
         J1RessourcePanel = new javax.swing.JPanel();
         J1RessourceLabel = new javax.swing.JLabel();
         InformationPanel = new javax.swing.JPanel();
@@ -221,280 +220,40 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
         J2PlateauPanel.setBackground(new java.awt.Color(255, 255, 255));
         J2PlateauPanel.setLayout(new java.awt.GridLayout(3, 4, 2, 2));
 
-        J2Main1.setBackground(new java.awt.Color(153, 204, 255));
         J2Main1.setName("J2Main1"); // NOI18N
-        J2Main1.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
-                CaseMouseClick(evt);
-            }
-        });
-
-        javax.swing.GroupLayout J2Main1Layout = new javax.swing.GroupLayout(J2Main1);
-        J2Main1.setLayout(J2Main1Layout);
-        J2Main1Layout.setHorizontalGroup(
-            J2Main1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 164, Short.MAX_VALUE)
-        );
-        J2Main1Layout.setVerticalGroup(
-            J2Main1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 91, Short.MAX_VALUE)
-        );
-
         J2PlateauPanel.add(J2Main1);
 
-        J2Main2.setBackground(new java.awt.Color(153, 204, 255));
         J2Main2.setName("J2Main2"); // NOI18N
-        J2Main2.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
-                CaseMouseClick(evt);
-            }
-        });
-
-        javax.swing.GroupLayout J2Main2Layout = new javax.swing.GroupLayout(J2Main2);
-        J2Main2.setLayout(J2Main2Layout);
-        J2Main2Layout.setHorizontalGroup(
-            J2Main2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 164, Short.MAX_VALUE)
-        );
-        J2Main2Layout.setVerticalGroup(
-            J2Main2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 91, Short.MAX_VALUE)
-        );
-
         J2PlateauPanel.add(J2Main2);
 
-        J2Main3.setBackground(new java.awt.Color(153, 204, 255));
         J2Main3.setName("J2Main3"); // NOI18N
-        J2Main3.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
-                CaseMouseClick(evt);
-            }
-        });
-
-        javax.swing.GroupLayout J2Main3Layout = new javax.swing.GroupLayout(J2Main3);
-        J2Main3.setLayout(J2Main3Layout);
-        J2Main3Layout.setHorizontalGroup(
-            J2Main3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 164, Short.MAX_VALUE)
-        );
-        J2Main3Layout.setVerticalGroup(
-            J2Main3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 91, Short.MAX_VALUE)
-        );
-
         J2PlateauPanel.add(J2Main3);
 
-        J2Main4.setBackground(new java.awt.Color(153, 204, 255));
         J2Main4.setName("J2Main4"); // NOI18N
-        J2Main4.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
-                CaseMouseClick(evt);
-            }
-        });
-
-        javax.swing.GroupLayout J2Main4Layout = new javax.swing.GroupLayout(J2Main4);
-        J2Main4.setLayout(J2Main4Layout);
-        J2Main4Layout.setHorizontalGroup(
-            J2Main4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 164, Short.MAX_VALUE)
-        );
-        J2Main4Layout.setVerticalGroup(
-            J2Main4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 91, Short.MAX_VALUE)
-        );
-
         J2PlateauPanel.add(J2Main4);
 
-        J2Terrain1.setBackground(new java.awt.Color(255, 204, 153));
-        J2Terrain1.setName("JTerrain1"); // NOI18N
-        J2Terrain1.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
-                CaseMouseClick(evt);
-            }
-        });
-
-        javax.swing.GroupLayout J2Terrain1Layout = new javax.swing.GroupLayout(J2Terrain1);
-        J2Terrain1.setLayout(J2Terrain1Layout);
-        J2Terrain1Layout.setHorizontalGroup(
-            J2Terrain1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 164, Short.MAX_VALUE)
-        );
-        J2Terrain1Layout.setVerticalGroup(
-            J2Terrain1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 91, Short.MAX_VALUE)
-        );
-
+        J2Terrain1.setName("J2Terrain1"); // NOI18N
         J2PlateauPanel.add(J2Terrain1);
 
-        J2Terrain2.setBackground(new java.awt.Color(255, 204, 153));
-        J2Terrain2.setName("JTerrain2"); // NOI18N
-        J2Terrain2.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
-                CaseMouseClick(evt);
-            }
-        });
-
-        javax.swing.GroupLayout J2Terrain2Layout = new javax.swing.GroupLayout(J2Terrain2);
-        J2Terrain2.setLayout(J2Terrain2Layout);
-        J2Terrain2Layout.setHorizontalGroup(
-            J2Terrain2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 164, Short.MAX_VALUE)
-        );
-        J2Terrain2Layout.setVerticalGroup(
-            J2Terrain2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 91, Short.MAX_VALUE)
-        );
-
+        J2Terrain2.setName("J2Terrain2"); // NOI18N
         J2PlateauPanel.add(J2Terrain2);
 
-        J2Terrain3.setBackground(new java.awt.Color(255, 204, 153));
-        J2Terrain3.setName("JTerrain3"); // NOI18N
-        J2Terrain3.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
-                CaseMouseClick(evt);
-            }
-        });
-
-        javax.swing.GroupLayout J2Terrain3Layout = new javax.swing.GroupLayout(J2Terrain3);
-        J2Terrain3.setLayout(J2Terrain3Layout);
-        J2Terrain3Layout.setHorizontalGroup(
-            J2Terrain3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 164, Short.MAX_VALUE)
-        );
-        J2Terrain3Layout.setVerticalGroup(
-            J2Terrain3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 91, Short.MAX_VALUE)
-        );
-
+        J2Terrain3.setName("J2Terrain3"); // NOI18N
         J2PlateauPanel.add(J2Terrain3);
 
-        J2Terrain4.setBackground(new java.awt.Color(255, 204, 153));
-        J2Terrain4.setName("JTerrain4"); // NOI18N
-        J2Terrain4.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
-                CaseMouseClick(evt);
-            }
-        });
-
-        javax.swing.GroupLayout J2Terrain4Layout = new javax.swing.GroupLayout(J2Terrain4);
-        J2Terrain4.setLayout(J2Terrain4Layout);
-        J2Terrain4Layout.setHorizontalGroup(
-            J2Terrain4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 164, Short.MAX_VALUE)
-        );
-        J2Terrain4Layout.setVerticalGroup(
-            J2Terrain4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 91, Short.MAX_VALUE)
-        );
-
+        J2Terrain4.setName("J2Terrain4"); // NOI18N
         J2PlateauPanel.add(J2Terrain4);
 
-        J2Combat1.setBackground(new java.awt.Color(255, 153, 153));
         J2Combat1.setName("J2Combat1"); // NOI18N
-        J2Combat1.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
-                CaseMouseClick(evt);
-            }
-        });
-
-        javax.swing.GroupLayout J2Combat1Layout = new javax.swing.GroupLayout(J2Combat1);
-        J2Combat1.setLayout(J2Combat1Layout);
-        J2Combat1Layout.setHorizontalGroup(
-            J2Combat1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 164, Short.MAX_VALUE)
-        );
-        J2Combat1Layout.setVerticalGroup(
-            J2Combat1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 91, Short.MAX_VALUE)
-        );
-
         J2PlateauPanel.add(J2Combat1);
 
-        J2Combat2.setBackground(new java.awt.Color(255, 153, 153));
         J2Combat2.setName("J2Combat2"); // NOI18N
-        J2Combat2.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
-                CaseMouseClick(evt);
-            }
-        });
-
-        javax.swing.GroupLayout J2Combat2Layout = new javax.swing.GroupLayout(J2Combat2);
-        J2Combat2.setLayout(J2Combat2Layout);
-        J2Combat2Layout.setHorizontalGroup(
-            J2Combat2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 164, Short.MAX_VALUE)
-        );
-        J2Combat2Layout.setVerticalGroup(
-            J2Combat2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 91, Short.MAX_VALUE)
-        );
-
         J2PlateauPanel.add(J2Combat2);
 
-        J2Combat3.setBackground(new java.awt.Color(255, 153, 153));
         J2Combat3.setName("J2Combat3"); // NOI18N
-        J2Combat3.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
-                CaseMouseClick(evt);
-            }
-        });
-
-        javax.swing.GroupLayout J2Combat3Layout = new javax.swing.GroupLayout(J2Combat3);
-        J2Combat3.setLayout(J2Combat3Layout);
-        J2Combat3Layout.setHorizontalGroup(
-            J2Combat3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 164, Short.MAX_VALUE)
-        );
-        J2Combat3Layout.setVerticalGroup(
-            J2Combat3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 91, Short.MAX_VALUE)
-        );
-
         J2PlateauPanel.add(J2Combat3);
 
-        J2Combat4.setBackground(new java.awt.Color(255, 153, 153));
         J2Combat4.setName("J2Combat4"); // NOI18N
-        J2Combat4.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
-                CaseMouseClick(evt);
-            }
-        });
-
-        javax.swing.GroupLayout J2Combat4Layout = new javax.swing.GroupLayout(J2Combat4);
-        J2Combat4.setLayout(J2Combat4Layout);
-        J2Combat4Layout.setHorizontalGroup(
-            J2Combat4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 164, Short.MAX_VALUE)
-        );
-        J2Combat4Layout.setVerticalGroup(
-            J2Combat4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 91, Short.MAX_VALUE)
-        );
-
         J2PlateauPanel.add(J2Combat4);
 
         PlateauPanel.add(J2PlateauPanel);
@@ -502,281 +261,41 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
         J1PlateauPanel.setBackground(new java.awt.Color(255, 255, 255));
         J1PlateauPanel.setLayout(new java.awt.GridLayout(3, 4, 2, 2));
 
-        J1Combat1.setBackground(new java.awt.Color(255, 153, 153));
-        J1Combat1.setName("J1Combat1"); // NOI18N
-        J1Combat1.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
-                CaseMouseClick(evt);
-            }
-        });
-
-        javax.swing.GroupLayout J1Combat1Layout = new javax.swing.GroupLayout(J1Combat1);
-        J1Combat1.setLayout(J1Combat1Layout);
-        J1Combat1Layout.setHorizontalGroup(
-            J1Combat1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 164, Short.MAX_VALUE)
-        );
-        J1Combat1Layout.setVerticalGroup(
-            J1Combat1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 91, Short.MAX_VALUE)
-        );
-
-        J1PlateauPanel.add(J1Combat1);
-
-        J1Combat2.setBackground(new java.awt.Color(255, 153, 153));
-        J1Combat2.setName("J1Combat2"); // NOI18N
-        J1Combat2.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
-                CaseMouseClick(evt);
-            }
-        });
-
-        javax.swing.GroupLayout J1Combat2Layout = new javax.swing.GroupLayout(J1Combat2);
-        J1Combat2.setLayout(J1Combat2Layout);
-        J1Combat2Layout.setHorizontalGroup(
-            J1Combat2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 164, Short.MAX_VALUE)
-        );
-        J1Combat2Layout.setVerticalGroup(
-            J1Combat2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 91, Short.MAX_VALUE)
-        );
-
-        J1PlateauPanel.add(J1Combat2);
-
-        J1Combat3.setBackground(new java.awt.Color(255, 153, 153));
-        J1Combat3.setName("J1Combat3"); // NOI18N
-        J1Combat3.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
-                CaseMouseClick(evt);
-            }
-        });
-
-        javax.swing.GroupLayout J1Combat3Layout = new javax.swing.GroupLayout(J1Combat3);
-        J1Combat3.setLayout(J1Combat3Layout);
-        J1Combat3Layout.setHorizontalGroup(
-            J1Combat3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 164, Short.MAX_VALUE)
-        );
-        J1Combat3Layout.setVerticalGroup(
-            J1Combat3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 91, Short.MAX_VALUE)
-        );
-
-        J1PlateauPanel.add(J1Combat3);
-
-        J1Combat4.setBackground(new java.awt.Color(255, 153, 153));
         J1Combat4.setName("J1Combat4"); // NOI18N
-        J1Combat4.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
-                CaseMouseClick(evt);
-            }
-        });
-
-        javax.swing.GroupLayout J1Combat4Layout = new javax.swing.GroupLayout(J1Combat4);
-        J1Combat4.setLayout(J1Combat4Layout);
-        J1Combat4Layout.setHorizontalGroup(
-            J1Combat4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 164, Short.MAX_VALUE)
-        );
-        J1Combat4Layout.setVerticalGroup(
-            J1Combat4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 91, Short.MAX_VALUE)
-        );
-
         J1PlateauPanel.add(J1Combat4);
 
-        J1Terrain1.setBackground(new java.awt.Color(255, 204, 153));
-        J1Terrain1.setName("J1Terrain1"); // NOI18N
-        J1Terrain1.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
-                CaseMouseClick(evt);
-            }
-        });
+        J1Combat3.setName("J1Combat3"); // NOI18N
+        J1PlateauPanel.add(J1Combat3);
 
-        javax.swing.GroupLayout J1Terrain1Layout = new javax.swing.GroupLayout(J1Terrain1);
-        J1Terrain1.setLayout(J1Terrain1Layout);
-        J1Terrain1Layout.setHorizontalGroup(
-            J1Terrain1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 164, Short.MAX_VALUE)
-        );
-        J1Terrain1Layout.setVerticalGroup(
-            J1Terrain1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 91, Short.MAX_VALUE)
-        );
+        J1Combat2.setName("J1Combat1"); // NOI18N
+        J1PlateauPanel.add(J1Combat2);
 
-        J1PlateauPanel.add(J1Terrain1);
+        J1Combat1.setName("J1Combat1"); // NOI18N
+        J1PlateauPanel.add(J1Combat1);
 
-        J1Terrain2.setBackground(new java.awt.Color(255, 204, 153));
-        J1Terrain2.setName("J1Terrain2"); // NOI18N
-        J1Terrain2.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
-                CaseMouseClick(evt);
-            }
-        });
-
-        javax.swing.GroupLayout J1Terrain2Layout = new javax.swing.GroupLayout(J1Terrain2);
-        J1Terrain2.setLayout(J1Terrain2Layout);
-        J1Terrain2Layout.setHorizontalGroup(
-            J1Terrain2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 164, Short.MAX_VALUE)
-        );
-        J1Terrain2Layout.setVerticalGroup(
-            J1Terrain2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 91, Short.MAX_VALUE)
-        );
-
-        J1PlateauPanel.add(J1Terrain2);
-
-        J1Terrain3.setBackground(new java.awt.Color(255, 204, 153));
-        J1Terrain3.setName("J1Terrain3"); // NOI18N
-        J1Terrain3.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
-                CaseMouseClick(evt);
-            }
-        });
-
-        javax.swing.GroupLayout J1Terrain3Layout = new javax.swing.GroupLayout(J1Terrain3);
-        J1Terrain3.setLayout(J1Terrain3Layout);
-        J1Terrain3Layout.setHorizontalGroup(
-            J1Terrain3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 164, Short.MAX_VALUE)
-        );
-        J1Terrain3Layout.setVerticalGroup(
-            J1Terrain3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 91, Short.MAX_VALUE)
-        );
-
-        J1PlateauPanel.add(J1Terrain3);
-
-        J1Terrain4.setBackground(new java.awt.Color(255, 204, 153));
         J1Terrain4.setName("J1Terrain4"); // NOI18N
-        J1Terrain4.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
-                CaseMouseClick(evt);
-            }
-        });
-
-        javax.swing.GroupLayout J1Terrain4Layout = new javax.swing.GroupLayout(J1Terrain4);
-        J1Terrain4.setLayout(J1Terrain4Layout);
-        J1Terrain4Layout.setHorizontalGroup(
-            J1Terrain4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 164, Short.MAX_VALUE)
-        );
-        J1Terrain4Layout.setVerticalGroup(
-            J1Terrain4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 91, Short.MAX_VALUE)
-        );
-
         J1PlateauPanel.add(J1Terrain4);
 
-        J1Main1.setBackground(new java.awt.Color(153, 204, 255));
-        J1Main1.setName("J1Main1"); // NOI18N
-        J1Main1.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
-                CaseMouseClick(evt);
-            }
-        });
+        J1Terrain3.setName("J1Terrain3"); // NOI18N
+        J1PlateauPanel.add(J1Terrain3);
 
-        javax.swing.GroupLayout J1Main1Layout = new javax.swing.GroupLayout(J1Main1);
-        J1Main1.setLayout(J1Main1Layout);
-        J1Main1Layout.setHorizontalGroup(
-            J1Main1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 164, Short.MAX_VALUE)
-        );
-        J1Main1Layout.setVerticalGroup(
-            J1Main1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 91, Short.MAX_VALUE)
-        );
+        J1Terrain2.setName("J1Terrain2"); // NOI18N
+        J1PlateauPanel.add(J1Terrain2);
 
-        J1PlateauPanel.add(J1Main1);
+        J1Terrain1.setName("J1Terrain1"); // NOI18N
+        J1PlateauPanel.add(J1Terrain1);
 
-        J1Main2.setBackground(new java.awt.Color(153, 204, 255));
-        J1Main2.setName("J1Main2"); // NOI18N
-        J1Main2.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
-                CaseMouseClick(evt);
-            }
-        });
+        J1Main4.setName("J1Main4"); // NOI18N
+        J1PlateauPanel.add(J1Main4);
 
-        javax.swing.GroupLayout J1Main2Layout = new javax.swing.GroupLayout(J1Main2);
-        J1Main2.setLayout(J1Main2Layout);
-        J1Main2Layout.setHorizontalGroup(
-            J1Main2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 164, Short.MAX_VALUE)
-        );
-        J1Main2Layout.setVerticalGroup(
-            J1Main2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 91, Short.MAX_VALUE)
-        );
-
-        J1PlateauPanel.add(J1Main2);
-
-        J1Main3.setBackground(new java.awt.Color(153, 204, 255));
         J1Main3.setName("J1Main3"); // NOI18N
-        J1Main3.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
-                CaseMouseClick(evt);
-            }
-        });
-
-        javax.swing.GroupLayout J1Main3Layout = new javax.swing.GroupLayout(J1Main3);
-        J1Main3.setLayout(J1Main3Layout);
-        J1Main3Layout.setHorizontalGroup(
-            J1Main3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 164, Short.MAX_VALUE)
-        );
-        J1Main3Layout.setVerticalGroup(
-            J1Main3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 91, Short.MAX_VALUE)
-        );
-
         J1PlateauPanel.add(J1Main3);
 
-        J1Main4.setBackground(new java.awt.Color(153, 204, 255));
-        J1Main4.setName("J1Main4"); // NOI18N
-        J1Main4.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
-                CaseMouseClick(evt);
-            }
-        });
+        J1Main2.setName("J1Main2"); // NOI18N
+        J1PlateauPanel.add(J1Main2);
 
-        javax.swing.GroupLayout J1Main4Layout = new javax.swing.GroupLayout(J1Main4);
-        J1Main4.setLayout(J1Main4Layout);
-        J1Main4Layout.setHorizontalGroup(
-            J1Main4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 164, Short.MAX_VALUE)
-        );
-        J1Main4Layout.setVerticalGroup(
-            J1Main4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 91, Short.MAX_VALUE)
-        );
-
-        J1PlateauPanel.add(J1Main4);
+        J1Main1.setName("J1Main1"); // NOI18N
+        J1PlateauPanel.add(J1Main1);
 
         PlateauPanel.add(J1PlateauPanel);
 
@@ -828,10 +347,8 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
         ActionButton.setBackground(new java.awt.Color(238, 233, 233));
         ActionButton.setFont(new java.awt.Font("Verdana", 1, 16)); // NOI18N
         ActionButton.setText("Finir le tour !");
-        ActionButton.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        ActionButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ActionButtonActionPerformed(evt);
             }
         });
@@ -849,7 +366,7 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
             ActionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ActionPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(ActionButton, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
+                .addComponent(ActionButton, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -910,16 +427,6 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
         controleur.ControleNextPhase();
     }//GEN-LAST:event_ActionButtonActionPerformed
 
-    private void CaseMouseClick(java.awt.event.MouseEvent evt)//GEN-FIRST:event_CaseMouseClick
-    {//GEN-HEADEREND:event_CaseMouseClick
-        Object obj = evt.getSource();
-        if (obj instanceof JPanel)
-        {
-            JPanel caseClicked = (JPanel)obj;
-            controleur.ControleSelectionCase(caseClicked);
-        }
-    }//GEN-LAST:event_CaseMouseClick
-
     public static void main(String args[]) 
     {
         java.awt.EventQueue.invokeLater(new Runnable() 
@@ -932,53 +439,53 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
     }
 
     
-    private JPanel[] J1Main;
-    private JPanel[] J2Main;
-    private JPanel[] J1Terrain;
-    private JPanel[] J2Terrain;
-    private JPanel[] J1Combat;
-    private JPanel[] J2Combat;
+    private VueCarte[] J1Main;
+    private VueCarte[] J2Main;
+    private VueCarte[] J1Terrain;
+    private VueCarte[] J2Terrain;
+    private VueCarte[] J1Combat;
+    private VueCarte[] J2Combat;
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ActionButton;
     private javax.swing.JPanel ActionPanel;
     private javax.swing.JPanel InformationPanel;
-    private javax.swing.JPanel J1Combat1;
-    private javax.swing.JPanel J1Combat2;
-    private javax.swing.JPanel J1Combat3;
-    private javax.swing.JPanel J1Combat4;
-    private javax.swing.JPanel J1Main1;
-    private javax.swing.JPanel J1Main2;
-    private javax.swing.JPanel J1Main3;
-    private javax.swing.JPanel J1Main4;
+    private Vue.VueCarte J1Combat1;
+    private Vue.VueCarte J1Combat2;
+    private Vue.VueCarte J1Combat3;
+    private Vue.VueCarte J1Combat4;
+    private Vue.VueCarte J1Main1;
+    private Vue.VueCarte J1Main2;
+    private Vue.VueCarte J1Main3;
+    private Vue.VueCarte J1Main4;
     private javax.swing.JLabel J1NomLabel;
     private javax.swing.JLabel J1PVLabel;
     private javax.swing.JPanel J1Panel;
     private javax.swing.JPanel J1PlateauPanel;
     private javax.swing.JLabel J1RessourceLabel;
     private javax.swing.JPanel J1RessourcePanel;
-    private javax.swing.JPanel J1Terrain1;
-    private javax.swing.JPanel J1Terrain2;
-    private javax.swing.JPanel J1Terrain3;
-    private javax.swing.JPanel J1Terrain4;
-    private javax.swing.JPanel J2Combat1;
-    private javax.swing.JPanel J2Combat2;
-    private javax.swing.JPanel J2Combat3;
-    private javax.swing.JPanel J2Combat4;
-    private javax.swing.JPanel J2Main1;
-    private javax.swing.JPanel J2Main2;
-    private javax.swing.JPanel J2Main3;
-    private javax.swing.JPanel J2Main4;
+    private Vue.VueCarte J1Terrain1;
+    private Vue.VueCarte J1Terrain2;
+    private Vue.VueCarte J1Terrain3;
+    private Vue.VueCarte J1Terrain4;
+    private Vue.VueCarte J2Combat1;
+    private Vue.VueCarte J2Combat2;
+    private Vue.VueCarte J2Combat3;
+    private Vue.VueCarte J2Combat4;
+    private Vue.VueCarte J2Main1;
+    private Vue.VueCarte J2Main2;
+    private Vue.VueCarte J2Main3;
+    private Vue.VueCarte J2Main4;
     private javax.swing.JLabel J2NomLabel;
     private javax.swing.JLabel J2PVLabel;
     private javax.swing.JPanel J2Panel;
     private javax.swing.JPanel J2PlateauPanel;
     private javax.swing.JLabel J2RessourceLabel;
     private javax.swing.JPanel J2RessourcePanel;
-    private javax.swing.JPanel J2Terrain1;
-    private javax.swing.JPanel J2Terrain2;
-    private javax.swing.JPanel J2Terrain3;
-    private javax.swing.JPanel J2Terrain4;
+    private Vue.VueCarte J2Terrain1;
+    private Vue.VueCarte J2Terrain2;
+    private Vue.VueCarte J2Terrain3;
+    private Vue.VueCarte J2Terrain4;
     private javax.swing.JPanel JFramePanel;
     private javax.swing.JPanel PlateauPanel;
     private javax.swing.JPanel jPanel8;

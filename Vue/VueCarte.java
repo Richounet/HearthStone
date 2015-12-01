@@ -8,6 +8,7 @@ public class VueCarte extends javax.swing.JPanel
     public VueCarte() 
     {
         initComponents();
+        SetCarte(null);
     }
     
     public VueCarte(String att, String def, String cout, String nom)

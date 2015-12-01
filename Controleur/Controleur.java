@@ -1,7 +1,9 @@
 package Controleur;
 
 import Modele.Carte.Carte;
+import Modele.Phase.PhaseType;
 import Modele.Plateau.Partie;
+import javax.swing.JPanel;
 
 /**
  * @author RICHE Vincent P1203372
@@ -17,10 +19,24 @@ public class Controleur
         this.partieEnCours = p;
     }
     
-    public void ControleSelectionCase()
+    public void ControleSelectionCase(JPanel card)
     {
-        Carte c = null;
-        partieEnCours.JouerCoup(c);
+        String cardName = card.getName();
+        int tableau = -1;
+        int index = cardName.charAt(cardName.length() - 1);
+        if (partieEnCours.GetPhaseActuelle() == PhaseType.PhaseDefense)
+            if (cardName.contains("Terrain"))
+                tableau = 2;
+        if (partieEnCours.GetPhaseActuelle() == PhaseType.PhaseInvocation)
+            if (cardName.contains("Main"))
+                tableau = 1;
+        if (partieEnCours.GetPhaseActuelle() == PhaseType.PhaseAttaque)
+            if (cardName.contains("Terrain"))
+                tableau = 2;
+        
+        Carte c = partieEnCours.FindCarteOnPlateau(tableau, index);
+        if (c != null)
+            partieEnCours.JouerCoup(c);
     }
     
     public void ControleNextPhase()

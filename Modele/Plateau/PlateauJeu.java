@@ -89,4 +89,9 @@ public class PlateauJeu
             }
         return null;
     }
+    
+    public PhaseType GetPhaseActuelle()
+    {
+        return phaseActuelle;
+    }
 }

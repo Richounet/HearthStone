@@ -2,6 +2,7 @@ package Modele.Plateau;
 
 import Modele.Carte.Carte;
 import Modele.Joueur.Joueur;
+import Modele.Phase.PhaseType;
 
 /**
  * @author RICHE Vincent P1203372
@@ -29,5 +30,15 @@ public class Partie
     public void NextPhase()
     {
         numeroTour += plateau.NextPhase();
+    }
+    
+    public PhaseType GetPhaseActuelle()
+    {
+        return plateau.GetPhaseActuelle();
+    }
+    
+    public Carte FindCarteOnPlateau(int tableau, int index)
+    {
+        return null;
     }
 }

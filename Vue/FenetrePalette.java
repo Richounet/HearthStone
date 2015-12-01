@@ -140,7 +140,7 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
 
         JFramePanel.setBackground(new java.awt.Color(255, 255, 255));
 
-        J2Panel.setBackground(new java.awt.Color(238, 233, 233));
+        J2Panel.setBackground(new java.awt.Color(232, 247, 255));
         J2Panel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(139, 131, 120)));
         J2Panel.setPreferredSize(new java.awt.Dimension(667, 80));
 
@@ -173,7 +173,7 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
                 .addGap(22, 22, 22))
         );
 
-        J2RessourcePanel.setBackground(new java.awt.Color(238, 233, 233));
+        J2RessourcePanel.setBackground(new java.awt.Color(232, 247, 255));
         J2RessourcePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(139, 131, 120)));
         J2RessourcePanel.setMinimumSize(new java.awt.Dimension(325, 80));
         J2RessourcePanel.setPreferredSize(new java.awt.Dimension(325, 80));
@@ -199,7 +199,7 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
                 .addGap(24, 24, 24))
         );
 
-        J1Panel.setBackground(new java.awt.Color(238, 233, 233));
+        J1Panel.setBackground(new java.awt.Color(232, 247, 255));
         J1Panel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(139, 131, 120)));
         J1Panel.setPreferredSize(new java.awt.Dimension(667, 80));
 
@@ -318,7 +318,7 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
 
         PlateauPanel.add(J1PlateauPanel);
 
-        J1RessourcePanel.setBackground(new java.awt.Color(238, 233, 233));
+        J1RessourcePanel.setBackground(new java.awt.Color(232, 247, 255));
         J1RessourcePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(139, 131, 120)));
         J1RessourcePanel.setPreferredSize(new java.awt.Dimension(325, 80));
 
@@ -343,7 +343,7 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        InformationPanel.setBackground(new java.awt.Color(238, 233, 233));
+        InformationPanel.setBackground(new java.awt.Color(232, 247, 255));
         InformationPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(139, 131, 120)));
         InformationPanel.setPreferredSize(new java.awt.Dimension(667, 88));
 
@@ -358,7 +358,7 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
             .addGap(0, 471, Short.MAX_VALUE)
         );
 
-        ActionPanel.setBackground(new java.awt.Color(238, 233, 233));
+        ActionPanel.setBackground(new java.awt.Color(232, 247, 255));
         ActionPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(139, 131, 120)));
         ActionPanel.setMinimumSize(new java.awt.Dimension(325, 80));
         ActionPanel.setPreferredSize(new java.awt.Dimension(325, 80));

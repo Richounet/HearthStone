@@ -8,10 +8,18 @@ import java.awt.GridLayout;
 import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 
-public class VueCarte extends javax.swing.JPanel {
-
+<<<<<<< HEAD
+public class VueCarte extends javax.swing.JPanel 
+{
     public static Controleur controleur;
     
+    public VueCarte() 
+    {
+=======
+public class VueCarte extends javax.swing.JPanel {
+
+    public VueCarte() {
+>>>>>>> 1316e631d8414a3e28ecaf62b1288788ccf867d6
         initComponents();
 
         Case = new JPanel[]{
@@ -251,8 +259,11 @@ public class VueCarte extends javax.swing.JPanel {
 
     private void cardMouseClick(java.awt.event.MouseEvent evt)//GEN-FIRST:event_cardMouseClick
     {//GEN-HEADEREND:event_cardMouseClick
-
+<<<<<<< HEAD
         controleur.ControleSelectionCase(this);
+=======
+
+>>>>>>> 1316e631d8414a3e28ecaf62b1288788ccf867d6
     }//GEN-LAST:event_cardMouseClick
 
     public void SetCarte(Carte c) {

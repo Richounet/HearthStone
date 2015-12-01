@@ -3,10 +3,6 @@ package Main;
 import Vue.FenetrePalette;
 import Vue.VueCarte;
 
-/**
- *
- * @author Richounet
- */
 public class Main 
 {
     public static void main(String[] args) 

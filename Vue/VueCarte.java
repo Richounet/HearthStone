@@ -6,6 +6,16 @@ public class VueCarte extends javax.swing.JPanel
     {
         initComponents();
     }
+    
+    public VueCarte(String att, String def, String cout, String nom)
+    {
+        initComponents();
+        
+        SetCardAttack(att);
+        SetCardCout(cout);
+        SetCardDef(def);
+        SetCardNom(nom);
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -203,7 +213,27 @@ public class VueCarte extends javax.swing.JPanel
     {//GEN-HEADEREND:event_cardMouseClick
         
     }//GEN-LAST:event_cardMouseClick
-
+    
+    public void SetCardAttack(String txt)
+    {
+        cardAtt.setText(txt);
+    }
+    
+    public void SetCardDef(String txt)
+    {
+        cardDef.setText(txt);
+    }
+    
+    public void SetCardNom(String txt)
+    {
+        cardName.setText(txt);
+    }
+    
+    public void SetCardCout(String txt)
+    {
+        cardCost.setText(txt);
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel cardAtt;
     private javax.swing.JLabel cardCost;

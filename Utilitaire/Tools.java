@@ -18,6 +18,9 @@ public class Tools
     {
         for (int i = 0; i < array.length; i++)
             if (array[i] == c)
+            {
                 array[i] = null;
+                break;
+            }
     }
 }

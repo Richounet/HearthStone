@@ -60,7 +60,8 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
         plat[1].addObserver(this);
         plat[0].Notify();
         plat[1].Notify();
-
+        
+        VueCarte.controleur = controleur;
         UpdateInfosJoueurs();
     }
 
@@ -522,9 +523,9 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
                 c = plateau.getMain(i);
                 J1Main[i].SetCarte(c);
                 c = plateau.getTerrain(i);
-                //J1Terrain[i].SetCarte(c);
+                J1Terrain[i].SetCarte(c);
                 c = plateau.getLigneCombat(i);
-                //J1Combat[i].SetCarte(c);
+                J1Combat[i].SetCarte(c);
             }
         } 
         else
@@ -536,14 +537,13 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
                 c = plateau.getMain(i);
                 J2Main[i].SetCarte(c);
                 c = plateau.getTerrain(i);
-                //J2Terrain[i].SetCarte(c);
+                J2Terrain[i].SetCarte(c);
                 c = plateau.getLigneCombat(i);
-                //J2Combat[i].SetCarte(c);
+                J2Combat[i].SetCarte(c);
             }
         }
 
         this.repaint();
         this.pack();
     }
-
 }

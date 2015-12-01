@@ -39,7 +39,15 @@ public class Partie
     
     public Carte FindCarteOnPlateau(int tableau, int index)
     {
-        return null;
+        if (tableau == -1)
+            return null;
+        PlateauJoueur pj = plateau.GetPlateauActuel();
+        if (tableau == 1)
+            return pj.getMain(index);
+        else if (tableau == 2)
+            return pj.getTerrain(index);
+        else
+            return null;
     }
     
     public PlateauJoueur[] GetPlateaux()

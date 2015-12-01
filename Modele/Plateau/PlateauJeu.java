@@ -21,7 +21,7 @@ public class PlateauJeu
         this.plateauJoueur[0] = new PlateauJoueur(j1);
         this.plateauJoueur[1] = new PlateauJoueur(j2);
         this.plateauActuel = 0;
-        this.phaseActuelle = PhaseType.PhaseDefense;
+        this.phaseActuelle = PhaseType.PhaseInvocation;
     }   
     
     public void JouerCoup(Carte c)
@@ -98,5 +98,10 @@ public class PlateauJeu
     public PlateauJoueur[] GetPlateaux()
     {
         return plateauJoueur;
+    }
+    
+    public PlateauJoueur GetPlateauActuel()
+    {
+        return plateauJoueur[plateauActuel];
     }
 }

@@ -24,7 +24,7 @@ public class Controleur
     {
         String cardName = card.getName();
         int tableau = -1;
-        int index = cardName.charAt(cardName.length() - 1);
+        int index = Integer.parseInt(cardName.substring(cardName.length() - 1)) - 1;
         if (partieEnCours.GetPhaseActuelle() == PhaseType.PhaseDefense)
             if (cardName.contains("Terrain"))
                 tableau = 2;

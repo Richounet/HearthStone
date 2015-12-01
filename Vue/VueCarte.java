@@ -1,10 +1,13 @@
 package Vue;
 
+import Controleur.Controleur;
 import Modele.Carte.Carte;
 import Modele.Carte.Creature;
 
 public class VueCarte extends javax.swing.JPanel 
 {
+    public static Controleur controleur;
+    
     public VueCarte() 
     {
         initComponents();
@@ -226,7 +229,7 @@ public class VueCarte extends javax.swing.JPanel
 
     private void cardMouseClick(java.awt.event.MouseEvent evt)//GEN-FIRST:event_cardMouseClick
     {//GEN-HEADEREND:event_cardMouseClick
-        
+        controleur.ControleSelectionCase(this);
     }//GEN-LAST:event_cardMouseClick
     
     public void SetCarte(Carte c)

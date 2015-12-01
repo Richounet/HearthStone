@@ -12,6 +12,6 @@ public class MyObservable extends Observable
     public void Notify()
     {
         setChanged();
-	notifyObservers();
+	notifyObservers(this);
     }
 }

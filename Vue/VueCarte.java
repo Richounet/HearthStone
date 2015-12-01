@@ -1,5 +1,8 @@
 package Vue;
 
+import Modele.Carte.Carte;
+import Modele.Carte.Creature;
+
 public class VueCarte extends javax.swing.JPanel 
 {
     public VueCarte() 
@@ -15,6 +18,17 @@ public class VueCarte extends javax.swing.JPanel
         SetCardCout(cout);
         SetCardDef(def);
         SetCardNom(nom);
+    }
+    
+    public VueCarte(Carte c)
+    {
+        initComponents();
+        
+        Creature cr = (Creature)c;
+        SetCardAttack(Integer.toString(cr.getAttaque()));
+        SetCardCout(Integer.toString(cr.getCoutRessource()));
+        SetCardDef(Integer.toString(cr.getDefense()));
+        SetCardNom(cr.getNom());
     }
 
     @SuppressWarnings("unchecked")

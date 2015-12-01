@@ -3,6 +3,7 @@ package Controleur;
 import Modele.Carte.Carte;
 import Modele.Phase.PhaseType;
 import Modele.Plateau.Partie;
+import Modele.Plateau.PlateauJoueur;
 import javax.swing.JPanel;
 
 /**

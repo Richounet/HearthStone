@@ -14,6 +14,7 @@ public class Deck
     
     public static void InitDeck()
     {
+        deck = new ArrayList<>();
         deck.add(new Creature("Dragon", 4, 4, 6));
         deck.add(new Creature("Gobelin", 1, 0, 1));
         deck.add(new Creature("Orc", 3, 3, 5));
@@ -26,6 +27,6 @@ public class Deck
     
     public static Carte GetRandomCarte()
     {
-        return deck.get(Tools.Random(0, deck.size()));
+        return deck.get(Tools.Random(0, deck.size() - 1));
     }
 }

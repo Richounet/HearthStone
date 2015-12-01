@@ -94,4 +94,9 @@ public class PlateauJeu
     {
         return phaseActuelle;
     }
+    
+    public PlateauJoueur[] GetPlateaux()
+    {
+        return plateauJoueur;
+    }
 }

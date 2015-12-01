@@ -1,11 +1,15 @@
 package Vue;
 
 import Controleur.Controleur;
+import Modele.Carte.Carte;
 import Modele.Joueur.Joueur;
 import Modele.Plateau.Partie;
+import Modele.Plateau.PlateauJoueur;
+import java.util.Observable;
+import java.util.Observer;
 import javax.swing.JPanel;
 
-public class FenetrePalette extends javax.swing.JFrame 
+public class FenetrePalette extends javax.swing.JFrame implements Observer
 {
     private Controleur controleur;
     private Partie partie;
@@ -26,9 +30,29 @@ public class FenetrePalette extends javax.swing.JFrame
         partie = new Partie(joueur1, joueur2);
         controleur = new Controleur(partie);
         
+        J1Main = new JPanel[] { J1Main1, J1Main2, J1Main3, J1Main4 };
+        J2Main = new JPanel[] { J1Main1, J1Main2, J1Main3, J1Main4 };
+        J1Terrain = new JPanel[] { J1Terrain1, J1Terrain2, J1Terrain3, J1Terrain4 };
+        J2Terrain = new JPanel[] { J2Terrain1, J2Terrain2, J2Terrain3, J2Terrain4 };
+        J1Combat = new JPanel[] { J1Combat1, J1Combat2, J1Combat3, J1Combat4 };
+        J2Combat = new JPanel[] { J2Combat1, J2Combat2, J2Combat3, J2Combat4 };
+        
+        PlateauJoueur[] plat = partie.GetPlateaux();
+        plat[0].addObserver(this);
+        plat[1].addObserver(this);
+        plat[0].Notify();
+        plat[1].Notify();
+        
+        UpdateInfosJoueurs();
+    }
+    
+    public void UpdateInfosJoueurs()
+    {
         // Mise à jour de la vue
         J1NomLabel.setText(joueur1.getNom());
         J2NomLabel.setText(joueur2.getNom());
+        J1PVLabel.setText(Integer.toString(joueur1.getPv()));
+        J1PVLabel.setText(Integer.toString(joueur2.getPv()));
     }
     
     @SuppressWarnings("unchecked")
@@ -883,7 +907,7 @@ public class FenetrePalette extends javax.swing.JFrame
     }// </editor-fold>//GEN-END:initComponents
 
     private void ActionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActionButtonActionPerformed
-        // TODO add your handling code here:
+        controleur.ControleNextPhase();
     }//GEN-LAST:event_ActionButtonActionPerformed
 
     private void CaseMouseClick(java.awt.event.MouseEvent evt)//GEN-FIRST:event_CaseMouseClick
@@ -907,6 +931,14 @@ public class FenetrePalette extends javax.swing.JFrame
         });
     }
 
+    
+    private JPanel[] J1Main;
+    private JPanel[] J2Main;
+    private JPanel[] J1Terrain;
+    private JPanel[] J2Terrain;
+    private JPanel[] J1Combat;
+    private JPanel[] J2Combat;
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ActionButton;
     private javax.swing.JPanel ActionPanel;
@@ -951,4 +983,65 @@ public class FenetrePalette extends javax.swing.JFrame
     private javax.swing.JPanel PlateauPanel;
     private javax.swing.JPanel jPanel8;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void update(Observable o, Object arg)
+    {
+        /*PlateauJoueur plateau = (PlateauJoueur)o;
+        if (plateau.getJ().getNom().equals(joueur1.getNom()))
+        {
+            int i;
+            Carte c;
+            for (i = 0; i < 4; i++)
+            {
+                c = plateau.getMain(i);
+                if (c != null)
+                {
+                    J1PlateauPanel.remove(J1Main[i]);
+                    J1PlateauPanel.add(new VueCarte(c));
+                }
+                c = plateau.getTerrain(i);
+                if (c != null)
+                {
+                    J1PlateauPanel.remove(J1Terrain[i]);
+                    J1PlateauPanel.add(new VueCarte(c));
+                }
+                c = plateau.getLigneCombat(i);
+                if (c != null)
+                {
+                    J1PlateauPanel.remove(J1Combat[i]);
+                    J1PlateauPanel.add(new VueCarte(c));
+                }
+            }
+        }
+        else
+        {
+                        int i;
+            Carte c;
+            for (i = 0; i < 4; i++)
+            {
+                c = plateau.getMain(i);
+                if (c != null)
+                {
+                    J2PlateauPanel.remove(J2Main[i]);
+                    J2PlateauPanel.add(new VueCarte(c));
+                }
+                c = plateau.getTerrain(i);
+                if (c != null)
+                {
+                    J2PlateauPanel.remove(J2Terrain[i]);
+                    J2PlateauPanel.add(new VueCarte(c));
+                }
+                c = plateau.getLigneCombat(i);
+                if (c != null)
+                {
+                    J2PlateauPanel.remove(J2Combat[i]);
+                    J2PlateauPanel.add(new VueCarte(c));
+                }
+            }
+        }*/
+        
+        this.repaint();
+        this.pack();
+    }
 }

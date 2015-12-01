@@ -41,4 +41,9 @@ public class Partie
     {
         return null;
     }
+    
+    public PlateauJoueur[] GetPlateaux()
+    {
+        return plateau.GetPlateaux();
+    }
 }

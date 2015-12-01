@@ -12,6 +12,8 @@ public class VueCarte extends javax.swing.JPanel {
 
     public static Controleur controleur;
     
+    public VueCarte()
+    {
         initComponents();
 
         Case = new JPanel[]{

@@ -261,11 +261,15 @@ public class VueCarte extends javax.swing.JPanel {
             SetCardNom(cr.getNom());
             ((GridLayout) this.getLayout()).setHgap(3);
             ((GridLayout) this.getLayout()).setVgap(3);
-            
+
             for (int i = 0; i < 9; i++) {
                 Case[i].setBackground(new Color(213, 231, 203));
             }
-            
+
+            Case[2].setBackground(new Color(121, 169, 205));
+            Case[6].setBackground(new Color(208, 148, 155));
+            Case[8].setBackground(new Color(146, 171, 131));
+
         } else {
             SetCardAttack("");
             SetCardCout("");

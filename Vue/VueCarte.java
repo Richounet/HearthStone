@@ -228,6 +228,25 @@ public class VueCarte extends javax.swing.JPanel
         
     }//GEN-LAST:event_cardMouseClick
     
+    public void SetCarte(Carte c)
+    {
+        if (c != null)
+        {
+            Creature cr = (Creature)c;
+            SetCardAttack(Integer.toString(cr.getAttaque()));
+            SetCardCout(Integer.toString(cr.getCoutRessource()));
+            SetCardDef(Integer.toString(cr.getDefense()));
+            SetCardNom(cr.getNom());
+        }
+        else
+        {
+            SetCardAttack("");
+            SetCardCout("");
+            SetCardDef("");
+            SetCardNom("");
+        }
+    }
+    
     public void SetCardAttack(String txt)
     {
         cardAtt.setText(txt);

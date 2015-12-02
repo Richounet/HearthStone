@@ -5,53 +5,54 @@ import Modele.Carte.Carte;
 import Modele.Joueur.Joueur;
 import Modele.Plateau.Partie;
 import Modele.Plateau.PlateauJoueur;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.io.File;
+import java.io.IOException;
 import java.util.Observable;
 import java.util.Observer;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class FenetrePalette extends javax.swing.JFrame implements Observer
-{
+public class FenetrePalette extends javax.swing.JFrame implements Observer {
+
     private Controleur controleur;
     private Partie partie;
     private Joueur joueur1;
     private Joueur joueur2;
 
-    public FenetrePalette()
-    {
+    public FenetrePalette() {
         initComponents();
         InitGame();
     }
 
-    private void InitGame()
-    {
+    private void InitGame() {
         // Variable du jeu
         joueur1 = new Joueur("Axel", 10);
         joueur2 = new Joueur("Vincent", 10);
         partie = new Partie(joueur1, joueur2);
         controleur = new Controleur(partie);
 
-        J1Main = new VueCarte[]
-        {
+        J1Main = new VueCarte[]{
             J1Main1, J1Main2, J1Main3, J1Main4
         };
-        J2Main = new VueCarte[]
-        {
+        J2Main = new VueCarte[]{
             J2Main1, J2Main2, J2Main3, J2Main4
         };
-        J1Terrain = new VueCarte[]
-        {
+        J1Terrain = new VueCarte[]{
             J1Terrain1, J1Terrain2, J1Terrain3, J1Terrain4
         };
-        J2Terrain = new VueCarte[]
-        {
+        J2Terrain = new VueCarte[]{
             J2Terrain1, J2Terrain2, J2Terrain3, J2Terrain4
         };
-        J1Combat = new VueCarte[]
-        {
+        J1Combat = new VueCarte[]{
             J1Combat1, J1Combat2, J1Combat3, J1Combat4
         };
-        J2Combat = new VueCarte[]
-        {
+        J2Combat = new VueCarte[]{
             J2Combat1, J2Combat2, J2Combat3, J2Combat4
         };
 
@@ -60,13 +61,13 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
         plat[1].addObserver(this);
         plat[0].Notify();
         plat[1].Notify();
-        
+
+
         VueCarte.controleur = controleur;
         UpdateInfosJoueurs();
     }
 
-    public void UpdateInfosJoueurs()
-    {
+    public void UpdateInfosJoueurs() {
         // Mise à jour de la vue
         J1NomLabel.setText(joueur1.getNom());
         J2NomLabel.setText(joueur2.getNom());
@@ -118,6 +119,7 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
         J1RessourcePanel = new javax.swing.JPanel();
         J1RessourceLabel = new javax.swing.JLabel();
         InformationPanel = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         ActionPanel = new javax.swing.JPanel();
         ActionButton = new javax.swing.JButton();
 
@@ -189,7 +191,7 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
             .addGroup(J2RessourcePanelLayout.createSequentialGroup()
                 .addGap(87, 87, 87)
                 .addComponent(J2RessourceLabel)
-                .addContainerGap(81, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         J2RessourcePanelLayout.setVerticalGroup(
             J2RessourcePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -345,17 +347,29 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
 
         InformationPanel.setBackground(new java.awt.Color(232, 247, 255));
         InformationPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(139, 131, 120)));
-        InformationPanel.setPreferredSize(new java.awt.Dimension(667, 88));
+        InformationPanel.setPreferredSize(new java.awt.Dimension(325, 473));
+        InformationPanel.setSize(new java.awt.Dimension(325, 473));
+
+        jLabel1.setBackground(new java.awt.Color(232, 247, 255));
+        jLabel1.setMinimumSize(new java.awt.Dimension(285, 433));
+        jLabel1.setPreferredSize(new java.awt.Dimension(285, 433));
+        jLabel1.setSize(new java.awt.Dimension(285, 433));
 
         javax.swing.GroupLayout InformationPanelLayout = new javax.swing.GroupLayout(InformationPanel);
         InformationPanel.setLayout(InformationPanelLayout);
         InformationPanelLayout.setHorizontalGroup(
             InformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(InformationPanelLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20))
         );
         InformationPanelLayout.setVerticalGroup(
             InformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 471, Short.MAX_VALUE)
+            .addGroup(InformationPanelLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         ActionPanel.setBackground(new java.awt.Color(232, 247, 255));
@@ -366,6 +380,10 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
         ActionButton.setBackground(new java.awt.Color(238, 233, 233));
         ActionButton.setFont(new java.awt.Font("Verdana", 1, 16)); // NOI18N
         ActionButton.setText("Finir le tour !");
+        ActionButton.setMaximumSize(null);
+        ActionButton.setMinimumSize(new java.awt.Dimension(162, 40));
+        ActionButton.setPreferredSize(new java.awt.Dimension(162, 40));
+        ActionButton.setSize(new java.awt.Dimension(162, 40));
         ActionButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ActionButtonActionPerformed(evt);
@@ -376,17 +394,17 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
         ActionPanel.setLayout(ActionPanelLayout);
         ActionPanelLayout.setHorizontalGroup(
             ActionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ActionPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(ActionButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ActionPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(ActionButton, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(56, 56, 56))
         );
         ActionPanelLayout.setVerticalGroup(
             ActionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ActionPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(ActionButton, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(20, 20, 20)
+                .addComponent(ActionButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout JFramePanelLayout = new javax.swing.GroupLayout(JFramePanel);
@@ -401,10 +419,10 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
                     .addComponent(PlateauPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 667, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(JFramePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(J2RessourcePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(ActionPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(InformationPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 325, Short.MAX_VALUE)
-                    .addComponent(J1RessourcePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(J2RessourcePanel, javax.swing.GroupLayout.DEFAULT_SIZE, 327, Short.MAX_VALUE)
+                    .addComponent(ActionPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 327, Short.MAX_VALUE)
+                    .addComponent(J1RessourcePanel, javax.swing.GroupLayout.DEFAULT_SIZE, 327, Short.MAX_VALUE)
+                    .addComponent(InformationPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 327, Short.MAX_VALUE))
                 .addContainerGap())
         );
         JFramePanelLayout.setVerticalGroup(
@@ -417,7 +435,7 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(JFramePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(JFramePanelLayout.createSequentialGroup()
-                        .addComponent(InformationPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 473, Short.MAX_VALUE)
+                        .addComponent(InformationPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(ActionPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(PlateauPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -446,15 +464,11 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
         controleur.ControleNextPhase();
     }//GEN-LAST:event_ActionButtonActionPerformed
 
-    public static void main(String args[])
-    {
-        java.awt.EventQueue.invokeLater(new Runnable()
-        {
-            public void run()
-            {
+    public static void main(String args[]) {
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
                 new FenetrePalette().setVisible(true);
             }
-
         });
     }
 
@@ -507,19 +521,17 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
     private Vue.VueCarte J2Terrain4;
     private javax.swing.JPanel JFramePanel;
     private javax.swing.JPanel PlateauPanel;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel8;
     // End of variables declaration//GEN-END:variables
 
     @Override
-    public void update(Observable o, Object arg)
-    {
+    public void update(Observable o, Object arg) {
         PlateauJoueur plateau = (PlateauJoueur) o;
-        if (plateau.getJ().getNom().equals(joueur1.getNom()))
-        {
+        if (plateau.getJ().getNom().equals(joueur1.getNom())) {
             int i;
             Carte c;
-            for (i = 0; i < 4; i++)
-            {
+            for (i = 0; i < 4; i++) {
                 c = plateau.getMain(i);
                 J1Main[i].SetCarte(c);
                 c = plateau.getTerrain(i);
@@ -527,13 +539,10 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
                 c = plateau.getLigneCombat(i);
                 J1Combat[i].SetCarte(c);
             }
-        } 
-        else
-        {
+        } else {
             int i;
             Carte c;
-            for (i = 0; i < 4; i++)
-            {
+            for (i = 0; i < 4; i++) {
                 c = plateau.getMain(i);
                 J2Main[i].SetCarte(c);
                 c = plateau.getTerrain(i);

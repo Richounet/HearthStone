@@ -20,7 +20,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class FenetrePalette extends javax.swing.JFrame implements Observer 
+public class FenetrePalette extends javax.swing.JFrame implements Observer
 {
     private Controleur controleur;
     private Partie partie;
@@ -76,6 +76,29 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
         
         VueCarte.controleur = controleur;
         UpdateInfosJoueurs();
+        
+        VueCarte.fenetre = this;
+    }
+
+    
+    public JLabel getImageLabel()
+    {
+        return ImageLabel;
+    }
+    
+    public JLabel getRessourceInformationLabel()
+    {
+        return RessourceInformationLabel;
+    }
+    
+    public JLabel getAttaqueInformationLabel()
+    {
+        return AttaqueInformationLabel;
+    }
+    
+    public JLabel getDefenseInformationLabel()
+    {
+        return DefenseInformationLabel;
     }
 
     @SuppressWarnings("unchecked")
@@ -122,6 +145,10 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
         J1RessourcePanel = new javax.swing.JPanel();
         J1RessourceLabel = new javax.swing.JLabel();
         InformationPanel = new javax.swing.JPanel();
+        ImageLabel = new javax.swing.JLabel();
+        DefenseInformationLabel = new javax.swing.JLabel();
+        RessourceInformationLabel = new javax.swing.JLabel();
+        AttaqueInformationLabel = new javax.swing.JLabel();
         ActionPanel = new javax.swing.JPanel();
         ActionButton = new javax.swing.JButton();
         PhasePanel = new javax.swing.JPanel();
@@ -354,15 +381,50 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
         InformationPanel.setPreferredSize(new java.awt.Dimension(325, 387));
         InformationPanel.setSize(new java.awt.Dimension(325, 387));
 
+        ImageLabel.setMinimumSize(new java.awt.Dimension(263, 343));
+        ImageLabel.setPreferredSize(new java.awt.Dimension(263, 343));
+        ImageLabel.setSize(new java.awt.Dimension(263, 343));
+
+        DefenseInformationLabel.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        DefenseInformationLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        DefenseInformationLabel.setText("DEF : 10");
+
+        RessourceInformationLabel.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        RessourceInformationLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        RessourceInformationLabel.setText("RESS : 10");
+
+        AttaqueInformationLabel.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        AttaqueInformationLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        AttaqueInformationLabel.setText("ATT : 10");
+
         javax.swing.GroupLayout InformationPanelLayout = new javax.swing.GroupLayout(InformationPanel);
         InformationPanel.setLayout(InformationPanelLayout);
         InformationPanelLayout.setHorizontalGroup(
             InformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 325, Short.MAX_VALUE)
+            .addGroup(InformationPanelLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(ImageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InformationPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(AttaqueInformationLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25)
+                .addComponent(DefenseInformationLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25)
+                .addComponent(RessourceInformationLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         InformationPanelLayout.setVerticalGroup(
             InformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 385, Short.MAX_VALUE)
+            .addGroup(InformationPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(ImageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(InformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(DefenseInformationLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(RessourceInformationLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(AttaqueInformationLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         ActionPanel.setBackground(new java.awt.Color(232, 247, 255));
@@ -388,7 +450,7 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
             .addGroup(ActionPanelLayout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addComponent(ActionButton, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
         ActionPanelLayout.setVerticalGroup(
             ActionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -438,11 +500,11 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
                     .addComponent(PlateauPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 667, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(JFramePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(J2RessourcePanel, javax.swing.GroupLayout.DEFAULT_SIZE, 327, Short.MAX_VALUE)
-                    .addComponent(ActionPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 327, Short.MAX_VALUE)
-                    .addComponent(J1RessourcePanel, javax.swing.GroupLayout.DEFAULT_SIZE, 327, Short.MAX_VALUE)
-                    .addComponent(InformationPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 327, Short.MAX_VALUE)
-                    .addComponent(PhasePanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 327, Short.MAX_VALUE))
+                    .addComponent(J2RessourcePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ActionPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(J1RessourcePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(InformationPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PhasePanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         JFramePanelLayout.setVerticalGroup(
@@ -506,6 +568,9 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ActionButton;
     private javax.swing.JPanel ActionPanel;
+    private javax.swing.JLabel AttaqueInformationLabel;
+    private javax.swing.JLabel DefenseInformationLabel;
+    private javax.swing.JLabel ImageLabel;
     private javax.swing.JPanel InformationPanel;
     private Vue.VueCarte J1Combat1;
     private Vue.VueCarte J1Combat2;
@@ -547,6 +612,7 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
     private javax.swing.JLabel PhaseLabel;
     private javax.swing.JPanel PhasePanel;
     private javax.swing.JPanel PlateauPanel;
+    private javax.swing.JLabel RessourceInformationLabel;
     private javax.swing.JPanel jPanel8;
     // End of variables declaration//GEN-END:variables
 

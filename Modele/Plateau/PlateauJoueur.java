@@ -66,6 +66,8 @@ public class PlateauJoueur extends MyObservable
     
     public void TryDefend(Carte defenseur, Carte attaquante)
     {
+        
+        
         Notify();
     }
     

@@ -64,6 +64,8 @@ public class PlateauJeu extends MyObservable
         // Passage à invocation
         else if (phaseActuelle == PhaseType.PhaseDefense)
         {
+            FinishDefensePhase();
+            
             phaseActuelle = PhaseType.values()[phaseActuelle.ordinal() + 1];
             plateauJoueur[plateauActuel].InitPlateauDebutTour();
             plateauJoueur[plateauActuel].TryTirerCarte();
@@ -78,6 +80,16 @@ public class PlateauJeu extends MyObservable
         Notify();
         
         return 0;
+    }
+    
+    private void FinishDefensePhase()
+    {
+        Carte att;
+        do
+        {
+            att = GetProchaineCarteAttaquante();
+            plateauJoueur[plateauActuel].TryDefend(null, att);
+        }while (att != null);
     }
     
     private Carte GetProchaineCarteAttaquante()

@@ -78,15 +78,6 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
         UpdateInfosJoueurs();
     }
 
-    public void UpdateInfosJoueurs() 
-    {
-        // Mise à jour de la vue
-        J1NomLabel.setText(joueur1.getNom());
-        J2NomLabel.setText(joueur2.getNom());
-        J1PVLabel.setText(Integer.toString(joueur1.getPv()));
-        J1PVLabel.setText(Integer.toString(joueur2.getPv()));
-    }
-
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -563,66 +554,77 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
     public void update(Observable o, Object arg) 
     {
         if (o instanceof PlateauJoueur)
-        {
-            PlateauJoueur plateau = (PlateauJoueur) o;
-            if (plateau.getJ().getNom().equals(joueur1.getNom())) 
-            {
-                int i;
-                Carte c;
-                for (i = 0; i < 4; i++) 
-                {
-                    c = plateau.getMain(i);
-                    J1Main[i].SetCarte(c);
-                    c = plateau.getTerrain(i);
-                    J1Terrain[i].SetCarte(c);
-                    c = plateau.getLigneCombat(i);
-                    J1Combat[i].SetCarte(c);
-                }
-            } 
-            else 
-            {
-                int i;
-                Carte c;
-                for (i = 0; i < 4; i++) 
-                {
-                    c = plateau.getMain(i);
-                    J2Main[i].SetCarte(c);
-                    c = plateau.getTerrain(i);
-                    J2Terrain[i].SetCarte(c);
-                    c = plateau.getLigneCombat(i);
-                    J2Combat[i].SetCarte(c);
-                }
-            }
-        }
+            RepaintPlateau((PlateauJoueur)o);
         else if (o instanceof Joueur)
-        {
-            Joueur j = (Joueur)o;
-            if (j.getNom().equals(J1NomLabel.getText()))
-                J1RessourceLabel.setText(j.getRessource() + " / " + (Partie.numeroTour));
-            else
-                J2RessourceLabel.setText(j.getRessource() + " / " + (Partie.numeroTour));
-        }
+            UpdateInfosJoueurs();
         else if (o instanceof PlateauJeu)
         {
-            PlateauJeu p = (PlateauJeu)o;
-            if (p.GetPhaseActuelle() == PhaseType.PhaseInvocation)
-            {
-                ActionButton.setText("Phase Suivante: Attaque");
-                PhaseLabel.setText("Tour " + Partie.numeroTour + ", Phase 2 [Invocation]");
-            }
-            else if (p.GetPhaseActuelle() == PhaseType.PhaseAttaque)
-            {
-                ActionButton.setText("Fin de tour");
-                PhaseLabel.setText("Tour " + Partie.numeroTour + ", Phase 3 [Attaque]");
-            }
-            else if (p.GetPhaseActuelle() == PhaseType.PhaseDefense)
-            {
-                ActionButton.setText("Phase Suivante: Invocation");
-                PhaseLabel.setText("Tour " + Partie.numeroTour + ", Phase 1 [Defense]");
-            }
+            UpdateInfosPlateau((PlateauJeu)o);
+            RepaintPlateau(partie.GetPlateaux()[0]);
+            RepaintPlateau(partie.GetPlateaux()[1]);
         }
 
         this.repaint();
         this.pack();
+    }
+    
+    private void RepaintPlateau(PlateauJoueur plateau)
+    {
+        if (plateau.getJ().getNom().equals(joueur1.getNom())) 
+        {
+            int i;
+            Carte c;
+            for (i = 0; i < 4; i++) 
+            {
+                c = plateau.getMain(i);
+                J1Main[i].SetCarte(c);
+                c = plateau.getTerrain(i);
+                J1Terrain[i].SetCarte(c);
+                c = plateau.getLigneCombat(i);
+                J1Combat[i].SetCarte(c);
+            }
+        } 
+        else 
+        {
+            int i;
+            Carte c;
+            for (i = 0; i < 4; i++) 
+            {
+                c = plateau.getMain(i);
+                J2Main[i].SetCarte(c);
+                c = plateau.getTerrain(i);
+                J2Terrain[i].SetCarte(c);
+                c = plateau.getLigneCombat(i);
+                J2Combat[i].SetCarte(c);
+            }
+        }
+    }
+    
+    private void UpdateInfosPlateau(PlateauJeu p)
+    {
+        if (p.GetPhaseActuelle() == PhaseType.PhaseInvocation)
+        {
+            ActionButton.setText("Phase Suivante: Attaque");
+            PhaseLabel.setText("Tour " + Partie.numeroTour + ", Phase 2 [Invocation]");
+        }
+        else if (p.GetPhaseActuelle() == PhaseType.PhaseAttaque)
+        {
+            ActionButton.setText("Fin de tour");
+            PhaseLabel.setText("Tour " + Partie.numeroTour + ", Phase 3 [Attaque]");
+        }
+        else if (p.GetPhaseActuelle() == PhaseType.PhaseDefense)
+        {
+            ActionButton.setText("Phase Suivante: Invocation");
+            PhaseLabel.setText("Tour " + Partie.numeroTour + ", Phase 1 [Defense]");
+        }
+    }
+    
+    public void UpdateInfosJoueurs() 
+    {
+        // Mise à jour de la vue
+        J1NomLabel.setText(joueur1.getNom());
+        J2NomLabel.setText(joueur2.getNom());
+        J1PVLabel.setText(Integer.toString(joueur1.getPv()));
+        J2PVLabel.setText(Integer.toString(joueur2.getPv()));
     }
 }

@@ -88,7 +88,7 @@ public class PlateauJeu extends MyObservable
     
     private void FinishDefensePhase()
     {
-        Carte att = GetProchaineCarteAttaquante();;
+        Carte att = GetProchaineCarteAttaquante();
         while (att != null)
         {
             Carte[] ret = plateauJoueur[plateauActuel].TryDefend(null, att);
@@ -109,8 +109,9 @@ public class PlateauJeu extends MyObservable
             // Enleve le prochain attaquant de la ligne de combat adverse et le retourne
             if (plateauJoueur[index].getLigneCombat(i) != null)
             {
+                Carte c = plateauJoueur[index].getLigneCombat(i);
                 plateauJoueur[index].RemoveAttaquant(i);
-                return plateauJoueur[index].getLigneCombat(i);
+                return c;
             }
         return null;
     }
@@ -119,6 +120,8 @@ public class PlateauJeu extends MyObservable
     {
         if (c != null)
             Tools.RemoveFromArray(plateauJoueur[plateauActuel].getTerrain(), c);
+        
+        Notify();
     }
     
     private void DestroyEnemyCarte(Carte c)
@@ -128,6 +131,8 @@ public class PlateauJeu extends MyObservable
             p = 1;
         if (c != null)
             Tools.RemoveFromArray(plateauJoueur[p].getTerrain(), c);
+        
+        Notify();
     }
     
     public PhaseType GetPhaseActuelle()

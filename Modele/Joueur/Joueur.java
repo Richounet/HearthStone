@@ -52,5 +52,6 @@ public class Joueur extends MyObservable
     public void setRessource(int ressource)
     {
         this.ressource = ressource;
+        Notify();
     }
 }

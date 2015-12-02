@@ -3,7 +3,9 @@ package Vue;
 import Controleur.Controleur;
 import Modele.Carte.Carte;
 import Modele.Joueur.Joueur;
+import Modele.Phase.PhaseType;
 import Modele.Plateau.Partie;
+import Modele.Plateau.PlateauJeu;
 import Modele.Plateau.PlateauJoueur;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -18,19 +20,21 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class FenetrePalette extends javax.swing.JFrame implements Observer {
-
+public class FenetrePalette extends javax.swing.JFrame implements Observer 
+{
     private Controleur controleur;
     private Partie partie;
     private Joueur joueur1;
     private Joueur joueur2;
 
-    public FenetrePalette() {
+    public FenetrePalette() 
+    {
         initComponents();
         InitGame();
     }
 
-    private void InitGame() {
+    private void InitGame() 
+    {
         // Variable du jeu
         joueur1 = new Joueur("Axel", 10);
         joueur2 = new Joueur("Vincent", 10);
@@ -62,12 +66,20 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer {
         plat[0].Notify();
         plat[1].Notify();
 
-
+        joueur1.addObserver(this);
+        joueur2.addObserver(this);
+        joueur1.Notify();
+        joueur2.Notify();
+        
+        partie.GetPlateauJeu().addObserver(this);
+        partie.GetPlateauJeu().Notify();
+        
         VueCarte.controleur = controleur;
         UpdateInfosJoueurs();
     }
 
-    public void UpdateInfosJoueurs() {
+    public void UpdateInfosJoueurs() 
+    {
         // Mise à jour de la vue
         J1NomLabel.setText(joueur1.getNom());
         J2NomLabel.setText(joueur2.getNom());
@@ -464,8 +476,10 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer {
         controleur.ControleNextPhase();
     }//GEN-LAST:event_ActionButtonActionPerformed
 
-    public static void main(String args[]) {
-        java.awt.EventQueue.invokeLater(new Runnable() {
+    public static void main(String args[]) 
+    {
+        java.awt.EventQueue.invokeLater(new Runnable() 
+        {
             public void run() {
                 new FenetrePalette().setVisible(true);
             }
@@ -526,29 +540,62 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer {
     // End of variables declaration//GEN-END:variables
 
     @Override
-    public void update(Observable o, Object arg) {
-        PlateauJoueur plateau = (PlateauJoueur) o;
-        if (plateau.getJ().getNom().equals(joueur1.getNom())) {
-            int i;
-            Carte c;
-            for (i = 0; i < 4; i++) {
-                c = plateau.getMain(i);
-                J1Main[i].SetCarte(c);
-                c = plateau.getTerrain(i);
-                J1Terrain[i].SetCarte(c);
-                c = plateau.getLigneCombat(i);
-                J1Combat[i].SetCarte(c);
+    public void update(Observable o, Object arg) 
+    {
+        if (o instanceof PlateauJoueur)
+        {
+            PlateauJoueur plateau = (PlateauJoueur) o;
+            if (plateau.getJ().getNom().equals(joueur1.getNom())) 
+            {
+                int i;
+                Carte c;
+                for (i = 0; i < 4; i++) 
+                {
+                    c = plateau.getMain(i);
+                    J1Main[i].SetCarte(c);
+                    c = plateau.getTerrain(i);
+                    J1Terrain[i].SetCarte(c);
+                    c = plateau.getLigneCombat(i);
+                    J1Combat[i].SetCarte(c);
+                }
+            } 
+            else 
+            {
+                int i;
+                Carte c;
+                for (i = 0; i < 4; i++) 
+                {
+                    c = plateau.getMain(i);
+                    J2Main[i].SetCarte(c);
+                    c = plateau.getTerrain(i);
+                    J2Terrain[i].SetCarte(c);
+                    c = plateau.getLigneCombat(i);
+                    J2Combat[i].SetCarte(c);
+                }
             }
-        } else {
-            int i;
-            Carte c;
-            for (i = 0; i < 4; i++) {
-                c = plateau.getMain(i);
-                J2Main[i].SetCarte(c);
-                c = plateau.getTerrain(i);
-                J2Terrain[i].SetCarte(c);
-                c = plateau.getLigneCombat(i);
-                J2Combat[i].SetCarte(c);
+        }
+        else if (o instanceof Joueur)
+        {
+            Joueur j = (Joueur)o;
+            if (j.getNom().equals(J1NomLabel.getText()))
+                J1RessourceLabel.setText(j.getRessource() + " / " + (Partie.numeroTour + 1));
+            else
+                J2RessourceLabel.setText(j.getRessource() + " / " + (Partie.numeroTour + 1));
+        }
+        else if (o instanceof PlateauJeu)
+        {
+            PlateauJeu p = (PlateauJeu)o;
+            if (p.GetPhaseActuelle() == PhaseType.PhaseInvocation)
+            {
+                ActionButton.setText("Phase Suivante");
+            }
+            else if (p.GetPhaseActuelle() == PhaseType.PhaseAttaque)
+            {
+                ActionButton.setText("Fin de tour");
+            }
+            else if (p.GetPhaseActuelle() == PhaseType.PhaseDefense)
+            {
+                ActionButton.setText("-> Invocation");
             }
         }
 

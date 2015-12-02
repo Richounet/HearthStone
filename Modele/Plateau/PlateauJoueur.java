@@ -82,6 +82,7 @@ public class PlateauJoueur extends MyObservable
         {
             terrain[j] = newCarte;
             Tools.RemoveFromArray(main, newCarte);
+            joueur.setRessource(joueur.getRessource() - newCarte.getCoutRessource());
         }
         
         Notify();

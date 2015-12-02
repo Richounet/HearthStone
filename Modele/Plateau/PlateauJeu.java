@@ -3,13 +3,14 @@ package Modele.Plateau;
 import Modele.Carte.Carte;
 import Modele.Joueur.Joueur;
 import Modele.Phase.PhaseType;
+import Utilitaire.MyObservable;
 
 /**
  * @author RICHE Vincent P1203372
  * @author PARIS AXEL    P1306459
  */
 
-public class PlateauJeu
+public class PlateauJeu extends MyObservable
 {
     private PlateauJoueur[] plateauJoueur;
     private PhaseType phaseActuelle;
@@ -21,7 +22,9 @@ public class PlateauJeu
         this.plateauJoueur[0] = new PlateauJoueur(j1);
         this.plateauJoueur[1] = new PlateauJoueur(j2);
         this.plateauActuel = 0;
-        this.phaseActuelle = PhaseType.PhaseInvocation;
+        this.phaseActuelle = PhaseType.PhaseDefense;
+        
+        Notify();
     }   
     
     public void JouerCoup(Carte c)
@@ -69,6 +72,8 @@ public class PlateauJeu
         {
             phaseActuelle = PhaseType.values()[phaseActuelle.ordinal() + 1];
         }
+        
+        Notify();
         
         return 0;
     }

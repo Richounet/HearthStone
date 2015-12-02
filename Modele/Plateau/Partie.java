@@ -58,4 +58,9 @@ public class Partie
     {
         return plateau.GetPlateaux();
     }
+    
+    public PlateauJeu GetPlateauJeu()
+    {
+        return plateau;
+    }
 }

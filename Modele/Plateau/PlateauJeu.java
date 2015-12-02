@@ -104,4 +104,9 @@ public class PlateauJeu
     {
         return plateauJoueur[plateauActuel];
     }
+    
+    public int GetIndexPlateauActuel()
+    {
+        return plateauActuel;
+    }
 }

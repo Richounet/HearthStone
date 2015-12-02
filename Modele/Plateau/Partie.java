@@ -37,10 +37,14 @@ public class Partie
         return plateau.GetPhaseActuelle();
     }
     
-    public Carte FindCarteOnPlateau(int tableau, int index)
+    public Carte FindCarteOnPlateau(int tableau, int index, int joueur)
     {
+        // On vérifie que le joueur a cliqué sur un carte de son propre camp
+        if (plateau.GetIndexPlateauActuel() != joueur - 1)
+            return null;
         if (tableau == -1)
             return null;
+        
         PlateauJoueur pj = plateau.GetPlateauActuel();
         if (tableau == 1)
             return pj.getMain(index);

@@ -253,7 +253,6 @@ public class VueCarte extends javax.swing.JPanel {
 
     private void cardMouseClick(java.awt.event.MouseEvent evt)//GEN-FIRST:event_cardMouseClick
     {//GEN-HEADEREND:event_cardMouseClick
-
         controleur.ControleSelectionCase(this);
     }//GEN-LAST:event_cardMouseClick
 

@@ -64,11 +64,37 @@ public class PlateauJoueur extends MyObservable
                 ((Creature)terrain[j]).setEtat(EtatCreature.Normal);
     }
     
-    public void TryDefend(Carte defenseur, Carte attaquante)
+    public Carte[] TryDefend(Carte defenseur, Carte attaquante)
     {
-        
+        Carte[] ret = new Carte[2];
+        // Le joueur perd des pts de vie
+        if (defenseur == null)
+            joueur.setPv(joueur.getPv() - attaquante.getAttaque());
+        // Il y a combat entre les cartes
+        else
+        {
+            int att1 = defenseur.getAttaque();
+            int def1 = defenseur.getDefense();
+            int att2 = attaquante.getAttaque();
+            int def2 = attaquante.getDefense();
+            
+            boolean defDetruit = false;
+            boolean attDetruit = false;
+            
+            if (att1 >= def2)
+                attDetruit = true;
+            if (att2 >= def1)
+                defDetruit = true;
+            
+            if (defDetruit)
+                ret[0] = defenseur;
+            if (attDetruit)
+                ret[1] = attaquante;
+        }
         
         Notify();
+        
+        return ret;
     }
     
     public void TryInvoc(Carte newCarte)
@@ -113,7 +139,10 @@ public class PlateauJoueur extends MyObservable
     {
         for (int i = 0; i < main.length; i++)
             if (main[i] == null)
+            {
                 main[i] = Deck.GetRandomCarte();
+                break;
+            }
         Notify();
     }
     
@@ -128,7 +157,7 @@ public class PlateauJoueur extends MyObservable
         
         Notify();
     }
-    
+
     public void ChargeRessources()
     {
         joueur.setRessource(Partie.numeroTour);
@@ -138,4 +167,36 @@ public class PlateauJoueur extends MyObservable
     {
         joueur.setRessource(0);
     }
+
+    public Carte[] getMain()
+    {
+        return main;
+    }
+
+    public void setMain(Carte[] main)
+    {
+        this.main = main;
+    }
+
+    public Carte[] getTerrain()
+    {
+        return terrain;
+    }
+
+    public void setTerrain(Carte[] terrain)
+    {
+        this.terrain = terrain;
+    }
+
+    public Carte[] getLigneCombat()
+    {
+        return ligneCombat;
+    }
+
+    public void setLigneCombat(Carte[] ligneCombat)
+    {
+        this.ligneCombat = ligneCombat;
+    }
+    
+    
 }

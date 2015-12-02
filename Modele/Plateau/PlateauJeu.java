@@ -4,6 +4,7 @@ import Modele.Carte.Carte;
 import Modele.Joueur.Joueur;
 import Modele.Phase.PhaseType;
 import Utilitaire.MyObservable;
+import Utilitaire.Tools;
 
 /**
  * @author RICHE Vincent P1203372
@@ -34,7 +35,11 @@ public class PlateauJeu extends MyObservable
             // Joue le match attaquant/defenseur si il y a des attaquants
             Carte att = GetProchaineCarteAttaquante();
             if (att != null)
-                plateauJoueur[plateauActuel].TryDefend(c, att);
+            {
+                Carte[] ret = plateauJoueur[plateauActuel].TryDefend(c, att);
+                DestroyMyCarte(ret[0]);
+                DestroyEnemyCarte(ret[1]);
+            }
         }
         else if (phaseActuelle == PhaseType.PhaseInvocation)
         {
@@ -83,12 +88,14 @@ public class PlateauJeu extends MyObservable
     
     private void FinishDefensePhase()
     {
-        Carte att;
-        do
+        Carte att = GetProchaineCarteAttaquante();;
+        while (att != null)
         {
+            Carte[] ret = plateauJoueur[plateauActuel].TryDefend(null, att);
+            DestroyMyCarte(ret[0]);
+            DestroyEnemyCarte(ret[1]);
             att = GetProchaineCarteAttaquante();
-            plateauJoueur[plateauActuel].TryDefend(null, att);
-        }while (att != null);
+        }
     }
     
     private Carte GetProchaineCarteAttaquante()
@@ -106,6 +113,21 @@ public class PlateauJeu extends MyObservable
                 return plateauJoueur[index].getLigneCombat(i);
             }
         return null;
+    }
+    
+    private void DestroyMyCarte(Carte c)
+    {
+        if (c != null)
+            Tools.RemoveFromArray(plateauJoueur[plateauActuel].getTerrain(), c);
+    }
+    
+    private void DestroyEnemyCarte(Carte c)
+    {
+        int p = 0;
+        if (plateauActuel == 0)
+            p = 1;
+        if (c != null)
+            Tools.RemoveFromArray(plateauJoueur[p].getTerrain(), c);
     }
     
     public PhaseType GetPhaseActuelle()

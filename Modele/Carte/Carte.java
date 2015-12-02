@@ -35,4 +35,16 @@ public abstract class Carte
     {
         this.coutRessource = coutRessource;
     } 
+    
+    public abstract int getAttaque();
+
+    public abstract void setAttaque(int attaque);
+
+    public abstract int getDefense();
+
+    public abstract void setDefense(int defense);
+
+    public abstract EtatCreature getEtat();
+
+    public abstract void setEtat(EtatCreature etat);
 }

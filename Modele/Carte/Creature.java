@@ -19,31 +19,37 @@ public class Creature extends Carte
         this.etat = EtatCreature.Normal;
     }
 
+    @Override
     public int getAttaque()
     {
         return attaque;
     }
 
+    @Override
     public void setAttaque(int attaque)
     {
         this.attaque = attaque;
     }
 
+    @Override
     public int getDefense()
     {
         return defense;
     }
 
+    @Override
     public void setDefense(int defense)
     {
         this.defense = defense;
     }
 
+    @Override
     public EtatCreature getEtat()
     {
         return etat;
     }
 
+    @Override
     public void setEtat(EtatCreature etat)
     {
         this.etat = etat;

@@ -18,49 +18,41 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class FenetrePalette extends javax.swing.JFrame implements Observer, MouseListener
-{
+public class FenetrePalette extends javax.swing.JFrame implements Observer {
+
     private Controleur controleur;
     private Partie partie;
     private Joueur joueur1;
     private Joueur joueur2;
 
-    public FenetrePalette()
-    {
+    public FenetrePalette() {
         initComponents();
         InitGame();
     }
 
-    private void InitGame()
-    {
+    private void InitGame() {
         // Variable du jeu
         joueur1 = new Joueur("Axel", 10);
         joueur2 = new Joueur("Vincent", 10);
         partie = new Partie(joueur1, joueur2);
         controleur = new Controleur(partie);
 
-        J1Main = new VueCarte[]
-        {
+        J1Main = new VueCarte[]{
             J1Main1, J1Main2, J1Main3, J1Main4
         };
-        J2Main = new VueCarte[]
-        {
+        J2Main = new VueCarte[]{
             J2Main1, J2Main2, J2Main3, J2Main4
         };
-        J1Terrain = new VueCarte[]
-        {
+        J1Terrain = new VueCarte[]{
             J1Terrain1, J1Terrain2, J1Terrain3, J1Terrain4
         };
-        J2Terrain = new VueCarte[]
-        {
+        J2Terrain = new VueCarte[]{
             J2Terrain1, J2Terrain2, J2Terrain3, J2Terrain4
         };
-        J1Combat = new VueCarte[]
-        {
+        J1Combat = new VueCarte[]{
             J1Combat1, J1Combat2, J1Combat3, J1Combat4
         };
-        J2Combat = new VueCarte[]
-        {
+        J2Combat = new VueCarte[]{
             J2Combat1, J2Combat2, J2Combat3, J2Combat4
         };
 
@@ -69,15 +61,13 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer, Mous
         plat[1].addObserver(this);
         plat[0].Notify();
         plat[1].Notify();
-        
-        this.addMouseListener(this);
-        
+
+
         VueCarte.controleur = controleur;
         UpdateInfosJoueurs();
     }
 
-    public void UpdateInfosJoueurs()
-    {
+    public void UpdateInfosJoueurs() {
         // Mise à jour de la vue
         J1NomLabel.setText(joueur1.getNom());
         J2NomLabel.setText(joueur2.getNom());
@@ -474,15 +464,11 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer, Mous
         controleur.ControleNextPhase();
     }//GEN-LAST:event_ActionButtonActionPerformed
 
-    public static void main(String args[])
-    {
-        java.awt.EventQueue.invokeLater(new Runnable()
-        {
-            public void run()
-            {
+    public static void main(String args[]) {
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
                 new FenetrePalette().setVisible(true);
             }
-
         });
     }
 
@@ -540,15 +526,12 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer, Mous
     // End of variables declaration//GEN-END:variables
 
     @Override
-    public void update(Observable o, Object arg)
-    {
+    public void update(Observable o, Object arg) {
         PlateauJoueur plateau = (PlateauJoueur) o;
-        if (plateau.getJ().getNom().equals(joueur1.getNom()))
-        {
+        if (plateau.getJ().getNom().equals(joueur1.getNom())) {
             int i;
             Carte c;
-            for (i = 0; i < 4; i++)
-            {
+            for (i = 0; i < 4; i++) {
                 c = plateau.getMain(i);
                 J1Main[i].SetCarte(c);
                 c = plateau.getTerrain(i);
@@ -556,13 +539,10 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer, Mous
                 c = plateau.getLigneCombat(i);
                 J1Combat[i].SetCarte(c);
             }
-        } 
-        else
-        {
+        } else {
             int i;
             Carte c;
-            for (i = 0; i < 4; i++)
-            {
+            for (i = 0; i < 4; i++) {
                 c = plateau.getMain(i);
                 J2Main[i].SetCarte(c);
                 c = plateau.getTerrain(i);
@@ -574,26 +554,5 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer, Mous
 
         this.repaint();
         this.pack();
-    }
-
-    @Override
-    public void mouseClicked(MouseEvent e) {
-    }
-
-    @Override
-    public void mousePressed(MouseEvent e) {
-    }
-
-    @Override
-    public void mouseReleased(MouseEvent e) {
-    }
-
-    @Override
-    public void mouseEntered(MouseEvent e) {
-        // jLabel1.setIcon(new ImageIcon(getClass().getClassLoader().getResource("Images/Orc.jpg")));
-    }
-
-    @Override
-    public void mouseExited(MouseEvent e) {
     }
 }

@@ -17,7 +17,7 @@ public class Joueur extends MyObservable
     {
         this.nom = nom;
         this.pv = pv;
-        this.ressource = 20;
+        this.ressource = 0;
         
         Notify();
     }

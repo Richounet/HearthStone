@@ -57,6 +57,8 @@ public class PlateauJeu extends MyObservable
             plateauActuel++;
             if (plateauActuel == 2)
                 plateauActuel = 0;
+            
+            Notify();
             return 1;
         }
         // Passage à invocation

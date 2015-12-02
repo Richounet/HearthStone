@@ -19,7 +19,7 @@ public class Partie
     {
         joueurs = new Joueur[] { j1, j2 };
         plateau = new PlateauJeu(j1, j2);
-        numeroTour = 0;
+        numeroTour = 1;
     }
     
     public void JouerCoup(Carte c)

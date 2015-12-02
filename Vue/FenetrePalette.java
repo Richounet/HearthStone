@@ -578,9 +578,9 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
         {
             Joueur j = (Joueur)o;
             if (j.getNom().equals(J1NomLabel.getText()))
-                J1RessourceLabel.setText(j.getRessource() + " / " + (Partie.numeroTour + 1));
+                J1RessourceLabel.setText(j.getRessource() + " / " + (Partie.numeroTour));
             else
-                J2RessourceLabel.setText(j.getRessource() + " / " + (Partie.numeroTour + 1));
+                J2RessourceLabel.setText(j.getRessource() + " / " + (Partie.numeroTour));
         }
         else if (o instanceof PlateauJeu)
         {

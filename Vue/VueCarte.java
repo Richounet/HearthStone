@@ -351,8 +351,10 @@ public class VueCarte extends javax.swing.JPanel implements MouseListener {
     }
 
     @Override
-    public void mouseEntered(MouseEvent e) {
-        if (!this.cardName.getText().equals("")) {
+    public void mouseEntered(MouseEvent e) 
+    {
+        if (!this.cardName.getText().equals("")) 
+        {
             fenetre.getImageLabel().setIcon(new ImageIcon(getClass().getResource("/Images/" + this.cardName.getText() + ".jpg")));
             fenetre.getAttaqueInformationLabel().setText("ATT : " + this.cardAtt.getText());
             fenetre.getDefenseInformationLabel().setText("DEF : " + this.cardDef.getText());
@@ -361,7 +363,8 @@ public class VueCarte extends javax.swing.JPanel implements MouseListener {
     }
 
     @Override
-    public void mouseExited(MouseEvent e) {
+    public void mouseExited(MouseEvent e) 
+    {
         fenetre.getImageLabel().setIcon(null);
         fenetre.getAttaqueInformationLabel().setText(null);
         fenetre.getDefenseInformationLabel().setText(null);

@@ -692,5 +692,7 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
         J2NomLabel.setText(joueur2.getNom());
         J1PVLabel.setText(Integer.toString(joueur1.getPv()));
         J2PVLabel.setText(Integer.toString(joueur2.getPv()));
+        J1RessourceLabel.setText(Integer.toString(joueur1.getRessource()) + " / " + Partie.numeroTour);
+        J2RessourceLabel.setText(Integer.toString(joueur2.getRessource()) + " / " + Partie.numeroTour);
     }
 }

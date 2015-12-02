@@ -90,6 +90,8 @@ public class PlateauJoueur extends MyObservable
                 ret[0] = defenseur;
             if (attDetruit)
                 ret[1] = attaquante;
+            
+            attaquante.setEtat(EtatCreature.Fatigue);
         }
         
         Notify();
@@ -127,7 +129,6 @@ public class PlateauJoueur extends MyObservable
         // On passe la carte du terrain a la ligne de combat
         if (j < ligneCombat.length)
         {
-            ((Creature)newAtt).setEtat(EtatCreature.Fatigue);
             ligneCombat[j] = newAtt;
             Tools.RemoveFromArray(terrain, newAtt);
         }
@@ -168,6 +169,15 @@ public class PlateauJoueur extends MyObservable
         joueur.setRessource(0);
     }
 
+    public void EnleveFatigueCreatures()
+    {
+        for (int i = 0; i < main.length; i++)
+        {
+            if (main[i] != null)
+                main[i].setEtat(EtatCreature.Normal);
+        }
+    }
+    
     public Carte[] getMain()
     {
         return main;

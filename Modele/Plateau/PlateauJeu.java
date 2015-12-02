@@ -59,10 +59,11 @@ public class PlateauJeu extends MyObservable
         if (phaseActuelle == PhaseType.PhaseAttaque)
         {
             phaseActuelle = PhaseType.PhaseDefense;
+            plateauJoueur[plateauActuel].EnleveFatigueCreatures();
+            
             plateauActuel++;
             if (plateauActuel == 2)
                 plateauActuel = 0;
-            
             if (plateauActuel == 0)
                 return 1;
         }

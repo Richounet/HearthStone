@@ -30,6 +30,7 @@ public class Partie
     public void NextPhase()
     {
         numeroTour += plateau.NextPhase();
+        plateau.Notify();
     }
     
     public PhaseType GetPhaseActuelle()

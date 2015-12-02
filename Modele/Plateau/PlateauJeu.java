@@ -58,8 +58,8 @@ public class PlateauJeu extends MyObservable
             if (plateauActuel == 2)
                 plateauActuel = 0;
             
-            Notify();
-            return 1;
+            if (plateauActuel == 0)
+                return 1;
         }
         // Passage à invocation
         else if (phaseActuelle == PhaseType.PhaseDefense)
@@ -69,15 +69,14 @@ public class PlateauJeu extends MyObservable
             phaseActuelle = PhaseType.values()[phaseActuelle.ordinal() + 1];
             plateauJoueur[plateauActuel].InitPlateauDebutTour();
             plateauJoueur[plateauActuel].TryTirerCarte();
-            plateauJoueur[plateauActuel].ChargeRessource();
+            plateauJoueur[plateauActuel].ChargeRessources();
         }
         // Passage à attaque
         else if (phaseActuelle == PhaseType.PhaseInvocation)
         {
+            plateauJoueur[plateauActuel].DechargeRessources();
             phaseActuelle = PhaseType.values()[phaseActuelle.ordinal() + 1];
         }
-        
-        Notify();
         
         return 0;
     }

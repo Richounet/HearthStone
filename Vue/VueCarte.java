@@ -49,7 +49,8 @@ public class VueCarte extends javax.swing.JPanel implements MouseListener {
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
 
         Case_0_0 = new javax.swing.JPanel();
         cardName = new javax.swing.JLabel();
@@ -73,196 +74,71 @@ public class VueCarte extends javax.swing.JPanel implements MouseListener {
         setLayout(new java.awt.GridLayout(3, 3, 2, 2));
 
         Case_0_0.setName("Case_0_0"); // NOI18N
+        Case_0_0.setLayout(new java.awt.GridLayout());
 
         cardName.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         cardName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         cardName.setText("C1");
         cardName.setAlignmentY(0.0F);
         cardName.setName("cardName"); // NOI18N
-
-        javax.swing.GroupLayout Case_0_0Layout = new javax.swing.GroupLayout(Case_0_0);
-        Case_0_0.setLayout(Case_0_0Layout);
-        Case_0_0Layout.setHorizontalGroup(
-            Case_0_0Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Case_0_0Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(cardName, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        Case_0_0Layout.setVerticalGroup(
-            Case_0_0Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Case_0_0Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(cardName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        Case_0_0.add(cardName);
 
         add(Case_0_0);
 
         Case_0_1.setName("Case_0_1"); // NOI18N
-
-        javax.swing.GroupLayout Case_0_1Layout = new javax.swing.GroupLayout(Case_0_1);
-        Case_0_1.setLayout(Case_0_1Layout);
-        Case_0_1Layout.setHorizontalGroup(
-            Case_0_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 53, Short.MAX_VALUE)
-        );
-        Case_0_1Layout.setVerticalGroup(
-            Case_0_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 31, Short.MAX_VALUE)
-        );
-
+        Case_0_1.setLayout(new java.awt.GridLayout());
         add(Case_0_1);
 
         Case_0_2.setName("Case_0_2"); // NOI18N
+        Case_0_2.setLayout(new java.awt.GridLayout());
 
         cardCost.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         cardCost.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         cardCost.setText("1");
         cardCost.setAlignmentY(0.0F);
-
-        javax.swing.GroupLayout Case_0_2Layout = new javax.swing.GroupLayout(Case_0_2);
-        Case_0_2.setLayout(Case_0_2Layout);
-        Case_0_2Layout.setHorizontalGroup(
-            Case_0_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Case_0_2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(cardCost, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        Case_0_2Layout.setVerticalGroup(
-            Case_0_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Case_0_2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(cardCost, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        Case_0_2.add(cardCost);
 
         add(Case_0_2);
 
         Case_1_0.setName("Case_1_0"); // NOI18N
-
-        javax.swing.GroupLayout Case_1_0Layout = new javax.swing.GroupLayout(Case_1_0);
-        Case_1_0.setLayout(Case_1_0Layout);
-        Case_1_0Layout.setHorizontalGroup(
-            Case_1_0Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 53, Short.MAX_VALUE)
-        );
-        Case_1_0Layout.setVerticalGroup(
-            Case_1_0Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 31, Short.MAX_VALUE)
-        );
-
+        Case_1_0.setLayout(new java.awt.GridLayout());
         add(Case_1_0);
 
         Case_1_1.setBackground(new java.awt.Color(204, 204, 204));
         Case_1_1.setName("Case_1_1"); // NOI18N
-        Case_1_1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                cardMouseClick(evt);
-            }
-        });
-
-        javax.swing.GroupLayout Case_1_1Layout = new javax.swing.GroupLayout(Case_1_1);
-        Case_1_1.setLayout(Case_1_1Layout);
-        Case_1_1Layout.setHorizontalGroup(
-            Case_1_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 53, Short.MAX_VALUE)
-        );
-        Case_1_1Layout.setVerticalGroup(
-            Case_1_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 31, Short.MAX_VALUE)
-        );
-
+        Case_1_1.setLayout(new java.awt.GridLayout());
         add(Case_1_1);
 
         Case_1_2.setName("Case_1_2"); // NOI18N
-
-        javax.swing.GroupLayout Case_1_2Layout = new javax.swing.GroupLayout(Case_1_2);
-        Case_1_2.setLayout(Case_1_2Layout);
-        Case_1_2Layout.setHorizontalGroup(
-            Case_1_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 53, Short.MAX_VALUE)
-        );
-        Case_1_2Layout.setVerticalGroup(
-            Case_1_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 31, Short.MAX_VALUE)
-        );
-
+        Case_1_2.setLayout(new java.awt.GridLayout());
         add(Case_1_2);
 
         Case_2_0.setName("Case_2_0"); // NOI18N
+        Case_2_0.setLayout(new java.awt.GridLayout());
 
         cardAtt.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         cardAtt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         cardAtt.setText("1");
         cardAtt.setAlignmentY(0.0F);
-
-        javax.swing.GroupLayout Case_2_0Layout = new javax.swing.GroupLayout(Case_2_0);
-        Case_2_0.setLayout(Case_2_0Layout);
-        Case_2_0Layout.setHorizontalGroup(
-            Case_2_0Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Case_2_0Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(cardAtt, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        Case_2_0Layout.setVerticalGroup(
-            Case_2_0Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Case_2_0Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(cardAtt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        Case_2_0.add(cardAtt);
 
         add(Case_2_0);
 
         Case_2_1.setName("Case_2_1"); // NOI18N
-
-        javax.swing.GroupLayout Case_2_1Layout = new javax.swing.GroupLayout(Case_2_1);
-        Case_2_1.setLayout(Case_2_1Layout);
-        Case_2_1Layout.setHorizontalGroup(
-            Case_2_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 53, Short.MAX_VALUE)
-        );
-        Case_2_1Layout.setVerticalGroup(
-            Case_2_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 31, Short.MAX_VALUE)
-        );
-
+        Case_2_1.setLayout(new java.awt.GridLayout());
         add(Case_2_1);
 
         Case_2_2.setName("Case_2_2"); // NOI18N
+        Case_2_2.setLayout(new java.awt.GridLayout());
 
         cardDef.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         cardDef.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         cardDef.setText("2");
         cardDef.setAlignmentY(0.0F);
-
-        javax.swing.GroupLayout Case_2_2Layout = new javax.swing.GroupLayout(Case_2_2);
-        Case_2_2.setLayout(Case_2_2Layout);
-        Case_2_2Layout.setHorizontalGroup(
-            Case_2_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Case_2_2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(cardDef, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        Case_2_2Layout.setVerticalGroup(
-            Case_2_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Case_2_2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(cardDef, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        Case_2_2.add(cardDef);
 
         add(Case_2_2);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void cardMouseClick(java.awt.event.MouseEvent evt)//GEN-FIRST:event_cardMouseClick
-    {//GEN-HEADEREND:event_cardMouseClick
-        controleur.ControleSelectionCase(this);
-    }//GEN-LAST:event_cardMouseClick
 
     public void SetCarte(Carte c) {
         if (c != null) {
@@ -339,7 +215,9 @@ public class VueCarte extends javax.swing.JPanel implements MouseListener {
     // End of variables declaration//GEN-END:variables
 
     @Override
-    public void mouseClicked(MouseEvent e) {
+    public void mouseClicked(MouseEvent e) 
+    {
+        controleur.ControleSelectionCase(this);
     }
 
     @Override

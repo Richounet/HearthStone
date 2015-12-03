@@ -104,13 +104,14 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
 
         jPanel8 = new javax.swing.JPanel();
         JFramePanel = new javax.swing.JPanel();
         J2Panel = new javax.swing.JPanel();
-        J2PVLabel = new javax.swing.JLabel();
         J2NomLabel = new javax.swing.JLabel();
+        J2PVLabel = new javax.swing.JLabel();
         J2RessourcePanel = new javax.swing.JPanel();
         J2RessourceLabel = new javax.swing.JLabel();
         J1Panel = new javax.swing.JPanel();
@@ -170,117 +171,60 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("HearthStone");
-        setMaximumSize(new java.awt.Dimension(1012, 680));
-        setMinimumSize(new java.awt.Dimension(1012, 680));
+        setMaximumSize(new java.awt.Dimension(1020, 667));
+        setMinimumSize(new java.awt.Dimension(1020, 667));
         setName("FenetrePalette"); // NOI18N
-        setPreferredSize(new java.awt.Dimension(1012, 680));
-        setSize(new java.awt.Dimension(1012, 680));
+        setSize(new java.awt.Dimension(1020, 667));
 
         JFramePanel.setBackground(new java.awt.Color(255, 255, 255));
-        JFramePanel.setSize(new java.awt.Dimension(1012, 657));
 
         J2Panel.setBackground(new java.awt.Color(232, 247, 255));
         J2Panel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(139, 131, 120)));
         J2Panel.setMinimumSize(new java.awt.Dimension(667, 80));
         J2Panel.setPreferredSize(new java.awt.Dimension(667, 80));
-        J2Panel.setSize(new java.awt.Dimension(667, 80));
-
-        J2PVLabel.setFont(new java.awt.Font("Verdana", 1, 16)); // NOI18N
-        J2PVLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        J2PVLabel.setText("10 PV");
+        J2Panel.setLayout(new java.awt.GridLayout());
 
         J2NomLabel.setFont(new java.awt.Font("Verdana", 1, 16)); // NOI18N
         J2NomLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         J2NomLabel.setText("Axel");
+        J2Panel.add(J2NomLabel);
 
-        javax.swing.GroupLayout J2PanelLayout = new javax.swing.GroupLayout(J2Panel);
-        J2Panel.setLayout(J2PanelLayout);
-        J2PanelLayout.setHorizontalGroup(
-            J2PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, J2PanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(J2NomLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(J2PVLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(184, 184, 184))
-        );
-        J2PanelLayout.setVerticalGroup(
-            J2PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(J2PanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(J2PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(J2PVLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(J2NomLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        J2PVLabel.setFont(new java.awt.Font("Verdana", 1, 16)); // NOI18N
+        J2PVLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        J2PVLabel.setText("10 PV");
+        J2Panel.add(J2PVLabel);
 
         J2RessourcePanel.setBackground(new java.awt.Color(232, 247, 255));
         J2RessourcePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(139, 131, 120)));
         J2RessourcePanel.setMinimumSize(new java.awt.Dimension(325, 80));
         J2RessourcePanel.setPreferredSize(new java.awt.Dimension(325, 80));
-        J2RessourcePanel.setSize(new java.awt.Dimension(325, 80));
+        J2RessourcePanel.setLayout(new java.awt.GridLayout());
 
         J2RessourceLabel.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         J2RessourceLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         J2RessourceLabel.setText("Ressources: 0 / 0");
-
-        javax.swing.GroupLayout J2RessourcePanelLayout = new javax.swing.GroupLayout(J2RessourcePanel);
-        J2RessourcePanel.setLayout(J2RessourcePanelLayout);
-        J2RessourcePanelLayout.setHorizontalGroup(
-            J2RessourcePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(J2RessourcePanelLayout.createSequentialGroup()
-                .addGap(87, 87, 87)
-                .addComponent(J2RessourceLabel)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        J2RessourcePanelLayout.setVerticalGroup(
-            J2RessourcePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(J2RessourcePanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(J2RessourceLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        J2RessourcePanel.add(J2RessourceLabel);
 
         J1Panel.setBackground(new java.awt.Color(232, 247, 255));
         J1Panel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(139, 131, 120)));
         J1Panel.setFocusTraversalPolicyProvider(true);
         J1Panel.setMinimumSize(new java.awt.Dimension(667, 80));
         J1Panel.setPreferredSize(new java.awt.Dimension(667, 80));
-        J1Panel.setSize(new java.awt.Dimension(667, 80));
+        J1Panel.setLayout(new java.awt.GridLayout());
 
         J1NomLabel.setFont(new java.awt.Font("Verdana", 1, 16)); // NOI18N
         J1NomLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         J1NomLabel.setText("Vincent");
+        J1Panel.add(J1NomLabel);
 
         J1PVLabel.setFont(new java.awt.Font("Verdana", 1, 16)); // NOI18N
         J1PVLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         J1PVLabel.setText("10 PV");
-
-        javax.swing.GroupLayout J1PanelLayout = new javax.swing.GroupLayout(J1Panel);
-        J1Panel.setLayout(J1PanelLayout);
-        J1PanelLayout.setHorizontalGroup(
-            J1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(J1PanelLayout.createSequentialGroup()
-                .addGap(185, 185, 185)
-                .addComponent(J1NomLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(J1PVLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        J1PanelLayout.setVerticalGroup(
-            J1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(J1PanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(J1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(J1PVLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(J1NomLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        J1Panel.add(J1PVLabel);
 
         PlateauPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(139, 131, 120)));
         PlateauPanel.setMinimumSize(new java.awt.Dimension(667, 533));
         PlateauPanel.setPreferredSize(new java.awt.Dimension(667, 533));
-        PlateauPanel.setSize(new java.awt.Dimension(667, 533));
         PlateauPanel.setLayout(new java.awt.GridLayout(2, 0, 0, 1));
 
         J2PlateauPanel.setBackground(new java.awt.Color(255, 255, 255));
@@ -368,38 +312,20 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
         J1RessourcePanel.setBackground(new java.awt.Color(232, 247, 255));
         J1RessourcePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(139, 131, 120)));
         J1RessourcePanel.setPreferredSize(new java.awt.Dimension(325, 80));
-        J1RessourcePanel.setSize(new java.awt.Dimension(325, 80));
+        J1RessourcePanel.setLayout(new java.awt.GridLayout());
 
         J1RessourceLabel.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         J1RessourceLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         J1RessourceLabel.setText("Ressources: 0 / 0");
-
-        javax.swing.GroupLayout J1RessourcePanelLayout = new javax.swing.GroupLayout(J1RessourcePanel);
-        J1RessourcePanel.setLayout(J1RessourcePanelLayout);
-        J1RessourcePanelLayout.setHorizontalGroup(
-            J1RessourcePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, J1RessourcePanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(J1RessourceLabel)
-                .addGap(82, 82, 82))
-        );
-        J1RessourcePanelLayout.setVerticalGroup(
-            J1RessourcePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(J1RessourcePanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(J1RessourceLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        J1RessourcePanel.add(J1RessourceLabel);
 
         InformationPanel.setBackground(new java.awt.Color(232, 247, 255));
         InformationPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(139, 131, 120)));
         InformationPanel.setMinimumSize(new java.awt.Dimension(327, 354));
         InformationPanel.setPreferredSize(new java.awt.Dimension(327, 354));
-        InformationPanel.setSize(new java.awt.Dimension(327, 354));
 
         ImageLabel.setMinimumSize(new java.awt.Dimension(263, 300));
         ImageLabel.setPreferredSize(new java.awt.Dimension(263, 300));
-        ImageLabel.setSize(new java.awt.Dimension(263, 300));
 
         DefenseInformationLabel.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         DefenseInformationLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -418,7 +344,7 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
         InformationPanelLayout.setHorizontalGroup(
             InformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(InformationPanelLayout.createSequentialGroup()
-                .addContainerGap(14, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(InformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InformationPanelLayout.createSequentialGroup()
                         .addComponent(ImageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -448,63 +374,33 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
         ActionPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(139, 131, 120)));
         ActionPanel.setMinimumSize(new java.awt.Dimension(327, 86));
         ActionPanel.setPreferredSize(new java.awt.Dimension(327, 86));
-        ActionPanel.setSize(new java.awt.Dimension(327, 86));
+        ActionPanel.setLayout(new java.awt.GridLayout());
 
         ActionButton.setBackground(new java.awt.Color(238, 233, 233));
         ActionButton.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         ActionButton.setMinimumSize(new java.awt.Dimension(260, 40));
         ActionButton.setPreferredSize(new java.awt.Dimension(260, 40));
-        ActionButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        ActionButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 ActionButtonActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout ActionPanelLayout = new javax.swing.GroupLayout(ActionPanel);
-        ActionPanel.setLayout(ActionPanelLayout);
-        ActionPanelLayout.setHorizontalGroup(
-            ActionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ActionPanelLayout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(ActionButton, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        ActionPanelLayout.setVerticalGroup(
-            ActionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ActionPanelLayout.createSequentialGroup()
-                .addContainerGap(22, Short.MAX_VALUE)
-                .addComponent(ActionButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22))
-        );
+        ActionPanel.add(ActionButton);
 
         PhasePanel.setBackground(new java.awt.Color(232, 247, 255));
         PhasePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(139, 131, 120)));
         PhasePanel.setMinimumSize(new java.awt.Dimension(327, 81));
         PhasePanel.setName("PhasePanel"); // NOI18N
         PhasePanel.setPreferredSize(new java.awt.Dimension(327, 81));
-        PhasePanel.setSize(new java.awt.Dimension(327, 81));
+        PhasePanel.setLayout(new java.awt.GridLayout());
 
         PhaseLabel.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         PhaseLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         PhaseLabel.setText("Tour 1, phase 2 (invocation)");
         PhaseLabel.setName("PhaseLabel"); // NOI18N
-
-        javax.swing.GroupLayout PhasePanelLayout = new javax.swing.GroupLayout(PhasePanel);
-        PhasePanel.setLayout(PhasePanelLayout);
-        PhasePanelLayout.setHorizontalGroup(
-            PhasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PhasePanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(PhaseLabel)
-                .addGap(47, 47, 47))
-        );
-        PhasePanelLayout.setVerticalGroup(
-            PhasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PhasePanelLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(PhaseLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
-        );
+        PhasePanel.add(PhaseLabel);
 
         javax.swing.GroupLayout JFramePanelLayout = new javax.swing.GroupLayout(JFramePanel);
         JFramePanel.setLayout(JFramePanelLayout);
@@ -518,8 +414,8 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
                     .addComponent(PlateauPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(JFramePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(J2RessourcePanel, javax.swing.GroupLayout.DEFAULT_SIZE, 327, Short.MAX_VALUE)
-                    .addComponent(J1RessourcePanel, javax.swing.GroupLayout.DEFAULT_SIZE, 327, Short.MAX_VALUE)
+                    .addComponent(J2RessourcePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(J1RessourcePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(ActionPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(PhasePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(InformationPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -544,7 +440,7 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(JFramePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(J1Panel, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(J1RessourcePanel, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE))
+                    .addComponent(J1RessourcePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -556,9 +452,7 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(JFramePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0))
+            .addComponent(JFramePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -722,15 +616,15 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
                 J1Panel.setBackground(new Color(232,247,255));
                 J2Panel.setBackground(new Color(121, 169, 205));
             }            
-            J1PVLabel.setText(Integer.toString(joueur1.getPv()));
-            J2PVLabel.setText(Integer.toString(joueur2.getPv()));
+            J1PVLabel.setText(Integer.toString(joueur1.getPv()) + " PV");
+            J2PVLabel.setText(Integer.toString(joueur2.getPv()) + " PV");
             J1RessourceLabel.setText("Ressource(s) : " + Integer.toString(joueur1.getRessource()) + " / " + Partie.numeroTour);
             J2RessourceLabel.setText("Ressource(s) : " + Integer.toString(joueur2.getRessource()) + " / " + Partie.numeroTour);
         }
         else
         {
-            J1PVLabel.setText(Integer.toString(joueur1.getPv()));
-            J2PVLabel.setText(Integer.toString(joueur2.getPv()));
+            J1PVLabel.setText(Integer.toString(joueur1.getPv()) + " PV");
+            J2PVLabel.setText(Integer.toString(joueur2.getPv()) + " PV");
             
             if (joueur1.getPv() <= 0)
                 PhaseLabel.setText(joueur2.getNom() + " a gagné!");

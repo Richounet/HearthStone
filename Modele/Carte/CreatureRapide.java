@@ -1,5 +1,7 @@
 package Modele.Carte;
 
+import Modele.Joueur.Joueur;
+
 /**
  * @author RICHE Vincent P1203372
  * @author PARIS AXEL    P1306459
@@ -14,7 +16,7 @@ public class CreatureRapide extends Creature
     }
 
     @Override
-    public void TriggerInvocation()
+    public void TriggerInvocation(Joueur j)
     {
         setEtat(EtatCreature.Normal);
     }

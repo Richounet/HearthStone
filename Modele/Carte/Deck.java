@@ -27,6 +27,8 @@ public class Deck
         deck.add(new Creature("Balrog", 10, 10, 6));
         deck.add(new CreatureRapide("Spider", 1, 1, 2));
         deck.add(new CreatureRapide("Arbre", 1, 0, 4));
+        deck.add(new CreatureEffetVie("Soigneur", 1, 3, 4, 2));
+        deck.add(new CreatureEffetVie("Mage", 1, 2, 2, 4));
     }
     
     public static Carte GetRandomCarte()

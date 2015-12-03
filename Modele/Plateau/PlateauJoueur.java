@@ -115,7 +115,7 @@ public class PlateauJoueur extends MyObservable
         {
             terrain[j] = newCarte;
             Tools.RemoveFromArray(main, newCarte);
-            newCarte.TriggerInvocation();
+            newCarte.TriggerInvocation(joueur);
             joueur.setRessource(joueur.getRessource() - newCarte.getCoutRessource());
         }
         

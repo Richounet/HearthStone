@@ -1,5 +1,7 @@
 package Modele.Carte;
 
+import Modele.Joueur.Joueur;
+
 /**
  * @author RICHE Vincent P1203372
  * @author PARIS AXEL    P1306459
@@ -48,7 +50,7 @@ public abstract class Carte implements Cloneable
 
     public abstract void setEtat(EtatCreature etat);
     
-    public abstract void TriggerInvocation();
+    public abstract void TriggerInvocation(Joueur j);
     
     @Override
     protected Object clone() throws CloneNotSupportedException

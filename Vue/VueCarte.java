@@ -24,7 +24,7 @@ public class VueCarte extends javax.swing.JPanel implements MouseListener {
             Case_0_0, Case_0_1, Case_0_2, Case_1_0, Case_1_1, Case_1_2, Case_2_0, Case_2_1, Case_2_2
         };
 
-        SetCarte(null);
+        SetCarte(null, 0);
         this.addMouseListener(this);
     }
 
@@ -66,6 +66,7 @@ public class VueCarte extends javax.swing.JPanel implements MouseListener {
         cardDef = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(139, 131, 120)));
         setMinimumSize(new java.awt.Dimension(164, 91));
         setName("Case_0_1"); // NOI18N
         setPreferredSize(new java.awt.Dimension(164, 91));
@@ -139,7 +140,7 @@ public class VueCarte extends javax.swing.JPanel implements MouseListener {
         add(Case_2_2);
     }// </editor-fold>//GEN-END:initComponents
 
-    public void SetCarte(Carte c) {
+    public void SetCarte(Carte c, int ligne) {
         if (c != null) {
             Creature cr = (Creature) c;
             SetCardAttack(Integer.toString(cr.getAttaque()));
@@ -150,7 +151,12 @@ public class VueCarte extends javax.swing.JPanel implements MouseListener {
             ((GridLayout) this.getLayout()).setVgap(3);
 
             for (int i = 0; i < 9; i++) {
-                Case[i].setBackground(new Color(213, 231, 203));
+                if(ligne == 0)
+                    Case[i].setBackground(new Color(213, 231, 203));
+                if(ligne == 1)
+                    Case[i].setBackground(new Color(189, 231, 243));
+                if(ligne == 2)
+                    Case[i].setBackground(new Color(255, 215, 219));
             }
 
             if(cr.getEtat() == EtatCreature.Fatigue)
@@ -158,19 +164,23 @@ public class VueCarte extends javax.swing.JPanel implements MouseListener {
                 
             Case[2].setBackground(new Color(121, 169, 205));
             Case[6].setBackground(new Color(208, 148, 155));
-            Case[8].setBackground(new Color(146, 171, 131));
+            Case[8].setBackground(new Color(245, 171, 131));
 
         } else {
             SetCardAttack("");
             SetCardCout("");
             SetCardDef("");
             SetCardNom("");
-            this.setBorder(BorderFactory.createEmptyBorder());
             ((GridLayout) this.getLayout()).setHgap(0);
             ((GridLayout) this.getLayout()).setVgap(0);
 
             for (int i = 0; i < 9; i++) {
-                Case[i].setBackground(new Color(255, 215, 219));
+                if(ligne == 0)
+                    Case[i].setBackground(new Color(213, 231, 203));
+                if(ligne == 1)
+                    Case[i].setBackground(new Color(189, 231, 243));
+                if(ligne == 2)
+                    Case[i].setBackground(new Color(255, 215, 219));
             }
         }
     }

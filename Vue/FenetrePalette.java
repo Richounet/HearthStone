@@ -347,7 +347,7 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
         CardInfoPanel.setMinimumSize(new java.awt.Dimension(100, 52));
         CardInfoPanel.setPreferredSize(new java.awt.Dimension(100, 50));
         CardInfoPanel.setSize(new java.awt.Dimension(100, 50));
-        CardInfoPanel.setLayout(new java.awt.GridLayout());
+        CardInfoPanel.setLayout(new java.awt.GridLayout(1, 0));
 
         AttaqueInformationLabel.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         AttaqueInformationLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -522,11 +522,11 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
             for (i = 0; i < 4; i++) 
             {
                 c = plateau.getMain(i);
-                J1Main[i].SetCarte(c);
+                J1Main[i].SetCarte(c, 0);
                 c = plateau.getTerrain(i);
-                J1Terrain[i].SetCarte(c);
+                J1Terrain[i].SetCarte(c, 1);
                 c = plateau.getLigneCombat(i);
-                J1Combat[i].SetCarte(c);
+                J1Combat[i].SetCarte(c, 2);
             }
         } 
         else 
@@ -536,11 +536,11 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
             for (i = 0; i < 4; i++) 
             {
                 c = plateau.getMain(i);
-                J2Main[i].SetCarte(c);
+                J2Main[i].SetCarte(c, 0);
                 c = plateau.getTerrain(i);
-                J2Terrain[i].SetCarte(c);
+                J2Terrain[i].SetCarte(c, 1);
                 c = plateau.getLigneCombat(i);
-                J2Combat[i].SetCarte(c);
+                J2Combat[i].SetCarte(c, 2);
             }
         }
     }
@@ -574,13 +574,13 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
 
             if(partie.GetPlateauJeu().GetIndexPlateauActuel() == 0)
             { 
-                J1Panel.setBackground(new Color(121, 169, 205));
+                J1Panel.setBackground(new Color(123, 168, 200));
                 J2Panel.setBackground(new Color(232,247,255));  
             }
             else
             {          
                 J1Panel.setBackground(new Color(232,247,255));
-                J2Panel.setBackground(new Color(121, 169, 205));
+                J2Panel.setBackground(new Color(123, 168, 200));
             }            
             J1PVLabel.setText(Integer.toString(joueur1.getPv()) + " PV");
             J2PVLabel.setText(Integer.toString(joueur2.getPv()) + " PV");

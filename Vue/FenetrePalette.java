@@ -80,7 +80,6 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
         
         VueCarte.fenetre = this;
     }
-
     
     public JLabel getImageLabel()
     {
@@ -622,15 +621,14 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
     {
         if (o instanceof PlateauJoueur)
             RepaintPlateau((PlateauJoueur)o);
-        else if (o instanceof Joueur)
-            UpdateInfosJoueurs();
         else if (o instanceof PlateauJeu)
         {
             UpdateInfosPlateau((PlateauJeu)o);
             RepaintPlateau(partie.GetPlateaux()[0]);
             RepaintPlateau(partie.GetPlateaux()[1]);
         }
-
+        
+        UpdateInfosJoueurs();
         this.repaint();
         this.pack();
     }

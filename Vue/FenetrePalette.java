@@ -39,7 +39,7 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
     {
         // Variable du jeu
         joueur1 = new Joueur("Axel", 10);
-        joueur2 = new JoueurAleatoire("Vincent", 10);
+        joueur2 = new Joueur("Vincent", 10);
         partie = new Partie(joueur1, joueur2);
         controleur = new Controleur(partie);
 
@@ -182,7 +182,7 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
         J2Panel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(139, 131, 120)));
         J2Panel.setMinimumSize(new java.awt.Dimension(667, 80));
         J2Panel.setPreferredSize(new java.awt.Dimension(667, 80));
-        J2Panel.setLayout(new java.awt.GridLayout());
+        J2Panel.setLayout(new java.awt.GridLayout(1, 0));
 
         J2NomLabel.setFont(new java.awt.Font("Verdana", 1, 16)); // NOI18N
         J2NomLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -198,7 +198,7 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
         J2RessourcePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(139, 131, 120)));
         J2RessourcePanel.setMinimumSize(new java.awt.Dimension(325, 80));
         J2RessourcePanel.setPreferredSize(new java.awt.Dimension(325, 80));
-        J2RessourcePanel.setLayout(new java.awt.GridLayout());
+        J2RessourcePanel.setLayout(new java.awt.GridLayout(1, 0));
 
         J2RessourceLabel.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         J2RessourceLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -210,7 +210,7 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
         J1Panel.setFocusTraversalPolicyProvider(true);
         J1Panel.setMinimumSize(new java.awt.Dimension(667, 80));
         J1Panel.setPreferredSize(new java.awt.Dimension(667, 80));
-        J1Panel.setLayout(new java.awt.GridLayout());
+        J1Panel.setLayout(new java.awt.GridLayout(1, 0));
 
         J1NomLabel.setFont(new java.awt.Font("Verdana", 1, 16)); // NOI18N
         J1NomLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -312,7 +312,7 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
         J1RessourcePanel.setBackground(new java.awt.Color(232, 247, 255));
         J1RessourcePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(139, 131, 120)));
         J1RessourcePanel.setPreferredSize(new java.awt.Dimension(325, 80));
-        J1RessourcePanel.setLayout(new java.awt.GridLayout());
+        J1RessourcePanel.setLayout(new java.awt.GridLayout(1, 0));
 
         J1RessourceLabel.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         J1RessourceLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -374,7 +374,7 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
         ActionPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(139, 131, 120)));
         ActionPanel.setMinimumSize(new java.awt.Dimension(327, 86));
         ActionPanel.setPreferredSize(new java.awt.Dimension(327, 86));
-        ActionPanel.setLayout(new java.awt.GridLayout());
+        ActionPanel.setLayout(new java.awt.GridLayout(1, 0));
 
         ActionButton.setBackground(new java.awt.Color(238, 233, 233));
         ActionButton.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
@@ -394,7 +394,7 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
         PhasePanel.setMinimumSize(new java.awt.Dimension(327, 81));
         PhasePanel.setName("PhasePanel"); // NOI18N
         PhasePanel.setPreferredSize(new java.awt.Dimension(327, 81));
-        PhasePanel.setLayout(new java.awt.GridLayout());
+        PhasePanel.setLayout(new java.awt.GridLayout(1, 0));
 
         PhaseLabel.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         PhaseLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

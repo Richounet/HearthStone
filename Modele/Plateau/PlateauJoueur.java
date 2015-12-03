@@ -70,7 +70,7 @@ public class PlateauJoueur extends MyObservable
     {
         Carte[] ret = new Carte[2];
         // Le joueur perd des pts de vie
-        if (defenseur == null || defenseur.getEtat() == EtatCreature.Fatigue)
+        if (defenseur == null)
             joueur.setPv(joueur.getPv() - attaquante.getAttaque());
         // Il y a combat entre les cartes
         else
@@ -115,6 +115,7 @@ public class PlateauJoueur extends MyObservable
         {
             terrain[j] = newCarte;
             Tools.RemoveFromArray(main, newCarte);
+            newCarte.TriggerInvocation();
             joueur.setRessource(joueur.getRessource() - newCarte.getCoutRessource());
         }
         

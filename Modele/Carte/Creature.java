@@ -7,9 +7,9 @@ package Modele.Carte;
 
 public class Creature extends Carte
 {
-    private int attaque;
-    private int defense;
-    private EtatCreature etat;
+    protected int attaque;
+    protected int defense;
+    protected EtatCreature etat;
     
     public Creature(String nom, int coutRessource, int att, int def)
     {
@@ -18,7 +18,7 @@ public class Creature extends Carte
         this.defense = def;
         this.etat = EtatCreature.Normal;
     }
-
+    
     @Override
     public int getAttaque()
     {
@@ -61,5 +61,11 @@ public class Creature extends Carte
         Creature c = new Creature(nom, coutRessource, attaque, defense);
         c.setEtat(etat);
         return (Object)c;
+    }
+
+    @Override
+    public void TriggerInvocation()
+    {
+        setEtat(EtatCreature.Fatigue);
     }
 }

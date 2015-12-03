@@ -10,12 +10,6 @@ public abstract class Carte implements Cloneable
     protected String nom;
     protected int coutRessource;
 
-    @Override
-    protected Object clone() throws CloneNotSupportedException
-    {
-        return super.clone(); //To change body of generated methods, choose Tools | Templates.
-    }
-
     public Carte(String nom, int coutRessource)
     {
         this.nom = nom;
@@ -53,4 +47,12 @@ public abstract class Carte implements Cloneable
     public abstract EtatCreature getEtat();
 
     public abstract void setEtat(EtatCreature etat);
+    
+    public abstract void TriggerInvocation();
+    
+    @Override
+    protected Object clone() throws CloneNotSupportedException
+    {
+        return super.clone();
+    }    
 }

@@ -25,6 +25,8 @@ public class Deck
         deck.add(new Creature("Nazgul", 5, 5, 5));
         deck.add(new Creature("Bilbo", 6, 6, 6));
         deck.add(new Creature("Balrog", 10, 10, 6));
+        deck.add(new CreatureRapide("Spider", 1, 1, 2));
+        deck.add(new CreatureRapide("Arbre", 1, 0, 4));
     }
     
     public static Carte GetRandomCarte()

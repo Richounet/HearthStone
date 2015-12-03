@@ -8,6 +8,7 @@ import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.net.URL;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
@@ -233,7 +234,9 @@ public class VueCarte extends javax.swing.JPanel implements MouseListener {
     {
         if (!this.cardName.getText().equals("")) 
         {
-            fenetre.getImageLabel().setIcon(new ImageIcon(getClass().getResource("/Images/" + this.cardName.getText() + ".jpg")));
+            URL url = getClass().getResource("/Images/" + this.cardName.getText() + ".jpg");
+            if (url != null)
+                fenetre.getImageLabel().setIcon(new ImageIcon(url));
             fenetre.getAttaqueInformationLabel().setText("ATT : " + this.cardAtt.getText());
             fenetre.getDefenseInformationLabel().setText("DEF : " + this.cardDef.getText());
             fenetre.getRessourceInformationLabel().setText("COÛT : " + this.cardCost.getText());

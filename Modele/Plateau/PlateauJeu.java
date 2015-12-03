@@ -1,6 +1,7 @@
 package Modele.Plateau;
 
 import Modele.Carte.Carte;
+import Modele.Carte.EtatCreature;
 import Modele.Joueur.Joueur;
 import Modele.Phase.PhaseType;
 import Utilitaire.MyObservable;
@@ -32,6 +33,8 @@ public class PlateauJeu extends MyObservable
     {
         if (phaseActuelle == PhaseType.PhaseDefense)
         {
+            if (c.getEtat() == EtatCreature.Fatigue)
+                return;
             // Joue le match attaquant/defenseur si il y a des attaquants
             Carte att = GetProchaineCarteAttaquante();
             if (att != null)

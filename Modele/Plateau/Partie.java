@@ -15,6 +15,7 @@ public class Partie
     private Joueur[] joueurs;
     private PlateauJeu plateau;
     public static int numeroTour;
+    public static boolean partieTerminee = false;
 
     public Partie(Joueur j1, Joueur j2)
     {
@@ -25,16 +26,31 @@ public class Partie
     
     public void JouerCoup(Carte c)
     {
+        if (partieTerminee)
+            return;
         plateau.JouerCoup(c);
     }
     
     public void NextPhase()
     {
+        if (partieTerminee)
+            return;
         numeroTour += plateau.NextPhase();
         plateau.Notify();
         
         if (plateau.GetPlateauActuel().getJ() instanceof JoueurIA)
             JouerCoupIA();
+        
+        ControleVictoire();
+    }
+    
+    public void ControleVictoire()
+    {
+        if (joueurs[0].getPv() <= 0 || joueurs[1].getPv() < 0)
+        {
+            partieTerminee = true;
+            plateau.Notify();
+        }
     }
     
     public void JouerCoupIA()

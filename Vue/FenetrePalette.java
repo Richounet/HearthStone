@@ -687,23 +687,36 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
     
     public void UpdateInfosJoueurs() 
     {
-        // Mise à jour de la vue
-        J1NomLabel.setText(joueur1.getNom());
-        J2NomLabel.setText(joueur2.getNom());
-        
-        if(partie.GetPlateauJeu().GetIndexPlateauActuel() == 0)
-        { 
-            J1Panel.setBackground(new Color(121, 169, 205));
-            J2Panel.setBackground(new Color(232,247,255));  
+        if (Partie.partieTerminee == false)
+        {
+            // Mise à jour de la vue
+            J1NomLabel.setText(joueur1.getNom());
+            J2NomLabel.setText(joueur2.getNom());
+
+            if(partie.GetPlateauJeu().GetIndexPlateauActuel() == 0)
+            { 
+                J1Panel.setBackground(new Color(121, 169, 205));
+                J2Panel.setBackground(new Color(232,247,255));  
+            }
+            else
+            {          
+                J1Panel.setBackground(new Color(232,247,255));
+                J2Panel.setBackground(new Color(121, 169, 205));
+            }            
+            J1PVLabel.setText(Integer.toString(joueur1.getPv()));
+            J2PVLabel.setText(Integer.toString(joueur2.getPv()));
+            J1RessourceLabel.setText("Ressource(s) : " + Integer.toString(joueur1.getRessource()) + " / " + Partie.numeroTour);
+            J2RessourceLabel.setText("Ressource(s) : " + Integer.toString(joueur2.getRessource()) + " / " + Partie.numeroTour);
         }
         else
-        {          
-            J1Panel.setBackground(new Color(232,247,255));
-            J2Panel.setBackground(new Color(121, 169, 205));
-        }            
-        J1PVLabel.setText(Integer.toString(joueur1.getPv()));
-        J2PVLabel.setText(Integer.toString(joueur2.getPv()));
-        J1RessourceLabel.setText("Ressource(s) : " + Integer.toString(joueur1.getRessource()) + " / " + Partie.numeroTour);
-        J2RessourceLabel.setText("Ressource(s) : " + Integer.toString(joueur2.getRessource()) + " / " + Partie.numeroTour);
+        {
+            J1PVLabel.setText(Integer.toString(joueur1.getPv()));
+            J2PVLabel.setText(Integer.toString(joueur2.getPv()));
+            
+            if (joueur1.getPv() <= 0)
+                PhaseLabel.setText(joueur2.getNom() + " a gagné!");
+            else
+                PhaseLabel.setText(joueur1.getNom() + " a gagné!");
+        }
     }
 }

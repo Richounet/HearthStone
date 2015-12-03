@@ -9,6 +9,7 @@ import Modele.Plateau.Partie;
 import Modele.Plateau.PlateauJeu;
 import Modele.Plateau.PlateauJoueur;
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.io.File;
@@ -154,6 +155,11 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
         AttaqueInformationLabel = new javax.swing.JLabel();
         DefenseInformationLabel = new javax.swing.JLabel();
         RessourceInformationLabel = new javax.swing.JLabel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        NouvellePartie = new javax.swing.JMenuItem();
+        Quitter = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("HearthStone");
@@ -410,6 +416,29 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
                 .addContainerGap())
         );
 
+        jMenu1.setText("Menu");
+
+        NouvellePartie.setText("Nouvelle partie");
+        NouvellePartie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NouvellePartieActionPerformed(evt);
+            }
+        });
+        jMenu1.add(NouvellePartie);
+
+        Quitter.setText("Quitter");
+        Quitter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                QuitterActionPerformed(evt);
+            }
+        });
+        jMenu1.add(Quitter);
+
+        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -427,6 +456,14 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
     private void ActionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActionButtonActionPerformed
         controleur.ControleNextPhase();
     }//GEN-LAST:event_ActionButtonActionPerformed
+
+    private void NouvellePartieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NouvellePartieActionPerformed
+        
+    }//GEN-LAST:event_NouvellePartieActionPerformed
+
+    private void QuitterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuitterActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_QuitterActionPerformed
 
     public static void main(String args[]) 
     {
@@ -490,10 +527,15 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
     private Vue.VueCarte J2Terrain3;
     private Vue.VueCarte J2Terrain4;
     private javax.swing.JPanel JFramePanel;
+    private javax.swing.JMenuItem NouvellePartie;
     private javax.swing.JLabel PhaseLabel;
     private javax.swing.JPanel PhasePanel;
     private javax.swing.JPanel PlateauPanel;
+    private javax.swing.JMenuItem Quitter;
     private javax.swing.JLabel RessourceInformationLabel;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
 
     @Override
@@ -593,9 +635,19 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
             J2PVLabel.setText(Integer.toString(joueur2.getPv()) + " PV");
             
             if (joueur1.getPv() <= 0)
-                PhaseLabel.setText(joueur2.getNom() + " a gagné!");
+            {
+                PhaseLabel.setText(joueur2.getNom() + " a gagné!");    
+                PhaseLabel.setFont(new Font("Verdana", Font.BOLD, 24));
+                PhaseLabel.setForeground(Color.BLACK);
+                PhasePanel.setBackground(new Color(255, 215, 219));
+            }
             else
-                PhaseLabel.setText(joueur1.getNom() + " a gagné!");
+            {
+                PhaseLabel.setText(joueur1.getNom() + " a gagné!"); 
+                PhaseLabel.setFont(new Font("Verdana", Font.BOLD, 24));
+                PhaseLabel.setForeground(Color.BLACK);
+                PhasePanel.setBackground(new Color(255, 215, 219));              
+            }
         }
     }
 }

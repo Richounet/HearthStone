@@ -25,7 +25,7 @@ public class CreatureRapide extends Creature
     protected Object clone() throws CloneNotSupportedException
     {
         CreatureRapide c = new CreatureRapide(nom, coutRessource, attaque, defense);
-        c.setEtat(EtatCreature.Normal);
+        c.setEtat(getEtat());
         return (Object)c;
     }
 }

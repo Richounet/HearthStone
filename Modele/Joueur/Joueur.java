@@ -1,5 +1,9 @@
 package Modele.Joueur;
 
+import Modele.Carte.Carte;
+import Modele.Phase.PhaseType;
+import Modele.Plateau.PlateauJeu;
+import Modele.Plateau.PlateauJoueur;
 import Utilitaire.MyObservable;
 import java.util.Observable;
 
@@ -9,9 +13,9 @@ import java.util.Observable;
  */
 public class Joueur extends MyObservable
 {
-    private String nom;
-    private int pv;
-    private int ressource;
+    protected String nom;
+    protected int pv;
+    protected int ressource;
 
     public Joueur(String nom, int pv) 
     {
@@ -53,5 +57,10 @@ public class Joueur extends MyObservable
     {
         this.ressource = ressource;
         Notify();
+    }
+    
+    public Carte GetCoup(PlateauJoueur p, PhaseType phase)
+    {
+        return null;
     }
 }

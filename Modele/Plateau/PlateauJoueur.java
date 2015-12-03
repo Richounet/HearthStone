@@ -102,6 +102,8 @@ public class PlateauJoueur extends MyObservable
     
     public void TryInvoc(Carte newCarte)
     {
+        if (newCarte == null)
+            return;
         int j;
         for (j = 0; j < terrain.length; j++)
             if (terrain[j] == null)
@@ -121,6 +123,8 @@ public class PlateauJoueur extends MyObservable
     
     public void TryAttack(Carte newAtt)
     {
+        if (newAtt == null)
+            return;
         if (newAtt.getEtat() == EtatCreature.Fatigue)
             return;
         int j;
@@ -144,7 +148,7 @@ public class PlateauJoueur extends MyObservable
         for (int i = 0; i < main.length; i++)
             if (main[i] == null)
             {
-                main[i] = Deck.GetRandomCarte();
+                main[i] = Deck.GetRandomCarte();    
                 break;
             }
         Notify();
@@ -200,7 +204,5 @@ public class PlateauJoueur extends MyObservable
     public void setLigneCombat(Carte[] ligneCombat)
     {
         this.ligneCombat = ligneCombat;
-    }
-    
-    
+    }  
 }

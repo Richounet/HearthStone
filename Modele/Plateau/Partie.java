@@ -2,6 +2,7 @@ package Modele.Plateau;
 
 import Modele.Carte.Carte;
 import Modele.Joueur.Joueur;
+import Modele.Joueur.JoueurIA;
 import Modele.Phase.PhaseType;
 
 /**
@@ -31,6 +32,15 @@ public class Partie
     {
         numeroTour += plateau.NextPhase();
         plateau.Notify();
+        
+        if (plateau.GetPlateauActuel().getJ() instanceof JoueurIA)
+            JouerCoupIA();
+    }
+    
+    public void JouerCoupIA()
+    {
+        plateau.JouerCoupIA();
+        NextPhase();
     }
     
     public PhaseType GetPhaseActuelle()

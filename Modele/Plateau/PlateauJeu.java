@@ -53,6 +53,12 @@ public class PlateauJeu extends MyObservable
         }
     }
     
+    public void JouerCoupIA()
+    {
+        Carte c = plateauJoueur[plateauActuel].getJ().GetCoup(plateauJoueur[plateauActuel], phaseActuelle);
+        JouerCoup(c);
+    }
+    
     public int NextPhase()
     {
         // Passage à defense, début d'un tour

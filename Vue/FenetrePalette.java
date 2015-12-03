@@ -7,6 +7,7 @@ import Modele.Phase.PhaseType;
 import Modele.Plateau.Partie;
 import Modele.Plateau.PlateauJeu;
 import Modele.Plateau.PlateauJoueur;
+import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.io.File;
@@ -690,9 +691,20 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
         // Mise à jour de la vue
         J1NomLabel.setText(joueur1.getNom());
         J2NomLabel.setText(joueur2.getNom());
+        
+        if(partie.GetPlateauJeu().GetIndexPlateauActuel() == 0)
+        { 
+            J1Panel.setBackground(new Color(121, 169, 205));
+            J2Panel.setBackground(new Color(232,247,255));  
+        }
+        else
+        {          
+            J1Panel.setBackground(new Color(232,247,255));
+            J2Panel.setBackground(new Color(121, 169, 205));
+        }            
         J1PVLabel.setText(Integer.toString(joueur1.getPv()));
         J2PVLabel.setText(Integer.toString(joueur2.getPv()));
-        J1RessourceLabel.setText(Integer.toString(joueur1.getRessource()) + " / " + Partie.numeroTour);
-        J2RessourceLabel.setText(Integer.toString(joueur2.getRessource()) + " / " + Partie.numeroTour);
+        J1RessourceLabel.setText("Ressource(s) : " + Integer.toString(joueur1.getRessource()) + " / " + Partie.numeroTour);
+        J2RessourceLabel.setText("Ressource(s) : " + Integer.toString(joueur2.getRessource()) + " / " + Partie.numeroTour);
     }
 }

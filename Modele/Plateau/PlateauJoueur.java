@@ -24,7 +24,7 @@ public class PlateauJoueur extends MyObservable
         this.joueur = j;
         this.main = new Carte[4];
         for (int i = 0; i < 4; i++)
-            main[i] = Deck.GetRandomCarte();
+            main[i] = Deck.TirerNouvelleCarte(main);
         this.terrain = new Carte[4];
         this.ligneCombat = new Carte[4];
         
@@ -56,12 +56,14 @@ public class PlateauJoueur extends MyObservable
         this.joueur= j;
     }
     
-    public void InitPlateauDebutTour()
+    public void EnleveFatigueCreatures()
     {
         // Passage de toutes les créatures du terrain en normal
         for (int j = 0; j < terrain.length; j++)
             if (terrain[j] != null)
                 ((Creature)terrain[j]).setEtat(EtatCreature.Normal);
+        
+        Notify();
     }
     
     public Carte[] TryDefend(Carte defenseur, Carte attaquante)
@@ -89,11 +91,10 @@ public class PlateauJoueur extends MyObservable
             if (defDetruit)
                 ret[0] = defenseur;
             if (attDetruit)
-                ret[1] = attaquante;
-            
-            attaquante.setEtat(EtatCreature.Fatigue);
+                ret[1] = attaquante;    
         }
         
+        attaquante.setEtat(EtatCreature.Fatigue);
         Notify();
         
         return ret;
@@ -141,7 +142,7 @@ public class PlateauJoueur extends MyObservable
         for (int i = 0; i < main.length; i++)
             if (main[i] == null)
             {
-                main[i] = Deck.GetRandomCarte();
+                main[i] = Deck.TirerNouvelleCarte(main);
                 break;
             }
         Notify();
@@ -167,15 +168,6 @@ public class PlateauJoueur extends MyObservable
     public void DechargeRessources()
     {
         joueur.setRessource(0);
-    }
-
-    public void EnleveFatigueCreatures()
-    {
-        for (int i = 0; i < main.length; i++)
-        {
-            if (main[i] != null)
-                main[i].setEtat(EtatCreature.Normal);
-        }
     }
     
     public Carte[] getMain()

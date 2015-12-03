@@ -54,4 +54,12 @@ public class Creature extends Carte
     {
         this.etat = etat;
     }
+    
+    @Override
+    protected Object clone() throws CloneNotSupportedException
+    {
+        Creature c = new Creature(nom, coutRessource, attaque, defense);
+        c.setEtat(etat);
+        return (Object)c;
+    }
 }

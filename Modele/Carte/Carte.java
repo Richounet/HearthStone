@@ -5,10 +5,16 @@ package Modele.Carte;
  * @author PARIS AXEL    P1306459
  */
 
-public abstract class Carte
+public abstract class Carte implements Cloneable
 {
-    private String nom;
-    private int coutRessource;
+    protected String nom;
+    protected int coutRessource;
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException
+    {
+        return super.clone(); //To change body of generated methods, choose Tools | Templates.
+    }
 
     public Carte(String nom, int coutRessource)
     {

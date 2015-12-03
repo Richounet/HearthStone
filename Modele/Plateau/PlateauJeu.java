@@ -58,6 +58,7 @@ public class PlateauJeu extends MyObservable
         // Passage à defense, début d'un tour
         if (phaseActuelle == PhaseType.PhaseAttaque)
         {
+            // On enleve la fatigue des créatures qui ont attaqué au tour précédent
             phaseActuelle = PhaseType.PhaseDefense;
             plateauJoueur[plateauActuel].EnleveFatigueCreatures();
             
@@ -73,7 +74,6 @@ public class PlateauJeu extends MyObservable
             FinishDefensePhase();
             
             phaseActuelle = PhaseType.values()[phaseActuelle.ordinal() + 1];
-            plateauJoueur[plateauActuel].InitPlateauDebutTour();
             plateauJoueur[plateauActuel].TryTirerCarte();
             plateauJoueur[plateauActuel].ChargeRessources();
         }

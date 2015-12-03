@@ -2,6 +2,8 @@ package Modele.Carte;
 
 import Utilitaire.Tools;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * @author RICHE Vincent P1203372
@@ -19,14 +21,32 @@ public class Deck
         deck.add(new Creature("Gobelin", 1, 1, 1));
         deck.add(new Creature("Orc", 3, 3, 5));
         deck.add(new Creature("Soldat", 2, 2, 2));
-        /*deck.add(new Creature("Elfe", 3, 3, 5));
+        deck.add(new Creature("Elfe", 3, 3, 5));
         deck.add(new Creature("Nazgul", 5, 5, 5));
         deck.add(new Creature("Bilbo", 6, 6, 6));
-        deck.add(new Creature("Balrog", 10, 10, 6));*/
+        deck.add(new Creature("Balrog", 10, 10, 6));
     }
     
     public static Carte GetRandomCarte()
     {
         return deck.get(Tools.Random(0, deck.size() - 1));
+    }
+    
+    public static Carte TirerNouvelleCarte(Carte[] mainActuel)
+    {
+        Carte ret = null;
+        do
+        {
+            ret = GetRandomCarte();
+        } while (Tools.FindCarteInArray(mainActuel, ret) == true);
+        
+        try
+        {
+            return (Carte)ret.clone();
+        } catch (CloneNotSupportedException ex)
+        {
+            Logger.getLogger(Deck.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
     }
 }

@@ -23,4 +23,12 @@ public class Tools
                 break;
             }
     }
+    
+    public static boolean FindCarteInArray(Carte[] array, Carte c)
+    {
+        for (int i = 0; i < array.length; i++)
+            if (array[i] != null && array[i] == c)
+                return true;
+        return false;
+    }
 }

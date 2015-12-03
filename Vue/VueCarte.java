@@ -49,8 +49,7 @@ public class VueCarte extends javax.swing.JPanel implements MouseListener {
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
 
         Case_0_0 = new javax.swing.JPanel();
         cardName = new javax.swing.JLabel();
@@ -74,9 +73,9 @@ public class VueCarte extends javax.swing.JPanel implements MouseListener {
         setLayout(new java.awt.GridLayout(3, 3, 2, 2));
 
         Case_0_0.setName("Case_0_0"); // NOI18N
-        Case_0_0.setLayout(new java.awt.GridLayout());
+        Case_0_0.setLayout(new java.awt.GridLayout(1, 0));
 
-        cardName.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        cardName.setFont(new java.awt.Font("Verdana", 1, 10)); // NOI18N
         cardName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         cardName.setText("C1");
         cardName.setAlignmentY(0.0F);
@@ -86,11 +85,11 @@ public class VueCarte extends javax.swing.JPanel implements MouseListener {
         add(Case_0_0);
 
         Case_0_1.setName("Case_0_1"); // NOI18N
-        Case_0_1.setLayout(new java.awt.GridLayout());
+        Case_0_1.setLayout(new java.awt.GridLayout(1, 0));
         add(Case_0_1);
 
         Case_0_2.setName("Case_0_2"); // NOI18N
-        Case_0_2.setLayout(new java.awt.GridLayout());
+        Case_0_2.setLayout(new java.awt.GridLayout(1, 0));
 
         cardCost.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         cardCost.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -101,20 +100,20 @@ public class VueCarte extends javax.swing.JPanel implements MouseListener {
         add(Case_0_2);
 
         Case_1_0.setName("Case_1_0"); // NOI18N
-        Case_1_0.setLayout(new java.awt.GridLayout());
+        Case_1_0.setLayout(new java.awt.GridLayout(1, 0));
         add(Case_1_0);
 
         Case_1_1.setBackground(new java.awt.Color(204, 204, 204));
         Case_1_1.setName("Case_1_1"); // NOI18N
-        Case_1_1.setLayout(new java.awt.GridLayout());
+        Case_1_1.setLayout(new java.awt.GridLayout(1, 0));
         add(Case_1_1);
 
         Case_1_2.setName("Case_1_2"); // NOI18N
-        Case_1_2.setLayout(new java.awt.GridLayout());
+        Case_1_2.setLayout(new java.awt.GridLayout(1, 0));
         add(Case_1_2);
 
         Case_2_0.setName("Case_2_0"); // NOI18N
-        Case_2_0.setLayout(new java.awt.GridLayout());
+        Case_2_0.setLayout(new java.awt.GridLayout(1, 0));
 
         cardAtt.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         cardAtt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -125,11 +124,11 @@ public class VueCarte extends javax.swing.JPanel implements MouseListener {
         add(Case_2_0);
 
         Case_2_1.setName("Case_2_1"); // NOI18N
-        Case_2_1.setLayout(new java.awt.GridLayout());
+        Case_2_1.setLayout(new java.awt.GridLayout(1, 0));
         add(Case_2_1);
 
         Case_2_2.setName("Case_2_2"); // NOI18N
-        Case_2_2.setLayout(new java.awt.GridLayout());
+        Case_2_2.setLayout(new java.awt.GridLayout(1, 0));
 
         cardDef.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         cardDef.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

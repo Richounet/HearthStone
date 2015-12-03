@@ -29,17 +29,7 @@ public class Deck
     
     public static Carte GetRandomCarte()
     {
-        return deck.get(Tools.Random(0, deck.size() - 1));
-    }
-    
-    public static Carte TirerNouvelleCarte(Carte[] mainActuel)
-    {
-        Carte ret = null;
-        do
-        {
-            ret = GetRandomCarte();
-        } while (Tools.FindCarteInArray(mainActuel, ret) == true);
-        
+        Carte ret = deck.get(Tools.Random(0, deck.size() - 1));
         try
         {
             return (Carte)ret.clone();

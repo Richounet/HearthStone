@@ -24,7 +24,7 @@ public class PlateauJoueur extends MyObservable
         this.joueur = j;
         this.main = new Carte[4];
         for (int i = 0; i < 4; i++)
-            main[i] = Deck.TirerNouvelleCarte(main);
+            main[i] = Deck.GetRandomCarte();
         this.terrain = new Carte[4];
         this.ligneCombat = new Carte[4];
         
@@ -70,7 +70,7 @@ public class PlateauJoueur extends MyObservable
     {
         Carte[] ret = new Carte[2];
         // Le joueur perd des pts de vie
-        if (defenseur == null)
+        if (defenseur == null || defenseur.getEtat() == EtatCreature.Fatigue)
             joueur.setPv(joueur.getPv() - attaquante.getAttaque());
         // Il y a combat entre les cartes
         else
@@ -121,6 +121,8 @@ public class PlateauJoueur extends MyObservable
     
     public void TryAttack(Carte newAtt)
     {
+        if (newAtt.getEtat() == EtatCreature.Fatigue)
+            return;
         int j;
         for (j = 0; j < ligneCombat.length; j++)
             if (ligneCombat[j] == null)
@@ -142,7 +144,7 @@ public class PlateauJoueur extends MyObservable
         for (int i = 0; i < main.length; i++)
             if (main[i] == null)
             {
-                main[i] = Deck.TirerNouvelleCarte(main);
+                main[i] = Deck.GetRandomCarte();
                 break;
             }
         Notify();

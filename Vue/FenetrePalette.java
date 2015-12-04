@@ -165,6 +165,7 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
         setTitle("HearthStone");
         setMinimumSize(new java.awt.Dimension(1020, 667));
         setName("FenetrePalette"); // NOI18N
+        setResizable(false);
 
         JFramePanel.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -313,7 +314,9 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
         InformationPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(139, 131, 120)));
         InformationPanel.setMinimumSize(new java.awt.Dimension(327, 354));
         InformationPanel.setPreferredSize(new java.awt.Dimension(327, 354));
+        InformationPanel.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 0, 5));
 
+        ImageLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ImageLabel.setMinimumSize(new java.awt.Dimension(248, 289));
         ImageLabel.setPreferredSize(new java.awt.Dimension(248, 289));
         InformationPanel.add(ImageLabel);

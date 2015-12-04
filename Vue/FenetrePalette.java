@@ -88,9 +88,14 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
         return ImageLabel;
     }
     
-    public JLabel getRessourceInformationLabel()
+    public JLabel getCoutInformationLabel()
     {
-        return RessourceInformationLabel;
+        return CoutInformationLabel;
+    }
+    
+    public JLabel getCapaciteInformationLabel()
+    {
+        return CapaciteInformationLabel;
     }
     
     public JLabel getAttaqueInformationLabel()
@@ -154,7 +159,8 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
         CardInfoPanel = new javax.swing.JPanel();
         AttaqueInformationLabel = new javax.swing.JLabel();
         DefenseInformationLabel = new javax.swing.JLabel();
-        RessourceInformationLabel = new javax.swing.JLabel();
+        CoutInformationLabel = new javax.swing.JLabel();
+        CapaciteInformationLabel = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         NouvellePartie = new javax.swing.JMenuItem();
@@ -358,21 +364,27 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
         CardInfoPanel.setSize(new java.awt.Dimension(100, 50));
         CardInfoPanel.setLayout(new java.awt.GridLayout(1, 0));
 
-        AttaqueInformationLabel.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        AttaqueInformationLabel.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         AttaqueInformationLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        AttaqueInformationLabel.setText("ATT : 10");
+        AttaqueInformationLabel.setText("Att : 10");
         CardInfoPanel.add(AttaqueInformationLabel);
 
-        DefenseInformationLabel.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        DefenseInformationLabel.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         DefenseInformationLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        DefenseInformationLabel.setText("DEF : 10");
+        DefenseInformationLabel.setText("Def : 10");
         CardInfoPanel.add(DefenseInformationLabel);
 
-        RessourceInformationLabel.setBackground(new java.awt.Color(232, 247, 255));
-        RessourceInformationLabel.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        RessourceInformationLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        RessourceInformationLabel.setText("COÛT : 10");
-        CardInfoPanel.add(RessourceInformationLabel);
+        CoutInformationLabel.setBackground(new java.awt.Color(232, 247, 255));
+        CoutInformationLabel.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        CoutInformationLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        CoutInformationLabel.setText("Coût : 10");
+        CardInfoPanel.add(CoutInformationLabel);
+
+        CapaciteInformationLabel.setBackground(new java.awt.Color(232, 247, 255));
+        CapaciteInformationLabel.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        CapaciteInformationLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        CapaciteInformationLabel.setText("Rapide");
+        CardInfoPanel.add(CapaciteInformationLabel);
 
         javax.swing.GroupLayout JFramePanelLayout = new javax.swing.GroupLayout(JFramePanel);
         JFramePanel.setLayout(JFramePanelLayout);
@@ -489,7 +501,9 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
     private javax.swing.JButton ActionButton;
     private javax.swing.JPanel ActionPanel;
     private javax.swing.JLabel AttaqueInformationLabel;
+    private javax.swing.JLabel CapaciteInformationLabel;
     private javax.swing.JPanel CardInfoPanel;
+    private javax.swing.JLabel CoutInformationLabel;
     private javax.swing.JLabel DefenseInformationLabel;
     private javax.swing.JLabel ImageLabel;
     private javax.swing.JPanel InformationPanel;
@@ -535,7 +549,6 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
     private javax.swing.JPanel PhasePanel;
     private javax.swing.JPanel PlateauPanel;
     private javax.swing.JMenuItem Quitter;
-    private javax.swing.JLabel RessourceInformationLabel;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;

@@ -622,31 +622,43 @@
             <Component class="javax.swing.JLabel" name="AttaqueInformationLabel">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Verdana" size="14" style="1"/>
+                  <Font name="Verdana" size="12" style="1"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="ATT : 10"/>
+                <Property name="text" type="java.lang.String" value="Att : 10"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="DefenseInformationLabel">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Verdana" size="14" style="1"/>
+                  <Font name="Verdana" size="12" style="1"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="DEF : 10"/>
+                <Property name="text" type="java.lang.String" value="Def : 10"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="RessourceInformationLabel">
+            <Component class="javax.swing.JLabel" name="CoutInformationLabel">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="f7" red="e8" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Verdana" size="14" style="1"/>
+                  <Font name="Verdana" size="12" style="1"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="CO&#xdb;T : 10"/>
+                <Property name="text" type="java.lang.String" value="Co&#xfb;t : 10"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="CapaciteInformationLabel">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="f7" red="e8" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Verdana" size="12" style="1"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="Rapide"/>
               </Properties>
             </Component>
           </SubComponents>

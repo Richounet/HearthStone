@@ -152,12 +152,7 @@ public class VueCarte extends javax.swing.JPanel implements MouseListener {
             ((GridLayout) this.getLayout()).setVgap(3);
 
             for (int i = 0; i < 9; i++) {
-                if(ligne == 0)
                     Case[i].setBackground(new Color(213, 231, 203));
-                if(ligne == 1)
-                    Case[i].setBackground(new Color(189, 231, 243));
-                if(ligne == 2)
-                    Case[i].setBackground(new Color(255, 215, 219));
             }
 
             if(cr.getEtat() == EtatCreature.Fatigue)
@@ -176,12 +171,7 @@ public class VueCarte extends javax.swing.JPanel implements MouseListener {
             ((GridLayout) this.getLayout()).setVgap(0);
 
             for (int i = 0; i < 9; i++) {
-                if(ligne == 0)
                     Case[i].setBackground(new Color(213, 231, 203));
-                if(ligne == 1)
-                    Case[i].setBackground(new Color(189, 231, 243));
-                if(ligne == 2)
-                    Case[i].setBackground(new Color(255, 215, 219));
             }
         }
     }
@@ -246,9 +236,17 @@ public class VueCarte extends javax.swing.JPanel implements MouseListener {
             URL url = getClass().getResource("/Images/" + this.cardName.getText() + ".jpg");
             if (url != null)
                 fenetre.getImageLabel().setIcon(new ImageIcon(url));
-            fenetre.getAttaqueInformationLabel().setText("ATT : " + this.cardAtt.getText());
-            fenetre.getDefenseInformationLabel().setText("DEF : " + this.cardDef.getText());
-            fenetre.getRessourceInformationLabel().setText("COÛT : " + this.cardCost.getText());
+            
+            fenetre.getAttaqueInformationLabel().setText("Att : " + this.cardAtt.getText());
+            fenetre.getDefenseInformationLabel().setText("Def : " + this.cardDef.getText());
+            fenetre.getCoutInformationLabel().setText("Coût : " + this.cardCost.getText());
+            
+            if(this.cardName.getText().equals("Spider") || this.cardName.getText().equals("Groot"))
+                fenetre.getCapaciteInformationLabel().setText("Rapide");
+            else if(this.cardName.getText().equals("Sorcière") || this.cardName.getText().equals("Mage"))
+                fenetre.getCapaciteInformationLabel().setText("Soigneur");
+            else
+                fenetre.getCapaciteInformationLabel().setText("Ø");
         }
     }
 
@@ -258,6 +256,7 @@ public class VueCarte extends javax.swing.JPanel implements MouseListener {
         fenetre.getImageLabel().setIcon(null);
         fenetre.getAttaqueInformationLabel().setText(null);
         fenetre.getDefenseInformationLabel().setText(null);
-        fenetre.getRessourceInformationLabel().setText(null);
+        fenetre.getCoutInformationLabel().setText(null);
+        fenetre.getCapaciteInformationLabel().setText(null);
     }
 }

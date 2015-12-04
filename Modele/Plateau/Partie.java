@@ -10,7 +10,7 @@ import Modele.Phase.PhaseType;
  * @author PARIS AXEL    P1306459
  */
 
-public class Partie
+public class Partie implements Cloneable
 {
     private Joueur[] joueurs;
     private PlateauJeu plateau;
@@ -90,4 +90,9 @@ public class Partie
     {
         return plateau;
     }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }   
 }

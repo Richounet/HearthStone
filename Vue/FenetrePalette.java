@@ -20,6 +20,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
+import javax.swing.JDialog;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -34,6 +36,20 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
     {
         initComponents();
         InitGame();
+        JFrame frame = this;
+        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+        this.addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+                if(joueur1.getPv() > 0 || joueur2.getPv() > 0)
+                {
+                    AttentionQuitter aq = new AttentionQuitter(frame, true);
+                    aq.setVisible(true);
+                }
+                else
+                    frame.dispose();
+            }
+        });
     }
 
     private void InitGame() 
@@ -473,11 +489,25 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
     }//GEN-LAST:event_ActionButtonActionPerformed
 
     private void NouvellePartieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NouvellePartieActionPerformed
-        
+        if(joueur1.getPv() > 0 || joueur2.getPv() > 0)
+        {
+            AttentionNouvellePartie anp = new AttentionNouvellePartie(this, true);
+            anp.setVisible(true);
+        }
+        else
+        {
+            
+        }            
     }//GEN-LAST:event_NouvellePartieActionPerformed
 
     private void QuitterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuitterActionPerformed
-        this.dispose();
+        if(joueur1.getPv() > 0 || joueur2.getPv() > 0)
+        {
+            AttentionQuitter aq = new AttentionQuitter(this, true);
+            aq.setVisible(true);
+        }
+        else
+            this.dispose();
     }//GEN-LAST:event_QuitterActionPerformed
 
     public static void main(String args[]) 

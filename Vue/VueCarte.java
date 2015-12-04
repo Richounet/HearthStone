@@ -241,6 +241,10 @@ public class VueCarte extends javax.swing.JPanel implements MouseListener {
             fenetre.getDefenseInformationLabel().setText("Def : " + this.cardDef.getText());
             fenetre.getCoutInformationLabel().setText("Coût : " + this.cardCost.getText());
             
+            fenetre.getAttaqueInformationLabel().setForeground(new Color(121, 169, 205));
+            fenetre.getDefenseInformationLabel().setForeground(new Color(208, 148, 155));
+            fenetre.getCoutInformationLabel().setForeground(new Color(245, 171, 131));
+            
             if(this.cardName.getText().equals("Spider") || this.cardName.getText().equals("Groot"))
                 fenetre.getCapaciteInformationLabel().setText("Rapide");
             else if(this.cardName.getText().equals("Sorcière") || this.cardName.getText().equals("Mage"))

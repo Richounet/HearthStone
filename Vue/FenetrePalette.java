@@ -4,6 +4,7 @@ import Controleur.Controleur;
 import Modele.Carte.Carte;
 import Modele.Joueur.Joueur;
 import Modele.Joueur.JoueurAleatoire;
+import Modele.Joueur.JoueurMonteCarlo;
 import Modele.Phase.PhaseType;
 import Modele.Plateau.Partie;
 import Modele.Plateau.PlateauJeu;
@@ -43,7 +44,6 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
             public void windowClosing(java.awt.event.WindowEvent windowEvent) {
                 if(joueur1.getPv() > 0 && joueur2.getPv() > 0)
                 {
-                    System.out.println(joueur1.getPv() + " : " + joueur2.getPv());
                     AttentionQuitter aq = new AttentionQuitter(frame, true);
                     aq.setVisible(true);
                 }
@@ -57,7 +57,7 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
     {
         // Variable du jeu
         joueur1 = new Joueur("Axel", 10);
-        joueur2 = new JoueurAleatoire("Vincent", 10);
+        joueur2 = new JoueurMonteCarlo("Vincent", 10, this);
         partie = new Partie(joueur1, joueur2);
         controleur = new Controleur(partie);
 
@@ -98,6 +98,11 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
         UpdateInfosJoueurs();
         
         VueCarte.fenetre = this;
+    }
+    
+    public Partie getPartie()
+    {
+        return partie;
     }
     
     public JLabel getImageLabel()

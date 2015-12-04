@@ -29,26 +29,25 @@ public class AttentionNouvellePartie extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        NouvellePartieJDialogButton = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        QuitterJDialogButton3 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         RetourJDialogButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        getContentPane().setLayout(new java.awt.GridLayout());
+        getContentPane().setLayout(new java.awt.GridLayout(1, 0));
 
-        jPanel1.setMaximumSize(new java.awt.Dimension(424, 177));
-        jPanel1.setSize(new java.awt.Dimension(424, 177));
+        jPanel4.setMaximumSize(new java.awt.Dimension(409, 177));
 
-        jLabel2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Voulez-vous vraiment recommencer une partie ?");
+        jLabel5.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("Voulez-vous vraiment recommencer une partie ?");
 
-        NouvellePartieJDialogButton.setText("Nouvelle Partie");
-        NouvellePartieJDialogButton.addActionListener(new java.awt.event.ActionListener() {
+        QuitterJDialogButton3.setText("Nouvelle partie");
+        QuitterJDialogButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NouvellePartieJDialogButtonActionPerformed(evt);
+                QuitterJDialogButton3ActionPerformed(evt);
             }
         });
 
@@ -63,54 +62,54 @@ public class AttentionNouvellePartie extends javax.swing.JDialog {
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(45, 45, 45)
                         .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(90, 90, 90)
-                        .addComponent(NouvellePartieJDialogButton)
-                        .addGap(49, 49, 49)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(78, 78, 78)
+                        .addComponent(QuitterJDialogButton3)
+                        .addGap(45, 45, 45)
                         .addComponent(RetourJDialogButton))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addComponent(jLabel2)))
-                .addGap(41, 41, 41))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(jLabel5)))
+                .addGap(27, 27, 27))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel2)
-                .addGap(34, 34, 34)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(RetourJDialogButton)
-                    .addComponent(NouvellePartieJDialogButton))
-                .addGap(30, 30, 30))
+                .addComponent(jLabel5)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(QuitterJDialogButton3)
+                    .addComponent(RetourJDialogButton))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1);
+        getContentPane().add(jPanel4);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void NouvellePartieJDialogButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NouvellePartieJDialogButtonActionPerformed
-        // TODO add your handling code here:
-        this.dispose();
-        this.fenetre.dispose();
-    }//GEN-LAST:event_NouvellePartieJDialogButtonActionPerformed
 
     private void RetourJDialogButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RetourJDialogButtonActionPerformed
         // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_RetourJDialogButtonActionPerformed
+
+    private void QuitterJDialogButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuitterJDialogButton3ActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        this.fenetre.dispose();
+    }//GEN-LAST:event_QuitterJDialogButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -155,10 +154,19 @@ public class AttentionNouvellePartie extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton NouvellePartieJDialogButton;
+    private javax.swing.JButton QuitterJDialogButton;
+    private javax.swing.JButton QuitterJDialogButton1;
+    private javax.swing.JButton QuitterJDialogButton2;
+    private javax.swing.JButton QuitterJDialogButton3;
     private javax.swing.JButton RetourJDialogButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     // End of variables declaration//GEN-END:variables
 }

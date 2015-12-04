@@ -41,8 +41,9 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
         this.addWindowListener(new java.awt.event.WindowAdapter() {
             @Override
             public void windowClosing(java.awt.event.WindowEvent windowEvent) {
-                if(joueur1.getPv() > 0 || joueur2.getPv() > 0)
+                if(joueur1.getPv() > 0 && joueur2.getPv() > 0)
                 {
+                    System.out.println(joueur1.getPv() + " : " + joueur2.getPv());
                     AttentionQuitter aq = new AttentionQuitter(frame, true);
                     aq.setVisible(true);
                 }
@@ -56,7 +57,7 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
     {
         // Variable du jeu
         joueur1 = new Joueur("Axel", 10);
-        joueur2 = new Joueur("Vincent", 10);
+        joueur2 = new JoueurAleatoire("Vincent", 10);
         partie = new Partie(joueur1, joueur2);
         controleur = new Controleur(partie);
 
@@ -489,7 +490,7 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
     }//GEN-LAST:event_ActionButtonActionPerformed
 
     private void NouvellePartieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NouvellePartieActionPerformed
-        if(joueur1.getPv() > 0 || joueur2.getPv() > 0)
+        if(joueur1.getPv() > 0 && joueur2.getPv() > 0)
         {
             AttentionNouvellePartie anp = new AttentionNouvellePartie(this, true);
             anp.setVisible(true);
@@ -501,7 +502,7 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
     }//GEN-LAST:event_NouvellePartieActionPerformed
 
     private void QuitterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuitterActionPerformed
-        if(joueur1.getPv() > 0 || joueur2.getPv() > 0)
+        if(joueur1.getPv() > 0 && joueur2.getPv() > 0)
         {
             AttentionQuitter aq = new AttentionQuitter(this, true);
             aq.setVisible(true);

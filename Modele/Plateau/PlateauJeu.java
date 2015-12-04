@@ -33,15 +33,18 @@ public class PlateauJeu extends MyObservable
     {
         if (phaseActuelle == PhaseType.PhaseDefense)
         {
-            if (c.getEtat() == EtatCreature.Fatigue)
-                return;
-            // Joue le match attaquant/defenseur si il y a des attaquants
-            Carte att = GetProchaineCarteAttaquante();
-            if (att != null)
+            if(c != null)
             {
-                Carte[] ret = plateauJoueur[plateauActuel].TryDefend(c, att);
-                DestroyMyCarte(ret[0]);
-                DestroyEnemyCarte(ret[1]);
+                if (c.getEtat() == EtatCreature.Fatigue)
+                return;
+                // Joue le match attaquant/defenseur si il y a des attaquants
+                Carte att = GetProchaineCarteAttaquante();
+                if (att != null)
+                {
+                    Carte[] ret = plateauJoueur[plateauActuel].TryDefend(c, att);
+                    DestroyMyCarte(ret[0]);
+                    DestroyEnemyCarte(ret[1]);
+                }
             }
         }
         else if (phaseActuelle == PhaseType.PhaseInvocation)

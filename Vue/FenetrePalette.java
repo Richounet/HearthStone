@@ -57,7 +57,7 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
     {
         // Variable du jeu
         joueur1 = new Joueur("Axel", 10);
-        joueur2 = new JoueurMonteCarlo("Vincent", 10, this);
+        joueur2 = new JoueurAleatoire("Vincent", 10);
         partie = new Partie(joueur1, joueur2);
         controleur = new Controleur(partie);
 
@@ -660,7 +660,7 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
     
     public void UpdateInfosJoueurs() 
     {
-        if (Partie.partieTerminee == false)
+        if (partie.getPartieTerminee() == false)
         {
             // Mise à jour de la vue
             J1NomLabel.setText(joueur1.getNom());

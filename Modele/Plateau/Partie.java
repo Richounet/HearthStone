@@ -2,6 +2,7 @@ package Modele.Plateau;
 
 import Modele.Carte.Carte;
 import Modele.Joueur.Joueur;
+import Modele.Joueur.JoueurAleatoire;
 import Modele.Joueur.JoueurIA;
 import Modele.Phase.PhaseType;
 
@@ -15,7 +16,7 @@ public class Partie implements Cloneable
     private Joueur[] joueurs;
     private PlateauJeu plateau;
     public static int numeroTour;
-    public static boolean partieTerminee = false;
+    public boolean partieTerminee = false;
 
     public Partie(Joueur j1, Joueur j2)
     {
@@ -90,7 +91,20 @@ public class Partie implements Cloneable
     {
         return plateau;
     }
-
+    
+    public Joueur getJoueurs(int i) {
+        return joueurs[i];
+    }
+    
+    public void setAleatoireMonteCarlo(int i, String nom, int pv) 
+    {
+        joueurs[i] = new JoueurAleatoire(nom, pv);
+    }
+    
+    public boolean getPartieTerminee()
+    {
+        return partieTerminee;
+    }
     @Override
     public Object clone() throws CloneNotSupportedException {
         return super.clone();

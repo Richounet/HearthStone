@@ -21,23 +21,42 @@ public class JoueurMonteCarlo extends JoueurIA
     ArrayList<Partie> jeu;
     public static FenetrePalette fenetre;
     
+    public JoueurMonteCarlo(String nom, int pv) {
+        super(nom, pv);
+    }
+    
     public JoueurMonteCarlo(String nom, int pv, FenetrePalette fenetre) {
         super(nom, pv);
         this.fenetre = fenetre;
     }
 
-    @Override
-    public Carte GetCoup(PlateauJoueur p, PhaseType phase)
-    {
+    public void Monte_Carlo()
+    { 
         jeu = new ArrayList<>();
-        for(int i=0; i<100; i++)
+        for(int i=0; i<1; i++)
         {
             try {
                 jeu.add((Partie)fenetre.getPartie().clone());
+                jeu.get(i).setAleatoireMonteCarlo(0, jeu.get(i).getJoueurs(0).getNom(), jeu.get(i).getJoueurs(0).getPv());
+                jeu.get(i).setAleatoireMonteCarlo(1, this.nom, this.pv);
             } catch (CloneNotSupportedException ex) {
                 System.out.println("Erreur lors du clonage.");
-            }
+            }            
         }
+        
+        for(int i = 0; i < 1; i++)
+        {
+            jeu.get(i).JouerCoupIA();
+        }
+        
+        System.out.println(jeu.get(0).getJoueurs(0).getNom() + " : " + jeu.get(0).getJoueurs(0).getPv());
+        System.out.println(jeu.get(0).getJoueurs(1).getNom() + " : " + jeu.get(0).getJoueurs(1).getPv());
+    }
+            
+    @Override
+    public Carte GetCoup(PlateauJoueur p, PhaseType phase)
+    {
+        Monte_Carlo();
         return null;
     }
 }

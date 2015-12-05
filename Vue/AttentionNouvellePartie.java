@@ -72,9 +72,9 @@ public class AttentionNouvellePartie extends javax.swing.JDialog {
                         .addGap(45, 45, 45)
                         .addComponent(jLabel1))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(78, 78, 78)
+                        .addGap(66, 66, 66)
                         .addComponent(QuitterJDialogButton3)
-                        .addGap(45, 45, 45)
+                        .addGap(43, 43, 43)
                         .addComponent(RetourJDialogButton))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(27, 27, 27)
@@ -154,19 +154,10 @@ public class AttentionNouvellePartie extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton QuitterJDialogButton;
-    private javax.swing.JButton QuitterJDialogButton1;
-    private javax.swing.JButton QuitterJDialogButton2;
     private javax.swing.JButton QuitterJDialogButton3;
     private javax.swing.JButton RetourJDialogButton;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     // End of variables declaration//GEN-END:variables
 }

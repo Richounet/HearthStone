@@ -4,6 +4,7 @@ import Controleur.Controleur;
 import Modele.Carte.Carte;
 import Modele.Joueur.Joueur;
 import Modele.Joueur.JoueurAleatoire;
+import Modele.Joueur.JoueurIA;
 import Modele.Joueur.JoueurMonteCarlo;
 import Modele.Phase.PhaseType;
 import Modele.Plateau.Partie;
@@ -57,7 +58,7 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
     {
         // Variable du jeu
         joueur1 = new Joueur("Axel", 10);
-        joueur2 = new JoueurAleatoire("Vincent", 10);
+        joueur2 = new JoueurMonteCarlo("Vincent", 10, this);
         partie = new Partie(joueur1, joueur2);
         controleur = new Controleur(partie);
 

@@ -36,19 +36,21 @@ public class JoueurMonteCarlo extends JoueurIA
         for(int i=0; i<1; i++)
         {
             try {
+                System.out.println("Partie Actuelle | Phase : " + fenetre.getPartie().GetPhaseActuelle() + " | " + fenetre.getPartie().getJoueurs(0).getClass() + " - " + fenetre.getPartie().getJoueurs(1).getClass());
                 jeu.add((Partie)fenetre.getPartie().clone());
                 
-                System.out.println("Avant " + jeu.get(i).getJoueurs(0).getClass() + " " + jeu.get(i).getJoueurs(1).getClass());
+                System.out.println("Clonage | Avant changement de joueurs | Phase : " + jeu.get(i).GetPhaseActuelle() + " | " + jeu.get(i).getJoueurs(0).getClass() + " - " + jeu.get(i).getJoueurs(1).getClass());
                 
                 jeu.get(i).setAleatoireMonteCarlo(0, jeu.get(i).getJoueurs(0).getNom(), jeu.get(i).getJoueurs(0).getPv());
                 jeu.get(i).setAleatoireMonteCarlo(1, jeu.get(i).getJoueurs(1).getNom(), jeu.get(i).getJoueurs(1).getPv());
                 
-                System.out.println("Après " + jeu.get(i).getJoueurs(0).getClass() + " " + jeu.get(i).getJoueurs(1).getClass());
+                System.out.println("Clonage | Après changement de joueurs | Phase : " + jeu.get(i).GetPhaseActuelle() + " | " + jeu.get(i).getJoueurs(0).getClass() + " - " + jeu.get(i).getJoueurs(1).getClass());
                 
             } catch (CloneNotSupportedException ex) {
                 System.out.println("Erreur lors du clonage.");
             }            
-        }        
+        }
+        System.out.println("\n\n");
     }
             
     @Override

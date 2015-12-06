@@ -56,9 +56,11 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
 
     private void InitGame() 
     {
+        JoueurMonteCarlo.fenetre = this;
+        
         // Variable du jeu
         joueur1 = new Joueur("Axel", 10);
-        joueur2 = new JoueurMonteCarlo("Vincent", 10, this);
+        joueur2 = new JoueurMonteCarlo("Vincent", 10);
         partie = new Partie(joueur1, joueur2);
         controleur = new Controleur(partie);
 
@@ -645,17 +647,17 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
         if (p.GetPhaseActuelle() == PhaseType.PhaseInvocation)
         {
             ActionButton.setText("Phase Suivante: Attaque");
-            PhaseLabel.setText("Tour " + Partie.numeroTour + ", Phase 2 [Invocation]");
+            PhaseLabel.setText("Tour " + partie.numeroTour + ", Phase 2 [Invocation]");
         }
         else if (p.GetPhaseActuelle() == PhaseType.PhaseAttaque)
         {
             ActionButton.setText("Fin de tour");
-            PhaseLabel.setText("Tour " + Partie.numeroTour + ", Phase 3 [Attaque]");
+            PhaseLabel.setText("Tour " + partie.numeroTour + ", Phase 3 [Attaque]");
         }
         else if (p.GetPhaseActuelle() == PhaseType.PhaseDefense)
         {
             ActionButton.setText("Phase Suivante: Invocation");
-            PhaseLabel.setText("Tour " + Partie.numeroTour + ", Phase 1 [Defense]");
+            PhaseLabel.setText("Tour " + partie.numeroTour + ", Phase 1 [Defense]");
         }
     }
     
@@ -679,8 +681,8 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
             }            
             J1PVLabel.setText(Integer.toString(joueur1.getPv()) + " PV");
             J2PVLabel.setText(Integer.toString(joueur2.getPv()) + " PV");
-            J1RessourceLabel.setText("Ressource(s) : " + Integer.toString(joueur1.getRessource()) + " / " + Partie.numeroTour);
-            J2RessourceLabel.setText("Ressource(s) : " + Integer.toString(joueur2.getRessource()) + " / " + Partie.numeroTour);
+            J1RessourceLabel.setText("Ressource(s) : " + Integer.toString(joueur1.getRessource()) + " / " + partie.numeroTour);
+            J2RessourceLabel.setText("Ressource(s) : " + Integer.toString(joueur2.getRessource()) + " / " + partie.numeroTour);
         }
         else
         {

@@ -17,13 +17,15 @@ public class PlateauJeu extends MyObservable
     private PlateauJoueur[] plateauJoueur;
     private PhaseType phaseActuelle;
     private int plateauActuel;
+    private Partie partie;
 
-    public PlateauJeu(Joueur j1, Joueur j2) 
+    public PlateauJeu(Joueur j1, Joueur j2, Partie p) 
     {
         this.plateauJoueur = new PlateauJoueur[2];
         this.plateauJoueur[0] = new PlateauJoueur(j1);
         this.plateauJoueur[1] = new PlateauJoueur(j2);
         this.plateauActuel = 0;
+        this.partie = p;
         this.phaseActuelle = PhaseType.PhaseDefense;
         
         Notify();
@@ -87,7 +89,7 @@ public class PlateauJeu extends MyObservable
             
             phaseActuelle = PhaseType.values()[phaseActuelle.ordinal() + 1];
             plateauJoueur[plateauActuel].TryTirerCarte();
-            plateauJoueur[plateauActuel].ChargeRessources();
+            plateauJoueur[plateauActuel].ChargeRessources(partie.numeroTour);
         }
         // Passage à attaque
         else if (phaseActuelle == PhaseType.PhaseInvocation)

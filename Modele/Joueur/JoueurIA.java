@@ -12,7 +12,6 @@ import Modele.Plateau.PlateauJoueur;
 
 public class JoueurIA extends Joueur
 {
-
     public JoueurIA(String nom, int pv)
     {
         super(nom, pv);

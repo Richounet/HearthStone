@@ -42,4 +42,11 @@ public class JoueurAleatoire extends JoueurIA
         
         return null;
     }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException
+    {
+        JoueurAleatoire j = new JoueurAleatoire(this.nom, this.pv);
+        return (Object)j;
+    }
 }

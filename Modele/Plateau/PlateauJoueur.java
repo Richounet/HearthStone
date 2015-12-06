@@ -167,9 +167,9 @@ public class PlateauJoueur extends MyObservable
         Notify();
     }
 
-    public void ChargeRessources()
+    public void ChargeRessources(int nb)
     {
-        joueur.setRessource(Partie.numeroTour);
+        joueur.setRessource(nb);
     }
     
     public void DechargeRessources()

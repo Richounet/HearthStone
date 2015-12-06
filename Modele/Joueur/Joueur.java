@@ -11,7 +11,7 @@ import java.util.Observable;
  * @author RICHE Vincent P1203372
  * @author PARIS AXEL P1306459
  */
-public class Joueur extends MyObservable
+public class Joueur extends MyObservable implements Cloneable
 {
     protected String nom;
     protected int pv;
@@ -62,5 +62,11 @@ public class Joueur extends MyObservable
     public Carte GetCoup(PlateauJoueur p, PhaseType phase)
     {
         return null;
+    }
+
+    public Object clone() throws CloneNotSupportedException
+    {
+        Joueur j = new Joueur(this.nom, this.pv);
+        return (Object)j;
     }
 }

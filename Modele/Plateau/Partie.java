@@ -15,14 +15,14 @@ public class Partie implements Cloneable
 {
     private Joueur[] joueurs;
     private PlateauJeu plateau;
-    public static int numeroTour;
+    public int numeroTour;
     public boolean partieTerminee = false;
 
     public Partie(Joueur j1, Joueur j2)
     {
-        joueurs = new Joueur[] { j1, j2 };
-        plateau = new PlateauJeu(j1, j2);
         numeroTour = 1;
+        joueurs = new Joueur[] { j1, j2 };
+        plateau = new PlateauJeu(j1, j2, this);
     }
     
     public void JouerCoup(Carte c)
@@ -105,8 +105,12 @@ public class Partie implements Cloneable
     {
         return partieTerminee;
     }
+    
     @Override
-    public Object clone() throws CloneNotSupportedException {
-        return super.clone();
+    public Object clone() throws CloneNotSupportedException 
+    {
+        Partie p = new Partie((Joueur)this.joueurs[0].clone(), (Joueur)this.joueurs[1].clone());
+        
+        return (Object)p;
     }   
 }

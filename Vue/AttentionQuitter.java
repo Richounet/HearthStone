@@ -38,7 +38,8 @@ public class AttentionQuitter extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new java.awt.GridLayout(1, 0));
 
-        jPanel1.setMaximumSize(new java.awt.Dimension(409, 177));
+        jPanel1.setMaximumSize(new java.awt.Dimension(399, 137));
+        jPanel1.setSize(new java.awt.Dimension(399, 137));
 
         jLabel2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -73,12 +74,12 @@ public class AttentionQuitter extends javax.swing.JDialog {
                         .addComponent(jLabel1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(86, 86, 86)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(QuitterJDialogButton)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(RetourJDialogButton))
-                            .addComponent(jLabel2))))
+                                .addGap(53, 53, 53)
+                                .addComponent(RetourJDialogButton)))))
                 .addGap(45, 45, 45))
         );
         jPanel1Layout.setVerticalGroup(

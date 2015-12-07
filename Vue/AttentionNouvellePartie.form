@@ -29,7 +29,10 @@
     <Container class="javax.swing.JPanel" name="jPanel4">
       <Properties>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[409, 177]"/>
+          <Dimension value="[396, 137]"/>
+        </Property>
+        <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[396, 137]"/>
         </Property>
       </Properties>
 

@@ -38,7 +38,8 @@ public class AttentionNouvellePartie extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new java.awt.GridLayout(1, 0));
 
-        jPanel4.setMaximumSize(new java.awt.Dimension(409, 177));
+        jPanel4.setMaximumSize(new java.awt.Dimension(396, 137));
+        jPanel4.setSize(new java.awt.Dimension(396, 137));
 
         jLabel5.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

@@ -152,7 +152,12 @@ public class VueCarte extends javax.swing.JPanel implements MouseListener {
             ((GridLayout) this.getLayout()).setVgap(3);
 
             for (int i = 0; i < 9; i++) {
-                    Case[i].setBackground(new Color(213, 231, 203));
+                if(ligne == 0)                    
+                    Case[i].setBackground(new Color(240, 216, 173));
+                else if(ligne == 1)                    
+                    Case[i].setBackground(new Color(231, 205, 163));
+                else
+                    Case[i].setBackground(new Color(222, 194, 153));
             }
 
             if(cr.getEtat() == EtatCreature.Fatigue)
@@ -171,7 +176,12 @@ public class VueCarte extends javax.swing.JPanel implements MouseListener {
             ((GridLayout) this.getLayout()).setVgap(0);
 
             for (int i = 0; i < 9; i++) {
-                    Case[i].setBackground(new Color(213, 231, 203));
+                if(ligne == 0)                    
+                    Case[i].setBackground(new Color(240, 216, 173));
+                else if(ligne == 1)                    
+                    Case[i].setBackground(new Color(231, 205, 163));
+                else
+                    Case[i].setBackground(new Color(222, 194, 153));
             }
         }
     }

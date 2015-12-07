@@ -60,7 +60,7 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
         
         // Variable du jeu
         joueur1 = new Joueur("Axel", 10);
-        joueur2 = new JoueurMonteCarlo("Vincent", 10);
+        joueur2 = new Joueur("Vincent", 10);
         partie = new Partie(joueur1, joueur2);
         controleur = new Controleur(partie);
 
@@ -386,7 +386,6 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
         CardInfoPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(139, 131, 120)));
         CardInfoPanel.setMinimumSize(new java.awt.Dimension(100, 52));
         CardInfoPanel.setPreferredSize(new java.awt.Dimension(100, 50));
-        CardInfoPanel.setSize(new java.awt.Dimension(100, 50));
         CardInfoPanel.setLayout(new java.awt.GridLayout(1, 0));
 
         AttaqueInformationLabel.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
@@ -671,13 +670,13 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
 
             if(partie.GetPlateauJeu().GetIndexPlateauActuel() == 0)
             { 
-                J1Panel.setBackground(new Color(123, 168, 200));
+                J1Panel.setBackground(new Color(158,219,255));
                 J2Panel.setBackground(new Color(232,247,255));  
             }
             else
             {          
                 J1Panel.setBackground(new Color(232,247,255));
-                J2Panel.setBackground(new Color(123, 168, 200));
+                J2Panel.setBackground(new Color(158,219,255));
             }            
             J1PVLabel.setText(Integer.toString(joueur1.getPv()) + " PV");
             J2PVLabel.setText(Integer.toString(joueur2.getPv()) + " PV");

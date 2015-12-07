@@ -12,7 +12,7 @@ import Utilitaire.Tools;
  * @author RICHE Vincent P1203372
  * @author PARIS AXEL P1306459
  */
-public class PlateauJoueur extends MyObservable
+public class PlateauJoueur extends MyObservable implements Cloneable
 {
     private Joueur joueur;
     private Carte[] main;
@@ -206,4 +206,11 @@ public class PlateauJoueur extends MyObservable
     {
         this.ligneCombat = ligneCombat;
     }  
+    
+    @Override
+    public Object clone() throws CloneNotSupportedException 
+    {
+        PlateauJoueur p = new PlateauJoueur((Joueur)this.joueur.clone());
+        return (Object)p;
+    }
 }

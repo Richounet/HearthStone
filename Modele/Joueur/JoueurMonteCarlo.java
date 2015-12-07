@@ -1,4 +1,3 @@
-
 package Modele.Joueur;
 
 import Modele.Carte.Carte;
@@ -13,55 +12,53 @@ import java.util.logging.Logger;
 
 /**
  * @author RICHE Vincent P1203372
- * @author PARIS AXEL    P1306459
+ * @author PARIS AXEL P1306459
  */
+public class JoueurMonteCarlo extends JoueurIA {
 
-public class JoueurMonteCarlo extends JoueurIA
-{
     private ArrayList<Partie> jeu;
+    private ArrayList<Integer> nombreDeTours;
+    private ArrayList<Carte> premierCoup;
     public static FenetrePalette fenetre;
-    
-    public JoueurMonteCarlo(String nom, int pv) 
-    {
+
+    public JoueurMonteCarlo(String nom, int pv) {
         super(nom, pv);
     }
-    
-    public void Monte_Carlo()
-    { 
+
+    // On clone la partie actuelle un certain nombre de fois
+    // Pour chaque partie, on la joue jusqu'à la fin
+    // On regarde le nombre minimum de tours où l'IA coresspondant à l'IA Monte-Carlo a gagné
+    // On renvoie son premier coup joué
+    public void Monte_Carlo() {
         jeu = new ArrayList<>();
-        for(int i=0; i<10; i++)
-        {
+        nombreDeTours = new ArrayList<>();
+        premierCoup = new ArrayList<>();
+        
+        for (int i = 0; i < 1; i++) {
             try {
-                //System.out.println("Partie Actuelle | Phase : " + fenetre.getPartie().GetPhaseActuelle() + " | " + fenetre.getPartie().getJoueurs(0).getClass() + " - " + fenetre.getPartie().getJoueurs(1).getClass());
-                jeu.add((Partie)fenetre.getPartie().clone());
-                
-                //System.out.println("Clonage | Avant changement de joueurs | Phase : " + jeu.get(i).GetPhaseActuelle() + " | " + jeu.get(i).getJoueurs(0).getClass() + " - " + jeu.get(i).getJoueurs(1).getClass());
-                
+                jeu.add((Partie) fenetre.getPartie().clone());
                 jeu.get(i).setAleatoireMonteCarlo(0, jeu.get(i).getJoueurs(0).getNom(), jeu.get(i).getJoueurs(0).getPv());
                 jeu.get(i).setAleatoireMonteCarlo(1, jeu.get(i).getJoueurs(1).getNom(), jeu.get(i).getJoueurs(1).getPv());
-                
-                //System.out.println("Clonage | Après changement de joueurs | Phase : " + jeu.get(i).GetPhaseActuelle() + " | " + jeu.get(i).getJoueurs(0).getClass() + " - " + jeu.get(i).getJoueurs(1).getClass());
-                
             } catch (CloneNotSupportedException ex) {
                 System.out.println("Erreur lors du clonage.");
-            }            
+            }
+        }
+
+        for (int i = 0; i < jeu.size(); i++) {
+            jeu.get(i).SimulerPartieIA();
         }
         
-        for (int i = 0; i < jeu.size(); i++)
-            System.out.println(jeu.get(i).equals(fenetre.getPartie()));
     }
-            
+
     @Override
-    public Carte GetCoup(PlateauJoueur p, PhaseType phase)
-    {
+    public Carte GetCoup(PlateauJoueur p, PhaseType phase) {
         Monte_Carlo();
         return null;
     }
 
     @Override
-    public Object clone() throws CloneNotSupportedException
-    {
+    public Object clone() throws CloneNotSupportedException {
         JoueurMonteCarlo j = new JoueurMonteCarlo(this.nom, this.pv);
-        return (Object)j;
-    } 
+        return (Object) j;
+    }
 }

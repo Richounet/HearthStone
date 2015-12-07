@@ -12,7 +12,7 @@ import Utilitaire.Tools;
  * @author PARIS AXEL    P1306459
  */
 
-public class PlateauJeu extends MyObservable
+public class PlateauJeu extends MyObservable implements Cloneable
 {
     private PlateauJoueur[] plateauJoueur;
     private PhaseType phaseActuelle;
@@ -64,6 +64,7 @@ public class PlateauJeu extends MyObservable
     public void JouerCoupIA()
     {
         Carte c = plateauJoueur[plateauActuel].getJ().GetCoup(plateauJoueur[plateauActuel], phaseActuelle);
+        System.out.println(c);
         JouerCoup(c);
     }
     
@@ -169,4 +170,13 @@ public class PlateauJeu extends MyObservable
     {
         return plateauActuel;
     }
+    
+    @Override
+    public Object clone() throws CloneNotSupportedException 
+    {
+        PlateauJeu p = new PlateauJeu((Joueur)this.partie.getJoueurs(0).clone(), (Joueur)this.partie.getJoueurs(1).clone(), (Partie)this.partie.clone());
+        p.plateauJoueur[0] = (PlateauJoueur)this.plateauJoueur[0].clone();
+        p.plateauJoueur[1] = (PlateauJoueur)this.plateauJoueur[1].clone();
+        return (Object)p;
+    }  
 }

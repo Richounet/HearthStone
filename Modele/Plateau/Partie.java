@@ -60,6 +60,15 @@ public class Partie implements Cloneable
         NextPhase();
     }
     
+    public void SimulerPartieIA()
+    {
+        while(!partieTerminee)
+        {    
+            //System.out.println(this.getJoueurs(0).getNom() + " : " + this.getJoueurs(1).getPv() + " - " + this.getJoueurs(0).getNom() + " : " + this.getJoueurs(1).getPv());
+            JouerCoupIA();
+        }        
+    }
+    
     public PhaseType GetPhaseActuelle()
     {
         return plateau.GetPhaseActuelle();
@@ -110,7 +119,7 @@ public class Partie implements Cloneable
     public Object clone() throws CloneNotSupportedException 
     {
         Partie p = new Partie((Joueur)this.joueurs[0].clone(), (Joueur)this.joueurs[1].clone());
-        
+        p.plateau = (PlateauJeu)this.plateau.clone();
         return (Object)p;
     }   
 }

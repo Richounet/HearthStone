@@ -44,4 +44,16 @@ public class Deck
         }
         return null;
     }
+    
+    public static Carte FindCardByName(String s)
+    {
+        for (int i = 0; i < deck.size(); i++)
+            if (deck.get(i).getNom().equals(s))
+                try {
+                    return (Carte) deck.get(i).clone();
+                } catch (CloneNotSupportedException ex) {
+                    Logger.getLogger(Deck.class.getName()).log(Level.SEVERE, null, ex);
+                }
+        return null;
+    }
 }

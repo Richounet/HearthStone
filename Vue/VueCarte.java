@@ -3,6 +3,9 @@ package Vue;
 import Controleur.Controleur;
 import Modele.Carte.Carte;
 import Modele.Carte.Creature;
+import Modele.Carte.CreatureEffetVie;
+import Modele.Carte.CreatureRapide;
+import Modele.Carte.Deck;
 import Modele.Carte.EtatCreature;
 import java.awt.Color;
 import java.awt.GridLayout;
@@ -255,9 +258,9 @@ public class VueCarte extends javax.swing.JPanel implements MouseListener {
             fenetre.getDefenseInformationLabel().setForeground(new Color(245, 171, 131));
             fenetre.getCoutInformationLabel().setForeground(new Color(121, 169, 205));
             
-            if(this.cardName.getText().equals("Spider") || this.cardName.getText().equals("Groot"))
+            if(Deck.FindCardByName(cardName.getText()) instanceof CreatureRapide)
                 fenetre.getCapaciteInformationLabel().setText("Rapide");
-            else if(this.cardName.getText().equals("Sorcière") || this.cardName.getText().equals("Mage"))
+            else if(Deck.FindCardByName(cardName.getText()) instanceof CreatureEffetVie)
                 fenetre.getCapaciteInformationLabel().setText("Soigneur");
             else
                 fenetre.getCapaciteInformationLabel().setText("Ø");

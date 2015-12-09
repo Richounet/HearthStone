@@ -48,9 +48,16 @@ public class Partie implements Cloneable
             NextPhase();
     }
     
+    public void NextPhaseIA()
+    {
+        numeroTour += plateau.NextPhase();
+        plateau.Notify();
+        ControleVictoire();
+    }
+    
     public void ControleVictoire()
     {
-        if (joueurs[0].getPv() <= 0 || joueurs[1].getPv() < 0)
+        if (joueurs[0].getPv() <= 0 || joueurs[1].getPv() <= 0)
         {
             partieTerminee = true;
             plateau.Notify();
@@ -66,8 +73,8 @@ public class Partie implements Cloneable
     {
         while(!partieTerminee)
         {    
-            //System.out.println(this.getJoueurs(0).getNom() + " : " + this.getJoueurs(1).getPv() + " - " + this.getJoueurs(0).getNom() + " : " + this.getJoueurs(1).getPv());
             JouerCoupIA();
+            NextPhaseIA();
         }        
     }
     

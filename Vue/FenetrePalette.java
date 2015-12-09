@@ -102,9 +102,8 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
         
         VueCarte.fenetre = this;
         
-        
         if (joueur1 instanceof JoueurIA && joueur2 instanceof JoueurIA)
-            partie.NextPhase();
+            partie.SimulerPartieIA();
     }
     
     public void RestartGame()

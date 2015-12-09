@@ -43,6 +43,9 @@ public class Partie implements Cloneable
             JouerCoupIA();
         
         ControleVictoire();
+        
+        if (plateau.GetPlateauActuel().getJ() instanceof JoueurIA)
+            NextPhase();
     }
     
     public void ControleVictoire()
@@ -57,7 +60,6 @@ public class Partie implements Cloneable
     public void JouerCoupIA()
     {
         plateau.JouerCoupIA();
-        NextPhase();
     }
     
     public void SimulerPartieIA()

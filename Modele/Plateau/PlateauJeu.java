@@ -38,7 +38,7 @@ public class PlateauJeu extends MyObservable implements Cloneable
             if(c != null)
             {
                 if (c.getEtat() == EtatCreature.Fatigue)
-                return;
+                    return;
                 // Joue le match attaquant/defenseur si il y a des attaquants
                 Carte att = GetProchaineCarteAttaquante();
                 if (att != null)
@@ -64,7 +64,6 @@ public class PlateauJeu extends MyObservable implements Cloneable
     public void JouerCoupIA()
     {
         Carte c = plateauJoueur[plateauActuel].getJ().GetCoup(plateauJoueur[plateauActuel], phaseActuelle);
-        System.out.println(c);
         JouerCoup(c);
     }
     

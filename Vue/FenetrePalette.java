@@ -59,8 +59,8 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
         JoueurMonteCarlo.fenetre = this;
         
         // Variable du jeu
-        joueur1 = new JoueurAleatoire("Axel", 10);
-        joueur2 = new JoueurAleatoire("Vincent", 10);
+        joueur1 = new Joueur("Axel", 10);
+        joueur2 = new Joueur("Vincent", 10);
         partie = new Partie(joueur1, joueur2);
         controleur = new Controleur(partie);
 

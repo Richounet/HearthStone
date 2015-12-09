@@ -103,6 +103,11 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
         VueCarte.fenetre = this;
     }
     
+    public void RestartGame()
+    {
+        InitGame();
+    }
+    
     public Partie getPartie()
     {
         return partie;
@@ -504,7 +509,7 @@ public class FenetrePalette extends javax.swing.JFrame implements Observer
         }
         else
         {
-            
+           RestartGame();
         }            
     }//GEN-LAST:event_NouvellePartieActionPerformed
 

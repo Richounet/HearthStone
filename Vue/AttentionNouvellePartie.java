@@ -109,7 +109,7 @@ public class AttentionNouvellePartie extends javax.swing.JDialog {
     private void QuitterJDialogButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuitterJDialogButton3ActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        this.fenetre.dispose();
+        this.fenetre.RestartGame();
     }//GEN-LAST:event_QuitterJDialogButton3ActionPerformed
 
     /**

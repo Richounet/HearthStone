@@ -75,33 +75,39 @@ public class PlateauJoueur extends MyObservable implements Cloneable
         // Il y a combat entre les cartes
         else
         {
-            int att1 = defenseur.getAttaque();
-            int def1 = defenseur.getDefense();
-            int att2 = attaquante.getAttaque();
-            int def2 = attaquante.getDefense();
-            
-            boolean defDetruit = false;
-            boolean attDetruit = false;
-            
-            if (att1 >= def2)
-                attDetruit = true;
-            if (att2 >= def1)
-                defDetruit = true;
-            
-            if (defDetruit)
-                ret[0] = defenseur;
-            if (attDetruit)
-                ret[1] = attaquante;    
+            if (defenseur.getEtat() == EtatCreature.Fatigue)
+            {
+                joueur.setPv(joueur.getPv() - attaquante.getAttaque());   
+            }
+            else
+            {                         
+                int att1 = defenseur.getAttaque();
+                int def1 = defenseur.getDefense();
+                int att2 = attaquante.getAttaque();
+                int def2 = attaquante.getDefense();
+
+                boolean defDetruit = false;
+                boolean attDetruit = false;
+
+                if (att1 >= def2)
+                    attDetruit = true;
+                if (att2 >= def1)
+                    defDetruit = true;
+
+                if (defDetruit)
+                    ret[0] = defenseur;
+                if (attDetruit)
+                    ret[1] = attaquante; 
+            }   
         }
         
-        attaquante.setEtat(EtatCreature.Fatigue);
         Notify();
         
         return ret;
     }
     
     public void TryInvoc(Carte newCarte)
-    {
+    {       
         if (newCarte == null)
             return;
         int j;
@@ -126,8 +132,6 @@ public class PlateauJoueur extends MyObservable implements Cloneable
     {
         if (newAtt == null)
             return;
-        if (newAtt.getEtat() == EtatCreature.Fatigue)
-            return;
         int j;
         for (j = 0; j < ligneCombat.length; j++)
             if (ligneCombat[j] == null)
@@ -138,6 +142,7 @@ public class PlateauJoueur extends MyObservable implements Cloneable
         if (j < ligneCombat.length)
         {
             ligneCombat[j] = newAtt;
+            ligneCombat[j].setEtat(EtatCreature.Fatigue);
             Tools.RemoveFromArray(terrain, newAtt);
         }
             

@@ -37,8 +37,6 @@ public class PlateauJeu extends MyObservable implements Cloneable
         {
             if(c != null)
             {
-                if (c.getEtat() == EtatCreature.Fatigue)
-                    return;
                 // Joue le match attaquant/defenseur si il y a des attaquants
                 Carte att = GetProchaineCarteAttaquante();
                 if (att != null)
@@ -74,7 +72,6 @@ public class PlateauJeu extends MyObservable implements Cloneable
         {
             // On enleve la fatigue des créatures qui ont attaqué au tour précédent
             phaseActuelle = PhaseType.PhaseDefense;
-            plateauJoueur[plateauActuel].EnleveFatigueCreatures();
             
             plateauActuel++;
             if (plateauActuel == 2)
@@ -86,6 +83,8 @@ public class PlateauJeu extends MyObservable implements Cloneable
         else if (phaseActuelle == PhaseType.PhaseDefense)
         {
             FinishDefensePhase();
+            // Reset de l'état des cartes a la phase d'invoc
+            plateauJoueur[plateauActuel].EnleveFatigueCreatures();
             
             phaseActuelle = PhaseType.values()[phaseActuelle.ordinal() + 1];
             plateauJoueur[plateauActuel].TryTirerCarte();
